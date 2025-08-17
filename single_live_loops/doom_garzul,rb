@@ -1,0 +1,8 @@
+live_loop :doom_garzul do
+  sample :loop_garzul, rate: 0.5, start: 0.5
+  use_synth :prophet
+  bass = play :f1, sustain: 4, release: 4, cutoff: rrand(60, 130), note_slide: 1
+  sleep 4
+  control bass, note: :e1
+  sleep 4
+end
