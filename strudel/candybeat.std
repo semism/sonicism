@@ -10,5 +10,5 @@ $: n("[4!2 - 4] <[5 5] [5 <[3 <1 5>] 5>]> ")
   // .sound("gm_telephone")
   .scale("<<D4:major , D1:major> C4:dorian>").lpf(slider(1287, 100, 500, 1)).gain(slider(2.6, 0.2, 4, .1))
 
-$: note("a2")
+$: note("a2@3 <a4 a4 a5*4.3>")
   .sound("gm_viola").gain(slider(1.9, 0.2, 4, .1))
