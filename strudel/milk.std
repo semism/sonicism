@@ -1,5 +1,6 @@
 setcpm(160/4)
-kick: s("bd bd:4 bd bd:4").bank("tr707").gain(slider(2.7, 0, 4, .1)).echo(2,1,1)
+kick: s("bd bd:4 bd bd:4").bank("tr707").gain(slider(2.7, 0, 4, .1))
+// .delay(.5)
   ._punchcard().color("red")
 snare: s("- sd - sd").bank("tr707")
 clap: s("- - - <cp [cp - cp]> ")
