@@ -8,17 +8,17 @@ digiteka: note("c1 c2 <c2 c2 c2 d2>")
 .release(0.1)
 .distort(1)
 .phaser(slider(0,0,16,0.5)) //phaser off make digiteker
-.gain(1)
+.gain(1).color("[cyan pink <pink pink pink violet>]*4")
+._punchcard()
 
 aketigid: 
 n("- 1 - <2 2 6 3>")
 // n("6 6 6 <2 2 6 3>")
 .sound("numbers")
 .almostNever(x => x.sound("gm_seashore"))
-.almostNever(y => y.room(1))  
 .slow(2)
-.distort(0)
 .speed(-1)
+.someCyclesBy(.4, y => y.room(1))
 
 shkelmi_digitekes:s("bd:4 bd:4 bd:4 bd:4").bank("tr808")
 teneche:s("- sd:4 - sd:4").bank("tr808").almostNever(x=>x.speed(-1))
@@ -46,5 +46,6 @@ arrange(
   .room(2).delay(.1)
   .adsr("0.1:2:.2").almostNever(x=>x.delay(1))
 .fast(slider(1,1,8,2)).gain(slider(0.064,0,1))
-      ._scope()
+  .color("cyan")
+      ._punchcard()
 
