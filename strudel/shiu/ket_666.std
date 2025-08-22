@@ -3,12 +3,12 @@ digiteka: note("c1 c2 <c2 c2 c2 d2>")
 // .sound("saw")
 .sound("supersaw")
 .fast(4)
-.cutoff(500)
-.decay(0.5)
+.cutoff(700) //cutoff up make digitek
+.decay(0.5) 
 .release(0.1)
 .distort(1)
-.phaser(slider(3,0,16,0.5))
-.gain(.4)
+.phaser(slider(0,0,16,0.5)) //phaser off make digiteker
+.gain(1)
 
 aketigid: 
 n("- 1 - <2 2 6 3>")
