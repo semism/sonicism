@@ -1,14 +1,14 @@
 
-digiteka: note("c2 c2 c2 <c2 c2 c2 d2>")
+digiteka: note("c1 c2 <c2 c2 c2 d2>")
 // .sound("saw")
 .sound("supersaw")
-.fast(2)
+.fast(4)
 .cutoff(500)
 .decay(0.5)
 .release(0.1)
-.distort(0.7)
+.distort(1)
 .phaser(slider(3,0,16,0.5))
-.gain(.7)
+.gain(.4)
 
 aketigid: 
 n("- 1 - <2 2 6 3>")
@@ -47,5 +47,4 @@ arrange(
   .adsr("0.1:2:.2").almostNever(x=>x.delay(1))
 .fast(slider(1,1,8,2)).gain(slider(0.064,0,1))
       ._scope()
-
 
