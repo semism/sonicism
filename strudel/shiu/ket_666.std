@@ -1,0 +1,51 @@
+
+digiteka: note("c2 c2 c2 <c2 c2 c2 d2>")
+// .sound("saw")
+.sound("supersaw")
+.fast(2)
+.cutoff(500)
+.decay(0.5)
+.release(0.1)
+.distort(0.7)
+.phaser(slider(3,0,16,0.5))
+.gain(.7)
+
+aketigid: 
+n("- 1 - <2 2 6 3>")
+// n("6 6 6 <2 2 6 3>")
+.sound("numbers")
+.almostNever(x => x.sound("gm_seashore"))
+.almostNever(y => y.room(1))  
+.slow(2)
+.distort(0)
+.speed(-1)
+
+shkelmi_digitekes:s("bd:4 bd:4 bd:4 bd:4").bank("tr808")
+teneche:s("- sd:4 - sd:4").bank("tr808").almostNever(x=>x.speed(-1))
+shpulla:s("- cp:4 - cp").bank("tr808")
+lodra:s("- perc:4 <- - - perc> - - [lt ht <- - - perc:4>]").bank("tr808")
+  .someCyclesBy(.2, x=>x.ply(2).speed(-1)).gain(".25 1")
+
+ksksa:s("- hh oh hh oh hh oh -").bank("tr808")
+  .almostNever(x=>x.ply(2)).gain(".25 1 .25 1 .25 1")
+
+
+degjoj_ket_melodi:
+arrange(
+  [1,  "d5 - gb4 - gb4 - d5 - d5@4 - - - - "],
+  [1,  "- gb4 - gb4 - d5 - d5 - gb4 - g4 - gb4 -  "], 
+  [1,  "e4 - e4 - e4 - db5 - db5@5 - - - -"],
+  [1,  "- e4 - e4 - db5 - db5 - gb4 - g4 - gb4 -  "],
+  [1,  "d4 - d4 - d4 - b4@2 - b4@3 - - - -"],
+  [1,  "- d4 - d4 - b4 - b4 - d4 - e4 - d4  "],
+  [1,  "db4 - db4 - db4 - bb4@2 - bb4@2 - -"],
+  [1,  "- - bb4 - b4 - db5 -"]
+).note()
+  .sound("gm_acoustic_guitar_nylon:4")
+   .sound("saw")
+  .room(2).delay(.1)
+  .adsr("0.1:2:.2").almostNever(x=>x.delay(1))
+.fast(slider(1,1,8,2)).gain(slider(0.064,0,1))
+      ._scope()
+
+
