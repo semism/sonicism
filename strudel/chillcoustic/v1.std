@@ -1,4 +1,5 @@
 
+
 setcpm(120/4)
 
 const chord_prog = "<D3:major A3:major <B3:major C3:major> ->"
@@ -10,7 +11,7 @@ n("1, 3, 5")
   .delay(.6)
   .adsr(".1:.2:4:.4")
   .room(3)
-  .gain(.1)
+  .gain(.1).color("cyan")._scope()
 
 arpeg:
 arrange(
@@ -20,23 +21,33 @@ arrange(
   [1,  "-"]
 ).n().fast(4)
   .scale(chord_prog)
-  .cutoff(2000)
-  .adsr(".4:0:.4:.2")
-  .sound("gm_orchestral_harp, pulse")
+  // .scale("D5:major")
+  .cutoff("5000 2000 2000")
+  .adsr("0:0:.4:.2")
+  .sound("gm_orchestral_harp pulse square")
   .delay(.5)
-  .gain(.8).room(1)
+  .gain(.8).room(1).color("teal")._spiral()
 
 
+squeak: n("1 1 1 [1 1]").fast(1)
+  .scale("D5:major")
+  // .adsr("0:0:.4:.2")
+  .sound("<- - - square> pulse square")
+  .pan(-1)
+  // .delay(.5)
+  .gain(.2).color("pink")._punchcard()
+          
 bass:
-n("1 1 1 1".sub("8"))
+n("1 1 1 1".sub("<[4, 8] 8 8 8>/2"))
   .sound("gm_acoustic_bass")
   .almostNever(x=>x.ply(2))
   .fast(2).delay(.5)
-  .scale("D3:major")
+  .scale("D3:major").color("violet")._punchcard()
 
 kick: s("bd:1 bd bd bd").bank("tr707")
   .room(.9).gain(.6)
 snare: s("- sd - <sd [sd sd]>").room(.5)
 hats: s("- oh - <hh hh*2> - - - <rim:3 rim:3*2>")
   .gain("<1 .5>").room(.5)
+
 
