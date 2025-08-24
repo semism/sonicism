@@ -36,7 +36,7 @@ n("1 1 1 1".sub("8"))
 
 kick: s("bd:1 bd bd bd").bank("tr707")
   .room(.9).gain(.6)
-snare: s("- sd - <sd [sd sd]>")
+snare: s("- sd - <sd [sd sd]>").room(.5)
 hats: s("- oh - <hh hh*2> - - - <rim:3 rim:3*2>")
-  .gain("<1 .5>")
+  .gain("<1 .5>").room(.5)
 
