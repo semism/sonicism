@@ -1,3 +1,4 @@
+
 setcpm(120/4)
 
 const chord_prog = "<D3:major A3:major <B3:major C3:major> ->"
@@ -5,11 +6,11 @@ const chord_prog = "<D3:major A3:major <B3:major C3:major> ->"
 chords:
 n("1, 3, 5")
   .scale(chord_prog)
-  .sound("gm_synth_strings_1")
+  .sound("gm_synth_strings_1, sine")
   .delay(.6)
   .adsr(".1:.2:4:.4")
-  .room(.5)
-  .gain(.7)
+  .room(3)
+  .gain(.1)
 
 arpeg:
 arrange(
@@ -35,3 +36,4 @@ kick: s("bd:1 bd bd bd").bank("tr707")
 snare: s("- sd - <sd [sd sd]>")
 hats: s("- oh - <hh hh*2> - - - <rim:3 rim:3*2>")
   .gain("<1 .5>")
+
