@@ -49,3 +49,7 @@ snare: s("- sd - <sd [sd sd]>").room(.5)
 hats: s("- oh - <hh hh*2> - - - <rim:3 rim:3*2>")
   .gain("<1 .5>").room(.5)
 
+// number_lady:
+// note("d2:0 c2:1 c2:1 f2:0")
+//   .sound("numbers").room(1).jux(rev)
+
