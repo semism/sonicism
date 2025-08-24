@@ -30,11 +30,11 @@ arrange(
 
 squeak: n("1 1 1 [1 1]").fast(1)
   .scale("D5:major")
-  .adsr("0:0:.4:.2")
-  .sound("<- - - square> pulse square")
-  .pan(-0.2).room(2)
+  // .adsr("0:0:.4:.2")
+  .sound("<- - - gm_tinkle_bell:3> gm_tinkle_bell:2 gm_tinkle_bell:3")
+  // .room(2)
   .delay(.5)
-  .gain(.2).color("pink")._punchcard()
+  .gain(.4).color("pink")._punchcard()
           
 bass:
 n("1 1 1 1".sub("<[4, 8] 8 8 8>/2"))
