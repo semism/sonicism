@@ -1,5 +1,4 @@
 
-
 setcpm(120/4)
 
 const chord_prog = "<D3:major A3:major <B3:major C3:major> ->"
@@ -31,10 +30,10 @@ arrange(
 
 squeak: n("1 1 1 [1 1]").fast(1)
   .scale("D5:major")
-  // .adsr("0:0:.4:.2")
+  .adsr("0:0:.4:.2")
   .sound("<- - - square> pulse square")
-  .pan(-1)
-  // .delay(.5)
+  .pan(-0.2).room(2)
+  .delay(.5)
   .gain(.2).color("pink")._punchcard()
           
 bass:
@@ -49,5 +48,4 @@ kick: s("bd:1 bd bd bd").bank("tr707")
 snare: s("- sd - <sd [sd sd]>").room(.5)
 hats: s("- oh - <hh hh*2> - - - <rim:3 rim:3*2>")
   .gain("<1 .5>").room(.5)
-
 
