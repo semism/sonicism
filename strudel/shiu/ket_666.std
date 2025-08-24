@@ -1,8 +1,8 @@
 
-digiteka: note("c1 c2 <c2 c2 c2 d2>")
+digiteka: note("c1 c2 c2 <c2 c2 c2 d2>")
 // .sound("saw")
 .sound("supersaw")
-.fast(4)
+.fast(2)
 .cutoff(700) //cutoff up make digitek
 .decay(0.5) 
 .release(0.1)
@@ -19,15 +19,16 @@ n("- 1 - <2 2 6 3>")
 .slow(2)
 .speed(-1)
 .someCyclesBy(.4, y => y.room(1))
+.gain(.4)
 
-shkelmi_digitekes:s("bd:4 bd:4 bd:4 bd:4").bank("tr808")
-teneche:s("- sd:4 - sd:4").bank("tr808").almostNever(x=>x.speed(-1))
-shpulla:s("- cp:4 - cp").bank("tr808")
-lodra:s("- perc:4 <- - - perc> - - [lt ht <- - - perc:4>]").bank("tr808")
-  .someCyclesBy(.2, x=>x.ply(2).speed(-1)).gain(".25 1")
+shkelmi_digitekes:s("bd:4 bd:4 bd:4 bd:4").bank("tr808").gain(1)
+// teneche:s("- sd:4 - sd:4").bank("tr808").almostNever(x=>x.speed(-1))
+// shpulla:s("- cp:4 - cp").bank("tr808").gain(.3)
+// lodra:s("- perc:4 <- - - perc> - - [lt ht <- - - perc:4>]").bank("tr808")
+//   .someCyclesBy(.2, x=>x.ply(2).speed(-1)).gain(".25 1")
 
-ksksa:s("- hh oh hh oh hh oh -").bank("tr808")
-  .almostNever(x=>x.ply(2)).gain(".25 1 .25 1 .25 1")
+// ksksa:s("- hh oh hh oh hh oh -").bank("tr808")
+//   .almostNever(x=>x.ply(2)).gain(".25 1 .25 1 .25 1")
 
 
 degjoj_ket_melodi:
@@ -43,9 +44,8 @@ arrange(
 ).note()
   .sound("gm_acoustic_guitar_nylon:4")
    .sound("saw")
-  .room(2).delay(.1)
+  .room(2).delay(.5)
   .adsr("0.1:2:.2").almostNever(x=>x.delay(1))
-.fast(slider(1,1,8,2)).gain(slider(0.064,0,1))
+.fast(1).gain(slider(0.481,0,1))
   .color("cyan")
       ._punchcard()
-
