@@ -1,0 +1,37 @@
+setcpm(120/4)
+
+const chord_prog = "<D3:major A3:major <B3:major C3:major> ->"
+
+chords:
+n("1, 3, 5")
+  .scale(chord_prog)
+  .sound("gm_synth_strings_1")
+  .delay(.6)
+  .adsr(".1:.2:4:.4")
+  .room(.5)
+  .gain(.7)
+
+arpeg:
+arrange(
+  [1,  "1 3 5"],
+  [1,  "1 3 5"],
+  [1,  "1 3 5"]
+).n().fast(2)
+  .scale(chord_prog)
+  .adsr(".4:.2:.4:.1")
+  .sound("gm_orchestral_harp, pulse")
+  .delay(.5)
+  .gain(.8).room(1)
+
+
+bass:
+n("1 1 1 1".sub("8"))
+  .sound("gm_acoustic_bass")
+  .fast(2)
+  .scale("D3:major")
+
+kick: s("bd:1 bd bd bd").bank("tr707")
+  .room(.9).gain(.6)
+snare: s("- sd - <sd [sd sd]>")
+hats: s("- oh - <hh hh*2> - - - <rim:3 rim:3*2>")
+  .gain("<1 .5>")
