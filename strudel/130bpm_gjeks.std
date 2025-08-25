@@ -2,8 +2,9 @@ setcpm(130/4)
 
 acid: n("1*2 2*2 1*2 1*2 1*2 2*2 1*2 <3*2 <1 1 1 -10>>")
   .add(note("0,.1"))
+  // .scale("C2:major D2:major")
   .scale("C2:major")
-  .lpf(saw.range(slider(1700, 700, 1700, 100), 2000).fast(16)) //switch the range start to get different acids
+  .lpf(saw.range(slider(1200, 1200, 1700, 100), 2000).fast(16)) //switch the range start to get different acids
   // .phaser(slider(0,0,4,1))
   .lpq(saw.range(10, 22).fast(2))
   .s("sawtooth").adsr("0:.1:.3:.2")
