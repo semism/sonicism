@@ -33,6 +33,7 @@ hillti: n("1*2")
 kick:
 s("bd:4 bd:4 bd:4 <bd:4 bd:4*2>")
 // s("bd bd bd bd
+  .sometimesBy(.5, ply(4))
   .bank("mc303").gain(.4)
 snare:s("- sd - <sd sd sd sd*4>").bank("mc303").gain(.4)
 clap:s(" - [ - cp:2] - cp:2").bank("mc303").gain(.1)
