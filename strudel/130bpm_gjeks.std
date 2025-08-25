@@ -23,7 +23,10 @@ hillti: n("1*2")
   .delay(.1).gain(.1).room(2)
 
 
-kick:s("bd bd bd bd").bank("mc303").gain(.4)
+kick:
+// s("bd:4 bd:4 bd:4 <bd:4 bd:4*2>")
+s("bd bd bd bd")
+  .bank("mc303").gain(.4)
 snare:s("- sd - <sd sd sd sd*4>").bank("mc303").gain(.4)
 clap:s(" - [ - cp:2] - cp:2").bank("mc303").gain(.1)
 hhat:s("[- [ - - hh] - [ - hh:3 - hh:3 ]]/2").bank("mc303")
