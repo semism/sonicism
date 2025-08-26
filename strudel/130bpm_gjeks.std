@@ -13,10 +13,10 @@ n("1!2 2*4 1*2@2 3*2 3*2 <4*2 <1 1 1 -1>>")
   .hpf(400)
   .hpenv(3)
   .slow(2)
-  // .sometimesBy(.15, x=>x.slow(2))
   .scale("C3:major, C4:minor")
    // .scale("C4:major D4:minor")
-  // .room(.3).gain(slider(0.8,0,1,0.1))
+  .room(.1)
+  // .gain(slider(0.8,0,1,0.1))
   .distort(tri.range(1.5, 2).fast(2)).gain(tri.range(.01, .05).fast(2)) //0.1 starting gain good too
   .color("pink cyan")._pianoroll()
 
