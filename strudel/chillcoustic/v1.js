@@ -27,7 +27,8 @@ arrange(
   .delay(.5)
   .gain(.8)
   .room(2)
-  .roomsize(4).color("teal")._spiral()
+  .roomsize(4).color("teal").pan(0.75)
+  ._spiral()
 
 
 squeak: n("1 1 1 [1 1]").fast(1)
