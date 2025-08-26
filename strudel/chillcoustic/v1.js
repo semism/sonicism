@@ -21,11 +21,13 @@ arrange(
 ).n().fast(4)
   .scale(chord_prog)
   // .scale("D5:major")
-  .cutoff("5000 2000 2000")
+  .lpf("5000 2000 2000")
   .adsr("0:0:.4:.2")
   .sound("gm_orchestral_harp pulse square")
   .delay(.5)
-  .gain(.8).room(1).color("teal")._spiral()
+  .gain(.8)
+  .room(2)
+  .roomsize(4).color("teal")._spiral()
 
 
 squeak: n("1 1 1 [1 1]").fast(1)
