@@ -6,31 +6,32 @@
 
 
 
-// high_acid:
-// n("1!2 2*4 1*2@2 3*2 3*2 <4*2 <1 1 1 -1>>")
-//   .add(note("0, .1")) 
-//   .s("sawtooth, supersaw")
-//   .hpf(400)
-//   .hpenv(3)
-//   .slow(2)
-//   .scale("C3:major, C4:minor")
-//    // .scale("C4:major D4:minor")
-//   .room(.1)
-//   // .gain(slider(0.8,0,1,0.1))
-//   .distort(tri.range(1, 1.5).fast(2)).gain(tri.range(.01, .05).fast(2)) //0.1 starting gain good too
-//   .color("pink cyan")._pianoroll()
+high_acid:
+n("1!2 2*4 1*2@2 3*2 3*2 <4*2 <1 1 1 -1>>")
+  .add(note("0, .1")) 
+  .s("sawtooth, supersaw")
+  .hpf(400)
+  .hpenv(3)
+  .slow(2)
+  .scale("C3:major, C4:minor")
+   // .scale("C4:major D4:minor")
+  .room(.1)
+  // .gain(slider(0.8,0,1,0.1))
+  .distort(tri.range(1, 1.5).fast(2)).gain(tri.range(.01, .05).fast(2)) //0.1 starting gain good too
+  .color("pink cyan")._pianoroll()
 
 
 
 acid: n("1*2 2*2 1*2 1*2 1*2 2*2 1*2 <3*2 <1 1 1 -10>>")
+  .rib(irand(1000), 1)
   // .slow(2)
-  // .sometimesBy(.15, x=>x.slow(2))
+  .sometimesBy(.15, x=>x.slow(2))
   .add(note("0,.1"))
   .scale("C2:major D2:minor").color("pink cyan")
   // .scale("C2:major")
   .lpf(200) //switch the range start to get different acids
   // .phaser(slider(0,0,4,1))
-  .lpq(12).lpenv(slider(3.024,0,8))
+  .lpq(12).lpenv(slider(4.688,0,8))
   .s("sawtooth").adsr("0:.1:.3:.2")
   .delay(.1)
   .gain(tri.range(.1, 1).fast(4)) //cool effect (tri, saw, square)
@@ -44,7 +45,7 @@ anija: n("1*2")
   .add(note("0,.1"))
   .scale("C2:major")
   .lpf(saw.range(1700, 2000).fast(2))
-  .phaser(slider(4,0,4,1))
+  .phaser(slider(2,0,4,1))
   .lpq(saw.range(10, 22).fast(2))
   .s("sawtooth")
   .delay(.1).gain("[.2 .1]/2").slow(2)
@@ -69,13 +70,13 @@ hillti: n("1*2")
 
 kick2:
 s("bd:4 bd:4 bd:4 <bd:4 bd:4*2>")
-  .sometimesBy(.5, ply(4))
-  .bank("mc303").gain(.4)
+  // .sometimesBy(.5, ply(4))
+  .bank("mc303").gain(.5)
 
 snare:s("- sd - <sd sd sd sd*4>").bank("mc303").gain(.4)
 clap:s(" - [ - cp:2] - cp:2").bank("mc303").gain(.1)
-// hhat:s("[- [ - - hh] - [ - hh:3 - hh:3 ]]/2").bank("mc303")
-//   .sometimesBy(.25, ply(4)).gain(".2 .4 .1").pan(-1)
+hhat:s("[- [ - - hh] - [ - hh:3 - hh:3 ]]/2").bank("mc303")
+  .sometimesBy(.25, ply(4)).gain(".2 .4 .1").pan(-1)
 shaker:s("sh").bank("mc303").fast(1).distort("4:.1 5:.1 2:.2")
-//   .sometimesBy(.25, ply(4)).pan(1)
+  .sometimesBy(.25, ply(4)).pan(1)
 zile_lope:s(" - [ - cb:2] - <- - - - - - - - [- cb:1]>").bank("mc303").gain(.5).room(.3)
