@@ -7,7 +7,7 @@ digiteka: note("c1 c2 <c2 c2 c2 d2>")
 .decay(0.5) 
 .release(0.1)
 .distort(1)
-.phaser(slider(0,0,16,0.5)) //phaser off make digiteker
+// .phaser(slider(11,0,16,0.5)) //phaser off make digiteker
 .gain(1).color("[cyan pink <pink pink pink violet>]*4")
 ._punchcard()
 
@@ -42,10 +42,10 @@ arrange(
   [1,  "db4 - db4 - db4 - bb4@2 - bb4@2 - -"],
   [1,  "- - bb4 - b4 - db5 -"]
 ).note()
-  .sound("gm_acoustic_guitar_nylon:4")
-   .sound("saw")
-  .room(2).delay(.5)
+  .sound("sawtooth")
+  .room(2).delay(.5).lpf(3000)
   .adsr("0.1:2:.2").almostNever(x=>x.delay(1))
 .fast(4).gain(slider(0,0,1))
   .color("cyan")
       ._punchcard()
+
