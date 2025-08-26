@@ -44,12 +44,11 @@ n("1 1 1 1".sub("<[4, 8] 8 8 8>/2"))
   .scale("D3:major").color("violet")._punchcard()
 
 kick: s("bd:1 bd bd bd").bank("tr707")
-  .room(.9).gain(.6)
-snare: s("- sd - <sd [sd sd]>").room(.5)
+  .room(1).roomsize(4).gain(.6)
+snare: s("- sd - <sd [sd sd]>").room(".5 1").roomsize(4).rel(.1)
 hats: s("- oh - <hh hh*2> - - - <rim:3 rim:3*2>")
-  .gain("<1 .5>").room(.5)
+  .gain("<.3 .5>").room(.5).roomsize(4).jux(rev)
 
 // number_lady:
 // note("d2:0 c2:1 c2:1 f2:0")
 //   .sound("numbers").room(1).jux(rev)
-
