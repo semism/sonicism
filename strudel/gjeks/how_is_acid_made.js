@@ -1,3 +1,4 @@
+//switch angels acid recipe
 setCps(140/60/4)
 kick: s("sbd!4").distort("3:.3")
   .duck("2:3:4").duckattack(.2).duckdepth(.8)
