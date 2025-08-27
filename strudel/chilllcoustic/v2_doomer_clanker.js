@@ -28,6 +28,8 @@ base:n("<0>").scale("<C2:minor C2:minor D2:major D2:minor>")
 
 kick:s("bd").beat("0, 2, 3, 4",8).room(.4)
 snare:s("sd").beat("1, 3", 4).room(.4).gain(.4)
+rim: s("rim").beat("4, 16, 18",32).room(.4).gain(.4)
+  .almostNever(ply("2 | 4"))
 hihat:s("white!8").decay(.1).sometimesBy(.15, x=>x.decay(.7))
   .gain(.4).pan(1)
 
@@ -44,4 +46,5 @@ sub:n("<0>!4").clip(1)
   .almostNever(x=>x.clip(.5).ply(2))
   .scale("<C2:minor C2:minor D2:major D2:minor>")
   .s("sine, supersaw").lpf(2000).lpenv(2).lpq(6).room(2)
+
 
