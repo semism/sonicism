@@ -26,8 +26,10 @@ arpeg:n("0 2 4 <7!3 ->").scale("<C:minor C:minor D:major D:minor>").delay(.5)
 base:n("<0>").scale("<C2:minor C2:minor D2:major D2:minor>")
 .clip(2).s("gm_electric_guitar_clean").room(4).roomsize(4).gain(.3)
 
-kick:s("bd").beat("2, 3, 4",8).room(.4)
+kick:s("bd").beat("0, 2, 3, 4",8).room(.4)
 snare:s("sd").beat("1, 3", 4).room(.4).gain(.4)
+hihat:s("white!8").decay(.1).sometimesBy(.15, x=>x.decay(.7))
+  .gain(.4).pan(1)
 
 lead:n("<0 2 4 7@2 [0 2]>").clip(2)
   .scale("<C4:minor C4:minor D4:major D4:minor>,<C:minor C:minor D:major D:minor>")
