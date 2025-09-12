@@ -1,0 +1,45 @@
+//@title industry
+//@by _semism_
+
+/*
+*/
+setcpm(90/4)
+
+var base1 = n(`<
+ [2 - 2 - ]
+ [2*2 [- 0] 2 -]
+ [3 - 3 -]
+ [0 <- 1> <0 2> <- 1>]
+>`)
+
+var base2 = n(`<
+ [2 - 2 - ]
+ [2*2 [- 0] 2 -]
+ [3 - 3 -]
+ [0]
+>`)
+
+var bassline = n(`<
+ [- 7 - 7 ]
+ [-]
+ [- 3 - 3]
+ [1*2 3*2 5*2 7*2]
+>`)
+
+
+hello: base1.scale("c4:minor")
+  .sound("sine, tri").release(1)
+  .room(2).roomsize(6)
+  .gain(.4)
+  
+  
+hi: base2.off(1/8, x=> x.scale("c3:minor").sound("sawtooth").lpf(800).lpenv(3).lpq(12).clip("1 2").pan(1).room(1).roomsize(3))
+
+distant_kick: s("sbd").room(4).roomsize(3).distort("2:.2").release(4).speed(0.1)
+floor4_gallop: s("bd!4").delay(.2).gain("1 1.5")
+snare: s("sd sd rim -").speed(0.5).room(1).gain(.5)
+hh: s("white!8").room(1).gain(.2).clip(.1).pan(0.8)
+
+bass: bassline.scale("c1:minor").sound("sawtooth").lpf(400).lpenv(3)
+  .gain(3)
+
