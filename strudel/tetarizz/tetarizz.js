@@ -2,7 +2,7 @@
 Tetris
 */
 
-setCpm(100/4)
+setCpm(160/4)
 
 var t_notes = note(`<
 [e5 [b4 c5] d5 [c5 b4]]
@@ -25,10 +25,11 @@ var t_notes = note(`<
 >`)
 
 tetris: t_notes.sound("saw, sine")
-  .slow(2)
+  // .slow(2)
+  // .fast("2 1")
   .clip(".5 1 .5 .2")
   .room(1.2).roomsize(7).add(note("-7.2"))
-  // .lpf(400).lpenv(4).lpq(5)
+  .lpf(400).lpenv(4).lpq(5)
 squeak: 
 t_notes
   .s("saw").clip(".5 1 .5 .2")
@@ -38,4 +39,4 @@ t_notes
 kick:s("sbd*4")
 snare: s("<- <sd cp>>*4")
 hihat: s("white!8").decay(".3*4 .4").pan("<.88 1>").gain("<.58 .32>");
-sub: note("[e2 e3]*4").s("supersaw").add(note(-15.5))
+sub: note("[e2 e3]*4").s("supersaw").add(note(-15.5)).gain("<1.2 .8>")
