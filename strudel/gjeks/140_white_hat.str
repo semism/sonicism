@@ -11,6 +11,6 @@ snare: s("- sd - <sd:1 sd:2>").clip(".1")
 hihat: s("white!16")
   .clip(".4 .2 .1").pan(".77 -.77 .44")
 
-bike: s("gm_trumpet").detune(1).rel(5).beat(4, 64)
+bike: s("pulse, gm_trumpet").detune(1).rel(5).beat(4, 64)
 
 // all(x=>x.room(1).roomsize(3))
