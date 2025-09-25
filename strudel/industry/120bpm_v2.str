@@ -12,13 +12,6 @@ var base1 = n(`<
  [0 <- 1> <0 2> <- 1>]
 >`)
 
-var base2 = n(`<
- [2 - 2 - ]
- [2*2 [- 0] 2 -]
- [3 - 3 -]
- [0]
->`)
-
 var bassline = n(`<
  [- 7 - 7 ]
  [-]
@@ -33,9 +26,9 @@ hello: base1.scale("c4:minor")
   .gain(.4)
   
   
-hi: base2
+hi: base1
   .off(1/16, x=> x.scale("c3:minor").sound("sawtooth").lpf(300).lpenv(3).lpq(12).clip("1 2").pan(1).room(1).roomsize(3))
-  .off(1/8, x=> x.scale("c3:minor").sound("sawtooth").lpf(400).lpenv(3).lpq(12).clip("1 2").pan(-1).room(1).roomsize(3))
+  .off(1/8, x=> x.scale("c3:minor").sound("sawtooth").lpf(400).lpenv(5).lpq(12).clip("2 1").pan(-1).room(1).roomsize(3))
 
 distant_kick: s("sbd").room(4).roomsize(3).distort("2:.2").release(4).speed(0.1)
 floor4_gallop: s("bd!4").delay(.2).gain("1 1.5")
