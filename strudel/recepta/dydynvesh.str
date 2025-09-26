@@ -1,0 +1,5 @@
+dytdyt: n(irand(8).seg(16)) //start with 8th and play 16th notes to harmonize with lead
+  .scale("C4:minor").s("gm_voice_oohs")
+  // .rib(0, 2)
+  .rib("<92!4 5!4>", "<1 1 1 2>").almostNever(ply(4))
+  .lpf(2000).lpenv(2).lpq(10).jux(rev)
