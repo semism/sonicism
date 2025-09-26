@@ -16,9 +16,9 @@ bass_lead: n(irand(8).seg(16).sometimesBy(.12, x=>x.add(7)))
   .rib(5, "<1 1 1 2>")
   .lpf(800).lpenv(2)
 
-bass: n(irand(8).seg(8)) //start with 8th and play 16th notes to harmonize with lead
+bass: n(irand(8).seg(16)) //start with 8th and play 16th notes to harmonize with lead
   .scale("A1:minor").s("sawtooth, saw")
-  // .rib(0, 2)
+  // .rib(5, 2)
   .rib(5, "<1 1 1 2>")
   .lpf(2000).lpenv(2)
 
