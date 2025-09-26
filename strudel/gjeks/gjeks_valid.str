@@ -14,6 +14,7 @@ bass_lead: n(irand(8).seg(16).sometimesBy(.12, x=>x.add(7)))
   .scale("A2:minor").s("sawtooth, saw")
   // .rib(5, 2)
   .rib(5, "<1 1 1 2>")
+// .rib("<0!4 5!4>", "<1 1 1 2>")
   .lpf(800).lpenv(2)
 //   .lpq(20)
 
@@ -21,6 +22,7 @@ bass: n(irand(8).seg(8)) //start with 8th and play 16th notes to harmonize with 
   .scale("A1:minor").s("sawtooth, saw")
   // .rib(5, 2)
   .rib(5, "<1 1 1 2>")
+// .rib("<0!4 5!4>", "<1 1 1 2>")
   .lpf(2000).lpenv(2).lpq(0)
 
 // all(x=>x.room(1).roomsize(3))
