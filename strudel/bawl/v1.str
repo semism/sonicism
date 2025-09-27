@@ -18,7 +18,7 @@ bass: n(irand(10).seg(4)).s("saw, gm_voice_oohs")
   .lpq("<10 15>")
   .orbit(3)
 
-chirp: n(irand(10).seg("4 8?")).s("saw")
+chirp: n(irand(10).seg("4 8?")).s("saw") /decrease note length to chirp the digital
   .rib(43, 4)
   .scale("c4:minor")
   .lpf(1000).lpenv(2).lpq("<20 25>").jux(rev)
