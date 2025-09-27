@@ -8,8 +8,7 @@ hat: s("white!8").gain(.6).almostNever(x=>x.clip(".5 | .2 ").delay(.2))
   .off(1/16, x=>x.s("oh:3 oh:1").delay(.5))
   .orbit(2)
 
-tom: s("lt:2").beat("4, 8, 16", 64).almostNever(ply("2 | 4"))
-
+tom: s("lt:2").beat("4, <8 [8,9]>, 16", 64).almostNever(ply("2 | 4")).pan("<.66 -.66>")
 
 bass: n(irand(10).seg(4)).s("saw, gm_voice_oohs")
   .rib(43, 2)
@@ -26,3 +25,5 @@ chirp: n(irand(10).seg("4 8?")).s("saw")
   .orbit(4)
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
+all(x=>x.whenKey("Control:o", x=>x.s("gm_voice_oohs").color("blue")))
+all(x=>x.whenKey("Control:e", x=>x.off(1/8, x=>x.s("gm_voice_oohs:5").color("green"))))
