@@ -18,18 +18,18 @@ howlin: n("<1 1*2?>").scale("A2:minor").s("gm_voice_oohs:5")
 
 
 
-bass_lead: n(irand(8).seg("8 16").sometimesBy(.12, x=>x.add(7)))
+bass_lead: n(irand(8).seg("16").sometimesBy(.12, x=>x.add(7)))
   .scale("A2:minor").s("sawtooth, saw")
-  // .rib(0, 2)
-  .rib("<0!4 5!4>", "<1 1 1 2>")
-  .lpf(800).lpenv(2)
+  .rib(0, 1)
+  // .rib("<0!4 5!4>", "<1 1 1 2>")
+  .lpf("400 1000").lpenv(2)
   .lpq(sine.range(0,20)).orbit(5)
   ._scope()
 
-bass: n(irand(8).seg("4 8")) //start with 8th and play 16th notes to harmonize with lead
+bass: n(irand(8).seg("16")) //start with 8th and play 16th notes to harmonize with lead
   .scale("A1:minor").s("sawtooth, saw")
-  // .rib(0, 2)
-  .rib("<0!4 5!4>", "<1 1 1 2>")
-  .lpf(2000).lpenv(4).lpq(10).orbit(4)
+  .rib(0, 1)
+  // .rib("<0!4 5!4>", "<1 1 1 2>")
+  .lpf(2000).lpenv(4).lpq(10).orbit(4)._pianoroll()
 
 // all(x=>x.room(1).roomsize(3))
