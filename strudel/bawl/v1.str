@@ -12,8 +12,8 @@ tom: s("lt:2").beat("4, <8 [8,9]>, 16", 64).almostNever(ply("2 | 4")).pan("<.66 
 
 bass: n(irand(10).seg(4)).s("saw, gm_voice_oohs").gain(.4)
   .rib(43, 2)
-  .scale("c3:minor") //remove penatonic to make sadder
-  .room(3).roomsize(5) //toggle
+  .scale("c3:minor")
+  .room(3).roomsize(5)
   .lpf(800).lpenv(2)
   .lpq("<10 15>")
   .orbit(3)
