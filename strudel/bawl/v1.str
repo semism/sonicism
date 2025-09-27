@@ -1,3 +1,6 @@
+//@title b4wL
+//@by _semism_
+
 setCps(120/60/4)
 
 kick: s("sbd!4").distort("1:.7").duck("2:3:4:5").duckattack(.2).duckdepth(.8)
