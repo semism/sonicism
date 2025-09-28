@@ -1,5 +1,5 @@
 
-digiteka: note("c1 c2 <c2 c2 c2 d2>")
+digiteka: note("c1 c2 c2 <c2 c2 c2 d2>")
 .sound("supersaw, saw")
 .fast(4)
 .cutoff(1000) //cutoff up make digitek
@@ -26,20 +26,21 @@ shpulla:s("- cp:4 - cp").bank("tr808").gain(.3)
 ksksatre:s("hh!3").bank("tr808")
   .almostNever(x=>x.ply(2)).gain("1 .25 .25")
 
-_degjoj_ket_melodi:
-arrange(
-  [1,  "d5 - gb4 - gb4 - d5 - d5@4 - - - - "],
-  [1,  "- gb4 - gb4 - d5 - d5 - gb4 - g4 - gb4 -  "], 
-  [1,  "e4 - e4 - e4 - db5 - db5@5 - - - -"],
-  [1,  "- e4 - e4 - db5 - db5 - gb4 - g4 - gb4 -  "],
-  [1,  "d4 - d4 - d4 - b4@2 - b4@3 - - - -"],
-  [1,  "- d4 - d4 - b4 - b4 - d4 - e4 - d4  "],
-  [1,  "db4 - db4 - db4 - bb4@2 - bb4@2 - -"],
-  [1,  "- - bb4 - b4 - db5 -"]
-).note()
+degjoj_ket_melodi:
+// arrange(
+//   [1,  "d5 - gb4 - gb4 - d5 - d5@4 - - - - "],
+//   [1,  "- gb4 - gb4 - d5 - d5 - gb4 - g4 - gb4 -  "], 
+//   [1,  "e4 - e4 - e4 - db5 - db5@5 - - - -"],
+//   [1,  "- e4 - e4 - db5 - db5 - gb4 - g4 - gb4 -  "],
+//   [1,  "d4 - d4 - d4 - b4@2 - b4@3 - - - -"],
+//   [1,  "- d4 - d4 - b4 - b4 - d4 - e4 - d4  "],
+//   [1,  "db4 - db4 - db4 - bb4@2 - bb4@2 - -"],
+//   [1,  "- - bb4 - b4 - db5 -"]
+// ).note()
+n(irand(10)).seg(8).scale("c:minor").rib("<4 44>", 2)
   .sound("sawtooth")
   .room(2).delay(.5).lpf(3000)
   .adsr("0.1:2:.2").almostNever(x=>x.delay(1))
-.fast(4).gain(slider(1,0,1))
+.fast(1).gain(slider(1,0,1))
   .color("cyan")
       ._punchcard()
