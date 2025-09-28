@@ -42,4 +42,6 @@ nata: n(irand(14).seg(4)).scale("c4:minor")
   .every(4, x=>x.ply(2))
   .gain(.16).rel(1).attack(1)
 
-fusha: s("white").rel(4).gain(.01).room(4).pan("<-1 0 1>")
+flladi: s("white").rel(4).gain(.01).room(4).pan("<-1 0 1>")
+
+ora: s("<rd:1 [oh:4, rd:2]>").gain(".1 .2 .2 .1").pan("<-1 -.5 .5 1>")
