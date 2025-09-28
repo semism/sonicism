@@ -1,0 +1,38 @@
+/*
+       , ___
+     `\/{o,o}
+      / /)  )
+    /,--"-"- @title b4wL @by _semism_
+*/
+
+setCps(120/60/4)
+
+kick: s("sbd!4").distort("1:.7").duck("2:3:4:5").duckattack(.2).duckdepth(.8)
+  ._scope()
+
+snare: s("sd!2")
+hat: s("white!8").gain(.6).almostNever(x=>x.clip(".5 | .2 ").delay(.2))
+  .off(1/16, x=>x.s("oh:3 oh:1").delay(.5))
+  .orbit(2)
+
+tom: s("lt:2").beat("4, <8 [8,9]>, 16", 64).almostNever(ply("2 | 4")).pan("<.66 -.66>")
+
+sub: n("<3!8 0!8>").scale("c1:minor").s("tri, pulse").orbit(5)
+
+bass: n(irand(10).seg(4)).s("saw, gm_voice_oohs").gain(.4)
+  .rib(43, 2)
+  .scale("c3:minor")
+  .room(3).roomsize(5)
+  .lpf(800).lpenv(2)
+  .lpq("<10 15>")
+  .orbit(3)
+
+chirp: n(irand(10).seg("4 8?")).s("saw") //decrease note length to chirp the digital
+  .rib(43, 4)
+  .scale("c4:minor")
+  .lpf(1000).lpenv(2).lpq("<20 25>").jux(rev)
+  .orbit(4)
+
+all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
+all(x=>x.whenKey("Control:o", x=>x.s("gm_voice_oohs").color("blue")))
+all(x=>x.whenKey("Control:e", x=>x.off(1/8, x=>x.s("gm_voice_oohs:5").color("green"))))
