@@ -28,7 +28,7 @@ mora: note(
   )
 ).s("piano").delay(.5)
   .room(2).gain(.3)
-  // .off(1/16, x=>x.s("gm_tremolo_strings").gain(.2))
+  .off(1/16, x=>x.s("gm_tremolo_strings").gain(.2))
   // .slow(2)
   // .jux(rev)
 
@@ -42,12 +42,4 @@ nata: n(irand(14).seg(4)).scale("c4:minor")
   .every(4, x=>x.ply(2))
   .gain(.16).rel(1).attack(1)
 
-nata: n(irand(14).seg(4)).scale("c4:minor")
-  .s("brown, gm_tremolo_strings").rib(32, 8)
-  .almostNever(x=>x.clip(".2 | .5"))
-  .room(2).distort("1:.5")
-  .every(4, x=>x.ply(2))
-  .gain(.16).rel(1).attack(1)
-
 fusha: s("white").rel(4).gain(.01).room(4).pan("<-1 0 1>")
-
