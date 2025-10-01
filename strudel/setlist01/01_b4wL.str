@@ -1,55 +1,38 @@
 /*
-⣿⣿⣿⣿⠟⣩⣴⣶⣦⣍⠻⣿⣿⣿⣿⣿⣿⣿⢏⣾⣿⣿⠿⣿⣿⣿⣌⢻⣿
-⣿⣿⣿⢏⣾⣿⣿⠿⣿⣿⣿⣌⢻⣿⣿⣿⠟⣩⣬⣭⠻⣿⣀⣿⣿⣿⢟⣤⡙
-⣿⠟⣩⣬⣭⠻⣿⣀⣿⣿⣿⢟⣤⡙⢿⣷⣤⣒⠲⠶⢿⣘⣛⡛⠿⣿⣸⣿⣿
-⣷⣤⣒⠲⠶⢿⣘⣛⡛⠿⣿⣸⣿⣿⣷⣝⠿⣿⣿⠸⣿⣿⣿⣿⣿⣦⢹⣿⣿
-⣿⣿⣿⣿⠸⣿⣿⣿⣿⣿⣦⢹⣿⣿⣿⣿⣷⣌⠻⠟⣠⣴⣶⣦⣍⠻⡼⣿⣿
-⣿⣿⣿⣿⠟⣠⣴⣶⣦⣍⠻⡼⣿⣿⣿⣿⣿⢿⢏⣾⣿⣿⠿⣿⣿⣷⣶⣝⢿
-⣿⣿⣿⢏⣾⣿⣿⠿⣿⣿⣷⣶⣝⢿⣿⣿⠟⣩⣬⣭⠻⣿⣀⣿⣿⣿⣿⣿⣷
-⣿⠟⣩⣬⣭⠻⣿⣀⣿⣿⣿⣿⣿⣷⣦⣷⣤⣒⠲⠶⢿⣘⣛⡛⠿⣿⣿⣿⣿
-⣷⣤⣒⠲⠶⢿⣘⣛⡛⠿⣿⣿⣿⣿⣿⣿⣿⣷⣷⠸⣿⣿⣿⣿⣿⣦⣤⣍⠻
-⣿⣿⣿⣿⠸⣿⣿⣿⣿⣿⣦⣤⣍⠻⣿⣿⣿⣿⣿⣷⣌⠻⢿⣿⣿⣿⠟⣁⡀
-⣿⣿⣿⣿⣷⣌⠻⢿⣿⣿⣿⠟⣁⡀⢀⣠⠄⣠⣶⣶⣿⣿⡗⣠⣴⣶⣦⣍⠻
-⣿⣿⣿⣿⣿⣿⣿⠶⠶⠶⠶⠾⠿⠁⢈⣴⣾⣿⣿⣿⣿⢏⣾⣿⣿⠿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣇⡈⢉⣩⡭⠽⢛⣒⣒⣒⣈⣿⣿⠟⣩⣬⣭⠻⣿⣀⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣇⣉⣥⣶⣿⣿⣿⣿⣿⣿⣿⣷⣤⣒⠲⠶⢿⣘⣛⡛⠿⣿
-@title bird_boat @by _semism_
+       , ___
+     `\/{o,o}
+      / /)  )
+    /,--"-"- @title b4wL @by _semism_
 */
 
-setcps(100/60/4)
+setCps(120/60/4)
 
-const gp = gamepad(0)
+kick: s("sbd!4").distort("1:.7").duck("2:3:4:5").duckattack(.2).duckdepth(.8)
+  ._scope()
 
-river: s("brown, gm_seashore").delay(.5).detune(1).coarse("6").room("2:5")
-  .gain(3).almostNever(off(1/8, x=>x.s("white").delay(.5).gain(.1)))
+snare: s("sd!2")
+hat: s("white!8").gain(.6).almostNever(x=>x.clip(".5 | .2 ").delay(.2))
+  .off(1/16, x=>x.s("oh:3 oh:1").delay(.5))
+  .orbit(2)
 
-wawes: n(irand(10))
-.seg(4).s("sawtooth, sine").scale("a2:minor")
-.lpf(berlin.range(3500, 5000))
-.lpenv(3)
-.rib("<22 5>", 4)
+tom: s("lt:2").beat("4, <8 [8,9]>, 16", 64).almostNever(ply("2 | 4")).pan("<.66 -.66>")
 
-// forest: n(irand(10).seg("8 16").s("gm_xylophone")
-//         .rib(22, 4)
-//         .room("2:2")
-//         .scale("a:minor")).jux(rev).gain(1.2)
+sub: n("<3!8 0!8>").scale("c1:minor").s("tri, pulse").orbit(5)
 
-// swans: n(irand(10).seg(8).s("pulse"))
-//         .rib(22, 2)
-//         .off(1/32, x=>x.s("gm_voice_oohs").room("1:1").pan("<-1 0 1>").add(7).gain(2))
-//         .scale("a3:minor").gain(1.2)
+bass: n(irand(10).seg(4)).s("saw, gm_voice_oohs").gain(.4)
+  .rib(43, 2)
+  .scale("c3:minor")
+  .room(3).roomsize(5)
+  .lpf(800).lpenv(2)
+  .lpq("<10 15>")
+  .orbit(3)
 
-// whistle: n(irand(10)
-//         .struct("x@3 x? x? x!3?")
-//         .s("gm_voice_oohs"))
-//         .rib(21, 4)
-//         .scale("a5:minor").gain(.9)
-
-kick: s("bd:1!4").bank("tr808").gain(1.2)
-  .duck(2).duckattack(.2)
-snare: s("sd:4!2").bank("tr808").gain(3)
-hat: s("pink!16").clip(".5")
-  .almostNever(off(1/16, x=>x.pan(1)))
-  .almostNever(x=>x.clip(".2 | 1")).gain(2.3)
+chirp: n(irand(10).seg("4 8?")).s("saw") //decrease note length to chirp the digital
+  .rib(43, 4)
+  .scale("c4:minor")
+  .lpf(1000).lpenv(2).lpq("<20 25>").jux(rev)
+  .orbit(4)
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
+all(x=>x.whenKey("Control:o", x=>x.s("gm_voice_oohs").color("blue")))
+all(x=>x.whenKey("Control:e", x=>x.off(1/8, x=>x.s("gm_voice_oohs:5").color("green"))))
