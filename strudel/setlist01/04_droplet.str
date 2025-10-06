@@ -11,10 +11,11 @@ close_strings: n(irand(12).seg(8))
   .scale("e1:minor:pentatonic")
   .s("saw")
 
-piano: n(irand(12).seg(16))
+piano: n(irand(12).seg("8 16"))
   .rib(14, 4)
+  // .jux(rev)
   .scale("e5:minor:pentatonic")
-  .s("piano, tri").room(1)
+  .s("piano, tri").room(1).color("pink")._pianoroll()
 
 kick: s("bd!4").bank("tr707")
 snare: s("sd!2").bank("tr707")
