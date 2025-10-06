@@ -24,6 +24,8 @@ bass_lead: n(irand(8).seg("16").sometimesBy(.12, x=>x.add(7)))
   // .rib("<0!4 5!4>", "<1 1 1 2>")
   .lpf("400 1000").lpenv(2)
   .lpq(sine.range(0,20)).orbit(5)
+ // .lpf("800").lpenv(2)
+ // .lpq(20).orbit(5)
   ._scope()
 
 bass: n(irand(8).seg("16")) //start with 8th and play 16th notes to harmonize with lead
