@@ -31,5 +31,6 @@ _lead: n("[0@4 2 <-3!2 -5 3>!2]*2" //up to times 8
 
  // n("<0!4 2 3 4 -2>!4 14!4")
 heart_monitor: n("14!16").s("saw").scale("g:minor")
+// .vowel("a <o!2 e!2> a o").distort(4)
   .fm(sine.range(1, 20)).fmh(2)
   .clip(sine.range(.1, 1))
