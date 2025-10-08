@@ -26,5 +26,6 @@ lead: n("[0@4 2 <-3!2 -5 3>!2]*2"
  .scale("g:minor").s("saw").pan("<-1 1>").distort("2:.5")
  .lpf(600).lpenv(2).lpq(10)
 
+// n("<0!4 2 3 4 -2>!4 14!4")
 heart_monitor: n("14!8").s("saw").scale("g:minor")
   .clip(sine.range(.1, 1))
