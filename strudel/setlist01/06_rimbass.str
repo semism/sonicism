@@ -1,0 +1,18 @@
+setcpm(200/4)
+
+kick: s("bd").beat("<4 [8, 10]>", 16).room(.1)
+snare: s("sd").room(.1)
+hat: s("[hh]!8").room(.1)
+  .gain(rand.rib(32, 3))
+rimbass: s("rim:1!8").room(.1).pan(rand.rib(32, 2)).sometimesBy(.05, x=>ply(4)) 
+  .s("wt_digital, wt_digital_echoes")
+
+lead: n("0 1 <3 2 4.5 2> <4!3 0>".add("<0 0.2>"))
+  .fm(rand.rib(10, 4).mul(10).fast(2)).fmh(saw)
+  .scale("f3:minor").s("supersaw") 
+
+riff: n("<[0 1]!16 [3 4]!4>".add("<0 0.2>"))
+  .fast(4).dec(1)
+  .clip(rand.mul(5).rib(3, 1))
+  .delay(.5).distort("1:.4")
+  .scale("f3:minor, f2:minor").s("gm_electric_guitar_clean, gm_overdriven_guitar")
