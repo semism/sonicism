@@ -13,6 +13,6 @@ lead: n("0 1 <3 2 4.5 2> <4!3 0>".add("<0 0.2>"))
 
 riff: n("<[0 1]!16 [3 4]!4>".add("<0 0.2>"))
   .fast(4).dec(1)
-  .clip(rand.mul(5).rib(32, 1))
-  .delay(.5).distort("1:.2")
+  .clip(rand.mul(5))
+  .delay(.5).distort("2:.1")
   .scale("f3:minor, f2:minor").s("gm_electric_guitar_clean, gm_overdriven_guitar")
