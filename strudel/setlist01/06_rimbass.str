@@ -26,4 +26,6 @@ chipmunk: n("0 1".add("<0 0.2>"))
   .robot()
   .scale("f6:minor").s("saw, gm_overdriven_guitar")
 
-
+chords: n("0, 1, 3".add(irand(6)))
+  .robot()
+  .scale("f4:minor").s("gm_synth_strings_2")
