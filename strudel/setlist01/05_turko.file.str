@@ -1,36 +1,38 @@
 setCpm(140/4)
-register('o', (orbit, pat) => pat.orbit(orbit))
-register('rlpf', (x, pat) => {return pat.lpf(pure(x).mul(12).pow(4))})
 
-kick: s("bd:2!4")
-  // .beat("4, 10", 16)
+kick: s("bd:2!4").duck("2:3")
+  // .beat("1 , 7 , 10, 13", 16)
   ._scope()
-
 snare: s("sd:1!2")
-  //  .beat("3, 8, 10?", 16)
+   // .beat("5, 13", 16)
 
-bass: n("0".add(-14)).scale("g:minor").s("supersaw").o(2)
-.lpf(slider(1300, 200, 2000, 100)).lpenv(2)
 
-//bass: n("0!4 1!4".add(-14)).scale("g:minor").s("supersaw").o(2).dec(1).lpf(300).lpenv(2).lpq(10)
-//.lpf(slider(2000, 200, 2000, 100)).lpenv(2)
+hat: s("hh!8").pan(-1).clip(".5 .45 .3")
+   // .beat("3, 7, 11, 15", 16)
 
-quack: n("[0@4 - <-3!2 -5 3>!2]*2")
-  .rib(14, 1/4)
-  .scale("g:minor").s("supersaw").o(3)
-  .clip(.5)
-  .delay(.7).hpf(2000).hpq(20)
-.room(1).roomsize(2)
-  .distort("4:.1")
+bass: n("0".add(-14)).scale("g:minor").s("supersaw").orbit(2)
+.lpf(slider(2000, 200, 2000, 100)).lpenv(2)
 
-_lead: n("[0@4 2 <-3!2 -5 3>!2]*2" //up to times 8
-        .add("<0? -14 -7>")
+// bass: n("0!4 1!4".add(-14)).scale("g:minor").s("supersaw").orbit(2)
+//   .dec(1).lpf(300).lpenv(2).lpq(10)
+// .lpf(slider(2000, 200, 2000, 100)).lpenv(2)
+
+// quack: n("[0@4 - <-3!2 -5 3>!2]")
+//   .rib(14, 1/4)
+//   .scale("g:minor").s("supersaw")
+//   .clip(.2)
+//   .delay(.7).hpf(2000).hpq(20)
+// .room(1).roomsize(2)
+//   .distort("4:.1")
+
+bass_lead: n("[0@4 2 <-3!2 -5 3>]*4" //up to times 8
+        .add("<-14 -7>")
        )
- .scale("g:minor").s("saw").pan("<-1 1>").distort("2:.5")
+ .scale("g:minor").s("saw").pan("<-1 1>").distort("2:.5").orbit(3)
  .lpf(600).lpenv(2).lpq(10)
 
- // n("<0!4 2 3 4 -2>!4 14!4")
-heart_monitor: n("14!16").s("saw").scale("g:minor")
-// .vowel("a <o!2 e!2> a o").distort(4)
+ // 
+heart_monitor: n("<0!4 2 3 4 -2>!4 14!4").s("saw").scale("g:minor")
+.vowel("a <o!2 e!2> a o").distort(3)
   .fm(sine.range(1, 20)).fmh(2)
   .clip(sine.range(.1, 1))
