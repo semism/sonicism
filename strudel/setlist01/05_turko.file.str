@@ -1,34 +1,36 @@
 setCpm(140/4)
 
 kick: s("bd:2!4").duck("2:3")
-  .beat("1 , 7 , 10, 13", 16)
+  // .beat("1 , 7 , 10, 13", 16)
   ._scope()
 snare: s("sd:1!2")
-   .beat("5, 13", 16)
+   // .beat("5, 13", 16)
 
 
 hat: s("hh!8").pan(-1).clip(".5 .45 .3")
-   .beat("3, 7, 11, 15", 16)
+   // .beat("3, 7, 11, 15", 16)
 
-
-bass: n("0".add(-14)).scale("g:minor").s("supersaw").orbit(2)
+//manual adjust add
+bass: n("0!4 1!4".add(-14)).scale("g:minor").s("supersaw").orbit(2)
 .lpf(slider(2000, 200, 2000, 100)).lpenv(2).lpq(10)
 
-// quack: n("0")
-//   .rib(0, 1/4)
-//   .scale("g:minor").s("supersaw")
-//   .clip(.2)
-//   .delay(.7).hpf(2000).hpq(20)
-// .room(1).roomsize(2)
-//   .distort("4:.1")
+quack: n("0")
+  .rib(0, 1/4)
+  .scale("g:minor").s("supersaw")
+  .clip(.2)
+  .delay(.7).hpf(2000).hpq(20)
+.room(1).roomsize(2)
+  .distort("4:.1")
 
 // lead: n("[0!2 0@2 2 3 5 0]*2").add(".5, .23, .78?")
-//  .scale("<g3:minor!4 g4:minor!4>").s("supersaw")
+//  .scale("<g3:minor!8 g4:minor!4>").s("supersaw")
 //   .pan(sine.slow(2)).distort("2:.5")
-//  .lpf("<600!4 [600 400]!4>").lpenv(2).lpq(10).orbit(3)
+//  .lpf("<600!8 [600 400]!4>").lpenv(2).lpq(10)
+//  .orbit(3)
 
 
-// heart_monitor: n("<0!4 2 3 4 -2>!4 14!4").s("saw").scale("g:minor")
-// .vowel("a <o!2 e!2> a o").distort(3)
-//   .fm(sine.range(1, 20)).fmh(2)
-//   .clip(sine.range(.1, 1))
+heart_monitor: n("<0!4 2 3 4 -2>!4 14!4").s("saw").scale("g:minor")
+.clip(.2)
+.vowel("a <o!2 e!2> a o").distort(3)
+  .fm(sine.range(1, 20)).fmh(2)
+  .clip(sine.range(.1, 1))
