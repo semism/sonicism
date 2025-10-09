@@ -1,6 +1,7 @@
 setCpm(140/4)
 
 kick: s("bd:2!4").duck("2:3")
+  .almostNever(ply(2))
   // .beat("1 , 7 , 10, 13", 16)
   ._scope()
 snare: s("sd:1!2")
