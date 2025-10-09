@@ -23,7 +23,7 @@ quack: n("0")
 .room(1).roomsize(2)
   .distort("4:.1")
 
-// lead: n("[0!2 0@2 2 3 5 0]*2").add(".5, .23, .78?")
+// lead: n("[0!2 0@2 2 3 5 0]").add(".5, .23, .78?")
 //  .scale("<g3:minor!8 g4:minor!4>").s("supersaw")
 //   .pan(sine.slow(2)).distort("2:.5")
 //  .lpf("<600!8 [600 400]!4>").lpenv(2).lpq(10)
