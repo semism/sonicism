@@ -5,10 +5,10 @@ snare: s("sd!2")
 
 bass: n("0!8".add(-14)).scale("g:major").s("supersaw").rel(.3).attack(.2).room(1)
 bass_gallop: n("0!16").scale("g1:major").s("saw")
-  .lpf(irand(10).mul(100).rib(44, 1)).lpenv(2).dec(.4)
+  .lpf(irand(10).mul(900).rib(44, 1)).lpenv(2).dec(.4)
 
 lead: n(irand(8).seg(16).rib(77, 1))
-  .scale("g4:major").s("saw").lpf(1000).room(2)
+  .scale("g4:major").s("saw").lpf(1000).lpenv("1 | 2").room(2)
 
 pink: s("pink!8").color("pink").clip(rand).jux(rev)
   .scope()
