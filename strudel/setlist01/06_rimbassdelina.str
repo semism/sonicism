@@ -21,7 +21,7 @@ rimbass: s("rim:1!8").room(.1).pan(rand.rib(32, 2)).sometimesBy(.05, x=>ply(4))
 //   .robot()
 //   .scale("f5:minor").s("saw, gm_overdriven_guitar")
 
-chords: n("<0@4 [2 3] [2 1] -1@2>*2".add("-7, -14, 7, 21"))
+chords: n("<0@4 [2 3] [2 1] -1@2>*2".add("-7, -14, 7, 21")) //start at 2x slow from base
   .rel(.1)
   .robot()
   .scale("f3:minor").s("gm_synth_strings_1").gain(.6)
