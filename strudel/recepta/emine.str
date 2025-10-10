@@ -15,8 +15,6 @@ const notes = arrange(
   [1, "c#4 a#3 c#4 a#3 a3 a#3 a#3@2 a3 a3 a3 a3 a3 a3 a3 -"]
 )
 
-dahiretrofaza: note(notes.add("12, -12")) //start at 2x slow from base
-  .rel(.2).delay(.1)
-  .s("supersaw").detune(".5")
-  .lpf(2000)
-  .lpenv(3)
+dahiretrofaza: note(notes.add("0")) //start at 2x slow from base
+  .rel(.1).room(1)
+  .s("saw, sine").detune(".5").gain(.5)
