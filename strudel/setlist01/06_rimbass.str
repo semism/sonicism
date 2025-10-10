@@ -25,6 +25,8 @@ chords: n("<0@4 [2 3] [2 1] -1@2>*4".add("-7, -14, 7"))
   .rel(.1).delay(.5)
   .robot()
   .scale("f4:minor").s("gm_synth_strings_1").gain(.6)
+  // .delay("1, .5")
+  // .clip(.2)
   // .jux(rev)
 
 strum: n("<0!4 [3!2] [2!2] -1@2>*4".add("-7, -14"))
