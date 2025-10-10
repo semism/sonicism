@@ -3,7 +3,6 @@ setcpm(70/4)
 dum: s("bd").beat("0, 8, 16, 24", 32).delay(.5).hpf(150)
 tak: s("- - rim - - - rim - - - - - rim:2 - rim  - - - rim - - - rim - - - rim - rim - rim:2 -").hpf(3000).delay(.5)
 
-
 const notes = arrange(
   [1, "e4 d4 e4 d4 c#4 d4 c#4@2 a#3 c#4 a#3 c#4 a#3 d4 c#4@2"],
   [1, "e4 d4 d4 d4 d4 d4 d4 - [[d4 c#4] d4]@2 [[d4 c#4] d4]@2 b3 d4 c#4 -"],
@@ -18,6 +17,6 @@ const notes = arrange(
 
 dahiretrofaza: note(notes.add("12, -12")) //start at 2x slow from base
   .rel(.2).delay(.1)
-  .s("gm_synth_brass_1")
+  .s("supersaw").detune(".5")
   .lpf(2000)
   .lpenv(3)
