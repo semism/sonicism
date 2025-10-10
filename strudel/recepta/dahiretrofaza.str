@@ -1,0 +1,7 @@
+dahiretrofaza: n("<0@4 [2 3] [2 1] -1@2>*2".add("-7, -14, 7, 21")) //start at 2x slow from base
+  .rel(.1)
+  .robot()
+  .scale("f3:minor").s("gm_synth_strings_1").gain(.6)
+  // .delay(".1, .5")
+  // .clip("<.1!7 1>")
+  // .jux(rev)
