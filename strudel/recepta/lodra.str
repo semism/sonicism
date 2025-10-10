@@ -1,0 +1,2 @@
+dum: s("bd").beat("0, 8, 16, 24",32).delay(.5)
+tak: s("- - rim - - - rim - - - - - rim:2 - rim  - - - rim - - - rim - - - rim - rim - rim:2 -").hpf(3000).delay(.5)
