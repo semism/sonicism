@@ -23,10 +23,10 @@ const notes = arrange(
 
 dahiretrofaza: note(notes.add("7"))
   .room(1)
-  .s("gm_sitar, saw, pulse").detune(".5").gain(.5)
+  .s("saw").detune(".5").gain(.5)
   .lpf(3000).attack(0)
   // .clip("<.4 .4 1 .8>*16")
-  .delay(1).gain(.4)
+  .delay(1)
 
 bass_bounce: note(notes.add("-14, -7"))
   .rib(4, 1/4)
