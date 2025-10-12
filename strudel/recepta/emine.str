@@ -1,8 +1,7 @@
-setcpm(70/4)
+setcpm(80/4)
 
 dum: s("bd").beat("0, 8, 16, 24", 32).delay(.5).hpf(150)
 tak: s("- - rim - - - rim - - - - - rim:2 - rim  - - - rim - - - rim - - - rim - rim - rim:2 -").hpf(3000).delay(.5)
-
 
 const notes = arrange(
   [1, "e4 d4 e4 d4 c#4 d4 c#4@2 a#3 c#4 a#3 c#4 a#3 d4 c#4@2"],
@@ -19,9 +18,9 @@ const notes = arrange(
 dahiretrofaza: note(notes.add("7"))
   .room(2)
   .s("gm_sitar, saw, pulse").detune(".5").gain(.5)
-  .lpf(3000)
-  .clip("<.1 .4 .5 .8>*16")
-  .jux(rev)
+  .lpf(3000).attack(0)
+  .clip("<.4 .4 1 .8>*16")
+  // .jux(rev)
   .delay(1)
 
 bass_bounce: note(notes.add("-14, -7"))
