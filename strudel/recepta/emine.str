@@ -22,6 +22,7 @@ const notes = arrange(
 )
 
 dahiretrofaza: note(notes.add("7"))
+  // .rib(6, 3)
   .room(1)
   .s("saw").detune(".5").gain(.5)
   .lpf(3000).attack(0)
@@ -29,7 +30,7 @@ dahiretrofaza: note(notes.add("7"))
   .delay(1)
 
 bass_bounce: note(notes.add("-14, -7"))
-  .rib(4, 1/4)
+  // .rib(6, 3)
   .s("saw").delay(.5)
   .decay(.4)
   .clip(rand.rib(43, 4))
