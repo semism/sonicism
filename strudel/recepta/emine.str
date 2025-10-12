@@ -31,7 +31,7 @@ dahiretrofaza: note(notes.add("7"))
 
 bass_bounce: note(notes.add("-14, -7"))
   // .rib(6, 3)
-  .s("saw").delay(.5)
+  .s("supersaw").delay(.5)
   .decay(.4)
   .clip(rand.rib(43, 4))
   .lpf(200).lpenv(2).lpq(10)
