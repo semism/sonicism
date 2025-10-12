@@ -3,6 +3,7 @@ setcpm(70/4)
 dum: s("bd").beat("0, 8, 16, 24", 32).delay(.5).hpf(150)
 tak: s("- - rim - - - rim - - - - - rim:2 - rim  - - - rim - - - rim - - - rim - rim - rim:2 -").hpf(3000).delay(.5)
 
+
 const notes = arrange(
   [1, "e4 d4 e4 d4 c#4 d4 c#4@2 a#3 c#4 a#3 c#4 a#3 d4 c#4@2"],
   [1, "e4 d4 d4 d4 d4 d4 d4 - [[d4 c#4] d4]@2 [[d4 c#4] d4]@2 b3 d4 c#4 -"],
@@ -15,10 +16,24 @@ const notes = arrange(
   [1, "c#4 a#3 c#4 a#3 a3 a#3 a#3@2 a3 a3 a3 a3 a3 a3 a3 -"]
 )
 
-dahiretrofaza: note(notes.add("0")) //start at 2x slow from base
-  .rel(.1).room(1)
-  .s("supersaw,saw, sine").detune(".5").gain(.5)
-  //.rel(.2).delay(.1)
-  //.s("supersaw").detune(".5")
-  //.lpf(2000)
-  //.lpenv(3)
+dahiretrofaza: note(notes.add("7"))
+  .room(2)
+  .s("gm_sitar, saw, pulse").detune(".5").gain(.5)
+  .lpf(3000)
+  .clip("<.1 .4 .5 .8>*16")
+  .jux(rev)
+  .delay(1)
+
+bass_bounce: note(notes.add("-14, -7"))
+  // .rib(4, 1/4)
+  .s("saw").delay(.5)
+  .decay(.4)
+  .clip(rand.rib(43, 4))
+  .lpf(200).lpenv(2).lpq(10)
+
+bass_floor: note(notes.seg(16).add(-35))
+  .rib(4, 1/16)
+  .rel(.6)
+  .s("saw").fm(2).fmh(2).lpf(2000).room(1)
+  .gain(.3)
+
