@@ -30,7 +30,7 @@ lead: n("[0!2 0@2 2 3 5 0]").add(".5, .23, .78?")
  .lpf("<600!8 [600 400]!4>").lpenv(2).lpq(10)
  .orbit(3)
 
-
+//n("<14 13 11 10>!8")
 heart_monitor: n("14!8").s("saw").scale("g:minor")
 .clip(.2)
 .vowel("a <o!2 e!2> a o").distort(3)
