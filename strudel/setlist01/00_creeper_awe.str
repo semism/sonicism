@@ -17,7 +17,11 @@ church: n("3, 4, 2").s("<gm_church_organ>").scale("e1:minor")
         .pan(sine.range(0,1).fast(4))
         .room(2)
 
-wind: n("20").s("pink!8, square").detune(50)
-  .sustain(2).release(4).fm(time).fmh(time).clip(irand(4).div(10))
+hiss: s("pink!8")
+  .clip(irand(4).div(10))
+  .gain(.1)
 
-number: n("[6 6 6]").s("numbers").speed(saw.range(-1, 1)).room(2)
+machine: note("e1").s("gm_flute!8").sustain(4).release(4)
+  .phaser(20).detune(500).pan(sine.range(0,1).slow(4)).gain(1)
+
+number: n("[ 0 0 0 6 6 6 0 0 0]").s("numbers").speed("<.1 .2 .3 -1>").room(2)
