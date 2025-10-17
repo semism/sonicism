@@ -16,7 +16,7 @@ n(irand(12).seg("8 16")
         .scale("e4:minor")
 
 church: n("3, 4, 2").s("<gm_church_organ>").scale("e1:minor")
-        .release(.8).phaser(sine.range(2, 20))
+        .release(.8)
         .lpf(sine.range(900, 2000))
         .lpq(10).lpenv("2")
         .pan(sine.range(0,1).fast(4))
