@@ -1,0 +1,23 @@
+setcpm(120/4)
+
+kick: s("sbd!4").room(.1)
+rim: s("rim!2").room(.1)
+shaker: s("sh!8").room(.1)
+
+wall: n(irand(20).seg("8")
+        .rib(76, 2)).s("saw, gm_church_organ")
+        .scale("e1:minor")
+        .decay(.4).lpf(2000).lpq(10).phaser(6)
+        .delay(.5)
+
+church: n("3, 4, 2").s("<gm_church_organ>").scale("e1:minor")
+        .release(.8).phaser(sine.range(2, 20))
+        .lpf(sine.range(200, 2000))
+        .lpq(10).lpenv("2")
+        .pan(sine.range(0,1).fast(4))
+        .room(2)
+
+wind: n("20").s("pink!8, square").detune(50)
+  .sustain(2).release(4).fm(time).fmh(time).clip(irand(4).div(10))
+
+number: n("[6 6 6]").s("numbers").speed(saw.range(-1, 1)).room(2)
