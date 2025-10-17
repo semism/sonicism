@@ -7,11 +7,11 @@ shaker: s("sh!16").room(1)
 wall: n(irand(8).seg("8").add("7,0,.1,.42")
         .rib(31, 2)).s("saw, gm_church_organ")
         .scale("e1:minor")
-        .decay(.4).lpf(2000).lpq(10).phaser(6)
+        .decay(.4).lpf(800).lpenv(2).lpq(10).phaser(6)
 
 spooktober:
-n(irand(12).seg("16 -")
-        .rib(31, 2)).s("gm_xylophone, gm_agogo")
+n(irand(12).seg("8 -")
+        .rib(31, 2)).s("gm_xylophone")
         .scale("e4:minor")
 
 church: n("3, 4, 2").s("<gm_church_organ>").scale("e1:minor")
