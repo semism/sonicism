@@ -1,0 +1,12 @@
+acid: n(irand(10).seg(2).rib(43, 4))
+  .scale("C2:major D2:minor")
+  .add(note("0,.1"))
+  .lpf(saw.range(1800, 2000).fast(4)) //switch the range start to get different acids
+  .phaser(sine.range(-1, 100).fast(8))
+  .lpq(saw.range(10, 20).fast(4))
+  .s("supersaw")
+  .delay(".2 .5 .1").decay(.4)
+  .room(.1)
+  .pan(perlin.range(-1,1).fast(2))
+  .chop("1 2 4 8") //choping higer gets metallic
+._scope()
