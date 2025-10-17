@@ -2,9 +2,9 @@ setcpm(120/4)
 
 kick: s("sbd!4, bd!4, sd").room(1)
 rim: s("rim!2").room(1)
-shaker: s("sh!8").room(1)
+shaker: s("sh!16").room(1)
 
-wall: n(irand(20).seg("8")
+wall: n(irand(20).seg("8").add("0,.1,.42")
         .rib(76, 2)).s("saw, gm_church_organ")
         .scale("e1:minor")
         .decay(.4).lpf(2000).lpq(10).phaser(6)
@@ -17,16 +17,12 @@ n(irand(12).seg("8 16")
 
 church: n("3, 4, 2").s("<gm_church_organ>").scale("e1:minor")
         .release(.8)
-        .lpf(sine.range(900, 2000))
+        .lpf(sine.range(200, 2000))
         .lpq(10).lpenv("2")
         .pan(sine.range(0,1).fast(4))
         .room(2)
 
-hiss: s("pink!8")
-  .clip(irand(4).div(10))
-  .gain(3)
-
-machine: note("e1".add("<0 1 2 3>")).s("gm_flute!8").sustain(4).release(4).distort(4).coarse(8)
+machine: note("e1".add("3, 4, 2")).s("gm_flute!8").sustain(4).release(4).distort(4).coarse(8)
   .phaser(20).detune(500).pan(sine.range(0,1).slow(4)).gain(.1)
 
 number: n("[ 0 0 0 6 6 6 0 0 0]".add("0,.1, .22")).scale("e2:minor").s("numbers")
