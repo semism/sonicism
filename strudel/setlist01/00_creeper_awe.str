@@ -1,14 +1,19 @@
 setcpm(120/4)
 
-// kick: s("sbd!4").room(.1)
-// rim: s("rim!2").room(.1)
-// shaker: s("sh!8").room(.1)
+kick: s("sbd!4, bd!4, sd").room(1)
+rim: s("rim!2").room(1)
+shaker: s("sh!8").room(1)
 
 // wall: n(irand(20).seg("8")
 //         .rib(76, 2)).s("saw, gm_church_organ")
 //         .scale("e1:minor")
 //         .decay(.4).lpf(2000).lpq(10).phaser(6)
 //         .delay(.5)
+
+// spooktober:
+// n(irand(20).seg("8").add(note("0,.1, .23"))
+//         .rib(76, 2)).s("gm_xylophone")
+//         .scale("e1:minor")
 
 church: n("3, 4, 2").s("<gm_church_organ>").scale("e1:minor")
         .release(.8).phaser(sine.range(2, 20))
@@ -19,9 +24,9 @@ church: n("3, 4, 2").s("<gm_church_organ>").scale("e1:minor")
 
 hiss: s("pink!8")
   .clip(irand(4).div(10))
-  .gain(.1)
+  .gain(3)
 
 machine: note("e1").s("gm_flute!8").sustain(4).release(4)
   .phaser(20).detune(500).pan(sine.range(0,1).slow(4)).gain(1)
 
-number: n("[ 0 0 0 6 6 6 0 0 0]").s("numbers").speed("<.1 .2 .3, -.5>").room(2).detune(2)
+number: n("[ 0 0 0 6 6 6 0 0 0]").s("numbers").speed("<.1 .2 .3, -.5>").room(2).detune(2).gain(.2)
