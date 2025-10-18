@@ -25,5 +25,6 @@ pad: s("swpad")
 
 bass: note("<c2@4 d2 b2 g#2 f2>").s("supersaw")
     .pan(sine.slow(2))
-    .room(1).lpf(300).color("orange")
+    .room(1).lpf(300).lpenv(7).lpattack(2).distort("2:.3")
+  .color("orange")
   ._pianoroll()
