@@ -11,7 +11,7 @@ snare: s("sd:1!2")
 hat: s("hh!8").pan(-1).clip(".5 .45 .3")
    // .beat("3, 7, 11, 15", 16)
 
-//manual adjust add
+//n("0!8".add("<-10 -11 -13 -14>")
 bass: n("0!4 1!4".add(-14)).scale("g:minor").s("supersaw").orbit(2)
 .lpf(slider(1500, 200, 2000, 100)).lpenv(2).lpq(10)
 
