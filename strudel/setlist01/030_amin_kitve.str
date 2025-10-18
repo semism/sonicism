@@ -30,4 +30,6 @@ bass: note("<c2@4 d2 b2 g#2 f2>").s("supersaw")
   .color("orange")
   ._pianoroll()
 
-// all(x=>x.lpf(slider(100, 0, 100).pow(2)).lpenv(0))
+// all(x=>x.lpf(slider(100, 0, 100).pow(2)).lpenv(0)
+//    .rib(7, 1/4)
+//    )
