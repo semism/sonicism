@@ -25,4 +25,4 @@ machine: note("e1".add("3, 4, 2")).s("gm_flute!8").sustain(4).release(4).distort
   .phaser(20).pan(sine.range(0,1).slow(4)).gain(.05).orbit(3)
 
 number: n("[6 6 6]/2").s("numbers")
-  .speed("<.1 .2 .3 -.5>").gain(1)
+  .speed("<.1 .2 .3 -.5>")
