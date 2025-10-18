@@ -1,3 +1,4 @@
+setcpm(110/4)
 ride:s("rd!6").delay(.2).pan(-1)
 
 digiteka: note("c1 c2 c2 <c2!3 d2>") //syncopate 3 and 4
