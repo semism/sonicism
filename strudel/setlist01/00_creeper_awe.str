@@ -2,10 +2,10 @@ setcpm(160/4)
 
 kick: s("sbd!4, bd!4, sd").room(.5).duck("2:3:4")
 rim: s("rim!2").room(.5)
-// shaker: s("sh!16").room(.5)
+shaker: s("sh!16").room(.5)
 
 wall: n(irand(8).struct("x x - x x!4").add("7,0,.1,.42")
-        .rib(31, 2)).s("<saw ->, gm_church_organ")
+        .rib(31, 2)).s("<saw -!7>, gm_church_organ")
         .scale("e1:minor")
         .decay(.4).orbit(2)
 
@@ -24,5 +24,5 @@ church: n("<[[6 7 8 4] 4 4@2] 3 4 ->, -4, -2"
 machine: note("e1".add("3, 4, 2")).s("gm_flute!8").sustain(4).release(4).distort(4)
   .phaser(20).pan(sine.range(0,1).slow(4)).gain(.05).orbit(3)
 
-number: n("[6 6 6]/2".add("0,.1, .22")).scale("e2:minor").s("numbers")
-  .speed("<.1 .2 .3 -.5>").gain(.1)
+number: n("[6 6 6]/2").s("numbers")
+  .speed("<.1 .2 .3 -.5>").gain(1)
