@@ -7,7 +7,7 @@ amen: s("breaks/2").n("<0@7 1>").fit()
 .scrub(irand(16).div(16).seg(8).rib(1, 2))
   .almostNever(ply("2 | 4"))
 
-hat: s("white!8").decay(.08).gain(.4)
+hat: s("rim!8").decay(.08).gain(.4)
   .almostNever(ply("2 | 4"))
 
 const chops = [
@@ -24,7 +24,9 @@ pad: s("swpad")
   ._punchcard()
 
 bass: note("<c2@4 d2 b2 g#2 f2>").s("supersaw")
-    .pan(sine.slow(2))
-    .room(1).lpf(300).lpenv(7).lpattack(2).distort("2:.3")
+    .pan(sine.slow(2)).seg("<4 16>")
+    .room(1).lpf(800).lpenv(2).lpattack(2).distort("2:.3")
   .color("orange")
   ._pianoroll()
+
+// all(x=>x.lpf(slider(100, 0, 100).pow(2)).lpenv(0))
