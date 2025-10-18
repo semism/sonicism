@@ -20,6 +20,7 @@ pad: s("swpad")
   .scrub(pick(chops, "<0@3 [1 2]>"))
   .n("0")
   .note("<c2@5 f2@3>")
+  .hpf(400)
   .distort("3:.2").phaser(.4)
   ._punchcard()
 
