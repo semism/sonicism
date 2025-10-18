@@ -13,7 +13,7 @@ hat: s("hh!8").pan(-1).clip(".5 .45 .3")
 
 //manual adjust add
 bass: n("0!4 1!4".add(-14)).scale("g:minor").s("supersaw").orbit(2)
-.lpf(slider(2000, 200, 2000, 100)).lpenv(2).lpq(10)
+.lpf(slider(1500, 200, 2000, 100)).lpenv(2).lpq(10)
 
 quack: n("0")
   .rib(0, 1/4)
@@ -23,15 +23,14 @@ quack: n("0")
 .room(1).roomsize(2)
   .distort("4:.1")
 
-lead: n("[0!2 0@2 2 3 5 0]").add(".5, .23, .78?")
+lead: n("<14 13 11 10>!16").add(".5, .23, .78?")
  .scale("<g3:minor!8 g4:minor!4>").s("supersaw")
   .pan(sine.slow(2))
   .distort("1:.9")
  .lpf("<600!8 [600 400]!4>").lpenv(2).lpq(10)
  .orbit(3)
 
-//n("<14 13 11 10>!8")
-heart_monitor: n("14!8").s("saw").scale("g:minor")
+heart_monitor: n("14!16").s("saw").scale("g:minor")
 .clip(.2)
 .vowel("a <o!2 e!2> a o").distort(3)
   .fm(sine.range(1, 20)).fmh(2)
