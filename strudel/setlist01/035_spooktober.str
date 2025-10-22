@@ -11,7 +11,7 @@ bounce: n("0!8").scale("g4:minor").s("saw").decay(.08)
 
 
 horn: n("<[4 5] 2 1 <8 [4 5]> 6@2 3 1>*2".add("0, 12"))
-  .every(8, x=>x.fast(2))
+  .every(8, x=>x.fast(2)).phaser(.2)
   .s("supersaw").scale("g3:minor").delay(.5)
   ._pianoroll()
 pad: 
