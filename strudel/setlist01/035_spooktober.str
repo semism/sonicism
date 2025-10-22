@@ -1,0 +1,27 @@
+samples('github:semism/smbreaks')
+samples('github:semism/smpad')
+
+setCpm(170/4)
+
+amen: s("breaks:2/2").fit()
+.every(8, x=>x.scrub(.5).rib(1,1))
+
+bounce: n("0!8").scale("g4:minor").s("saw").decay(.08)
+  .almostNever(ply("2 | 4"))
+
+
+horn: n("<[4 5] 2 1 <8 [4 5]> 6@2 3 1>*2".add("0, 12"))
+  .every(8, x=>x.fast(2))
+  .s("supersaw").scale("g3:minor").delay(.5)
+  ._pianoroll()
+pad: 
+  n("<2 1 [- 2 1@2] ->").scale("g2:minor")
+    .s("swpad:4").clip(1).phaser(.4)
+  .hpf(400).distort("5:.1")
+
+church: n("<2 1 [- 2 1@2] ->".add("-12, 0")).seg("<4 1>")
+  .s("gm_church_organ").scale("g1:minor").distort("2:.5")
+  .lpf(700)
+  .delay(".5").room(1)
+  ._pianoroll()
+
