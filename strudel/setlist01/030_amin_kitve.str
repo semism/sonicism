@@ -1,5 +1,5 @@
-samples('github:switchangel/breaks')
-samples('github:switchangel/pad')
+samples('github:semism/smbreaks')
+samples('github:semism/smpad')
 
 setCpm(170/4)
 
@@ -22,9 +22,16 @@ pad: s("swpad")
   .note("<c2@5 f2@3>")
   .hpf(400)
   .distort("3:.2").phaser(.4)
-  ._punchcard()
 
-bass: note("<c2@4 d2 b2 g#2 f2>").s("supersaw")
+const notes = "<c2@4 d2 b2 g#2 f2>"
+
+beep: note(notes.add(12)).s("swpad:4")
+  .scrub(".33@2").seg(4).room(1)
+  // .off(1/32, x=>x.note(notes.add(24)).s("<saw@3 pulse@2>").clip(".2 | .8").ply("2").hpf(sine.range(700, 2000)))
+  .decay(.4)
+  .delay(".1, .5")
+
+_bass: note(notes).s("supersaw")
     .pan(sine.slow(2)).seg("<4 16>")
     .room(1).lpf(800).lpenv(2).lpattack(2).distort("2:.3")
   .color("orange")
