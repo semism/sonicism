@@ -3,7 +3,7 @@ samples('github:semism/nibbles')
 
 setCpm(170/4)
 
-kick: s("sbd!4")
+kick: s("sbd!4").duck(2)
 snare: s("sd!2")
 
 // amen: n("<4!3 1>/2").s("breaks/2").fit()
@@ -18,14 +18,14 @@ snare: s("sd!2")
 //   .lpenv(itri.range(0, 2).pow(2).slow(4))
 //   .lpq(15)
 
-// acid: n(irand(12).seg(16).rib(93, 4).add(-7)) 
-//   .scale("f:minor")
-//   .s("sawtooth").lpf(300).room(1).roomsize(5)
-//   .lpenv(itri.range(0, 2).pow(2).slow(4))
-//   .lpq(15)
+acid: n(irand(12).seg(16).rib(93, 4).add(-7)) 
+  .scale("f:minor")
+  .s("sawtooth").lpf(300).room(1).roomsize(5)
+  .lpenv(itri.range(0, 2).pow(2).slow(4))
+  .lpq(15)
 
 bass: n(irand(12).seg(4).rib(93, 4).add(-14)) 
-  .scale("f:minor")
+  .scale("f:minor").orbit(2)
   .s("saw").delay(".2 .5 .1").decay(.4)
   ._pianoroll()
 
