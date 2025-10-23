@@ -10,6 +10,7 @@ amen: n("<2!3 1>/2").s("breaks/2").fit()
 
 bounce: n("[[4 5] 2 1 -]").scale("g4:minor").s("gm_xylophone")
   .decay(.08)
+  .delay(.5)
   .almostNever(ply("2 | 4"))
 
 
