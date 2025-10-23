@@ -7,11 +7,14 @@ amen: s("breaks:2/2").fit()
 .every(8, x=>x.scrub(.5).rib(1,1))
 
 bounce: n("0!8").scale("g4:minor").s("saw").decay(.08)
+  .lpf(itri.range(1000, 2000))
   .almostNever(ply("2 | 4"))
 
 
 horn: n("<[4 5] 2 1 <8 [4 5]> 6@2 3 1>*2".add("0, 12"))
-  .every(8, x=>x.fast(2)).phaser(.2)
+  .every(8, x=>x.fast(2))
+  .phaser(.2)
+  .clip(irand(16).div(16).rib("43 | 87",4))
   .s("supersaw").scale("g3:minor").delay(.5)
   ._pianoroll()
 pad: 
@@ -24,4 +27,3 @@ church: n("<2 1 [- 2 1@2] ->".add("-12, 0")).seg("<4 1>")
   .lpf(700)
   .delay(".5").room(1)
   ._pianoroll()
-
