@@ -35,5 +35,4 @@ rrxova: s("nibble/4").fit()
   .jux(rev)
   .distort("2.2:.4").fm(saw.range(20, 100))
   .coarse(2)
-  // .speed("0, 0.15, 0.2") //kor
   ._scope()
