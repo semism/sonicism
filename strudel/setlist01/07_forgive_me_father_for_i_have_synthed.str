@@ -1,4 +1,13 @@
+samples('github:semism/nibbles')
+
 setcpm(110/4)
+
+kap: s("nibble/3").fit()
+  .scrub(irand(8).div(8).seg("<16>").rib(1, 4)).clip(irand(10).div(10).rib(2, 2))
+  .distort("2.2:.7")
+  .delay(".5")
+  .almostNever(ply("2 | 4")).color("yellow")
+  ._scope()
 
 shkelm: s("sbd").beat("0, 2, 3?", 4).every(4, x=>x.ply(2))
 snare: s("sd!2")
