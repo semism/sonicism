@@ -23,7 +23,7 @@ const notes = arrange(
 
   dahiretrofaza: note(notes.add("7"))
   .rib(6, 3)
-  // .off(1/16, x=>x.slow(4).add("-14, -21"))
+  .off(1/16, x=>x.fm(2).fmh(berlin.range(1, 2)).gain(1).pan(sine))
   .room(1)
   .s("saw").detune(".5").gain(.5)
   .lpf(3000).attack(0)
