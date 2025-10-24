@@ -1,3 +1,4 @@
+samples('github:semism/nibbles')
 setcpm(70/4)
 
 dum: s("bd").beat("0, 8, 16, 24", 32).delay(.5).hpf(150)
@@ -8,30 +9,8 @@ tak: s("- - rim - - - rim - - - - - rim:2 - rim  - - - rim - - - rim - - - rim -
 
 cb: s("pink").beat("0, 1, 6", 16).delay(".2, .5, .1").clip(.2)
   .color("pink")._scope()
+bass: note("e2, e3!8").s("gm_electric_bass_finger:3").every(4, ply(2)).gain(1.5)
 
-const notes = arrange(
-  [1, "e4 d4 e4 d4 c#4 d4 c#4@2 a#3 c#4 a#3 c#4 a#3 d4 c#4@2"],
-  [1, "e4 d4 d4 d4 d4 d4 d4 - [[d4 c#4] d4]@2 [[d4 c#4] d4]@2 b3 d4 c#4 -"],
-  [1, "c#4 a#3 c#4 a#3 a3 a#3 a#3@2 a3 a3 a3 a3 a3 a3 a3 -"],
-  [1, "a#3 c#4 a#3 c#4 a#3 c#4 a#3@2 a3 a#3 a3 a#3 a3 a#3 a3@2"],
-  [1, "e4 d4 d4 d4 d4 d4 d4 - [[d4 c#4] d4]@2 [[d4 c#4] d4]@2 b3 d4 c#4 -"],
-  [1, "c#4 a#3 c#4 a#3 a3 a#3 a#3@2 a3 a3 a3 a3 a3 a3 a3 -"],
-  [1, "a#3 c#4 a#3 c#4 a#3 c#4 a#3@2 a3 a#3 a3 a#3 a3 a#3 a3@2"],
-  [1, "e4 d4 d4 d4 d4 d4 d4 - [[d4 c#4] d4]@2 [[d4 c#4] d4]@2 b3 d4 c#4 -"],
-  [1, "c#4 a#3 c#4 a#3 a3 a#3 a#3@2 a3 a3 a3 a3 a3 a3 a3 -"]
-)
-
-dahiretrofaza: note(notes.add("0, .1, -14, -7"))
-  // .rib(6, 3)
-  .s("supersaw, supersaw, supesaw")
-  .distort("5:.03").hpf(400)
-  .delay(.1).decay(.8).rel(.1)
-  .clip(rand)
-
-gajde: note(notes.add("0, -12, .01"))
-  .rib(6, 3)
-  .distort("2:.01").jux(rev).hpf(400)
-  .s("gm_bagpipe, gm_bagpipe").seg("1")
-  .room("1:5").delay(".1,.11,.12, .111")._pianoroll()
-
-bass: note("e2, e3!8").s("gm_electric_bass_finger:3").every(4, ply(2))
+arpeg: n("<0, -7, <7? ->>!16".add(perlin.fast(4).mul(7).rib("<12!2 14 53>", 2))) //berlin saw perlin
+  .scale("e:minor").rel(.01).attack(.3)
+  ._pianoroll()
