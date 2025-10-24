@@ -23,7 +23,8 @@ shpull: s("sd!2").room(.1)
 pershendetje: n(irand(8).rib("<77 12>", 2).seg("4 8").add(-14)) //seg reach 8
   .scale("f:major")
   .s("tones/4") 
-  .orbit(2).rel(.1).jux(rev)
+  .orbit(2).rel(.1)
+  .jux(rev)
   .distort("2.6:.2")
 
 ulurime: s("animals")
