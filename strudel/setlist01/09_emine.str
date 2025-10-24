@@ -11,8 +11,11 @@ cb: s("pink").beat("0, 1, 6", 16).delay(".2, .5, .1").clip(.2)
 
 amin: s("breaks:3/2").fit()
 
-bass: note("e2, e3!8").s("gm_electric_bass_finger:3").every(4, ply(2)).gain(1.5)
+bass: note("e2, e3!8").s("gm_electric_bass_finger:3")
+  .every(4, ply(2))
+  .gain(1.2)
+  .distort("4:.3")
 
-arpeg: n("<0, -7, <7? ->>!16".add(berlin.fast(4).mul(7).rib("<12!2 14 53>", 2))) //berlin saw perlin
+arpeg: n("<0, -7, <7 ->>!8".add(berlin.fast(2).mul(7).rib("<12!2 14 53>", 2))) //berlin saw perlin
   .scale("e:minor").rel(.01).attack(.3).s("tri,supersaw")
   ._pianoroll()
