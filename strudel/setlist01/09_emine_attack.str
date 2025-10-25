@@ -4,18 +4,18 @@ setcpm(70/4)
 dum: s("bd").beat("0, 8, 16, 24", 32).delay(.5).hpf(150)
   .off(1/4, x=>x.s("lt").ply(2)).duck(2)
   ._scope()
-_tak: s("- - rim - - - rim - - - - - rim:2 - rim  - - - rim - - - rim - - - rim - rim - rim:2 -").hpf(3000).delay(.5)
+tak: s("- - rim - - - rim - - - - - rim:2 - rim  - - - rim - - - rim - - - rim - rim - rim:2 -").hpf(3000).delay(.5)
 ._scope()
-_cb: s("pink").beat("0, 1, 6", 16).delay(".2, .5, .1").clip(.2)
+cb: s("pink").beat("0, 1, 6", 16).delay(".2, .5, .1").clip(.2)
   .color("pink")._scope()
 
-amin: s("breaks:3/2").fit() //brk 3 alt 4
+amin: s("breaks:4/2").fit() //brk 3 alt 4
 
 bass: note("e2, e3!8").s("gm_electric_bass_finger:3")
   .every(4, ply(2))
   .gain(1.2)
   .distort("4:.3")
 
-arpeg: n("<0, -7, <7 ->>!8".add(berlin.fast(2).mul(7).rib("<12!2 14 53>", 2))) //berlin saw perlin =>16ths
-  .scale("e:minor").rel(.01).attack(.3).s("tri,supersaw")
+arpeg: n("<0, -7, <7 ->>!16".add(berlin.fast(2).mul(7).rib("<12!2 14 53>", 2))) //berlin saw perlin =>16ths
+  .scale("e:minor").rel(.01).attack(.3).s("tri,supersaw").gain(.6).pan(sine.slow(2))
   ._pianoroll()
