@@ -1,3 +1,5 @@
+samples('github:semism/nibbles')
+
 setcpm(130/4)
 
 distant_strings: n(irand(12).seg(8))
@@ -17,8 +19,10 @@ piano: n(irand(12).seg("8 16"))
   .scale("e5:minor:pentatonic")
   .s("piano, tri").room(1).color("pink")._pianoroll()
 
-kick: s("bd!4").bank("tr707")
+kick: s("bd!4").bank("tr707").duck(2)
 snare: s("sd!2").bank("tr707")
   .every(8, x=>x.ply("2 | 4").clip(".2"))
 hat: s("brown!16").gain(6)
   .every(8, x=>x.ply("2 | 4").clip(".2"))
+
+fajll: n("<1 -2 0 2>".add(-7)).scale("e:minor:pentatonic").s("tones:1").attack(1).orbit(2)
