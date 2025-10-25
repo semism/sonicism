@@ -1,28 +1,29 @@
-setcpm(160/4)
+samples('github:semism/smbreaks')
+setcpm(165/4)
 
-kick: s("sbd!4, bd!4, sd").room(.5).duck("2:3:4")
-rim: s("rim!2").room(.5)
-shaker: s("sh!8").room(.5)
+shkelm: s("sbd!2").room(.1).duck("2:3:4")
+amin: s("breaks/4").fit().gain(2)
 
 wall: n(irand(8).struct("x x - x x!4").add("7,0,.1,.42")
-        .rib(31, 2)).s("<saw -!7>, gm_church_organ")
+        .rib(31, 2)).s("<supersaw -!7>, gm_church_organ")
         .scale("e1:minor")
         .decay(.4).orbit(2)
 
 spooktober:
-n(irand(8).seg("8 -").add("0, 2")
-        .rib(12, "<1!3 2>")).s("gm_xylophone")
-        .scale("e4:minor")
+n(irand(8).seg("8").add("0, 2")
+        .rib("<31!4 13!4>", 2)).s("gm_xylophone, tri")
+        .decay(rand).distort("5:.2").phaser(4)
+        .scale("e4:minor").orbit(4)
 
-church: n("<[[6 7 8 4] 4 4@2] 3 4 ->, -4, -2"
-        .add("7,0,.1,.42")
+church: n("<[[6 7 8 4] 4 4@2] -!3>, -4, -2"
+        .add("7,0,.1")
          )
         .s("<gm_church_organ>").scale("e1:minor")
         .release(.8)
-        .room(2).gain(.6).orbit(2)
+        .room(2).gain(.4).orbit(2)
 
 machine: note("e1".add("7,0,.1,.42")).s("gm_flute!8").sustain(4).release(4).distort(4)
   .phaser(20).pan(sine.range(0,1).slow(4)).gain(.05).orbit(3)
 
-number: n("[6 6 6]/2").s("numbers")
-  .speed("<.1 .2 .3 -.5>")
+// number: n("[6 6 6]/2").s("numbers").fit()
+//   .speed("<.1 .2 .3 -.5>")
