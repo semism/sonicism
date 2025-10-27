@@ -8,18 +8,21 @@ amen: n("<2!3 1>/2").s("breaks/2").fit()
   .delay(".5, .1").gain(.3)
   .almostNever(ply("2 | 4"))
   ._scope()
-horn: n("<<4 5 6 7> <7!3 9>>!8") //*2 to *8 
-  .every(8, x=>x.fast(2))
-  .phaser(.2)
-  .clip(irand(16).div(16).rib("43 | 87", 4))
-  .s("supersaw").scale("g3:minor").delay(.5)
+// horn: n("<<4 5 6 7> <7!3 9>>!8") //*2 to *8 
+//   .every(8, x=>x.fast(2))
+//   .phaser(.2)
+//   .clip(irand(16).div(16).rib("43 | 87", 4))
+//   .s("supersaw").scale("g3:minor").delay(.5)
 
-dog: n("<5!3 4>!4").scale("g6:minor").s("swpad:4/2").clip("<.7 1>").hpf(400)
-  .lpf(4000).distort("2:.5")
-._scope()
+// dog: n("<5!3 4>!4").scale("g6:minor").s("swpad:4/2").clip("<.7 1>").hpf(400)
+//   .lpf(4000).distort("2:.5")
+// ._scope()
 
-church: n("<<4 5 6 7> <7!3 9>>!8".add("-14"))
+church: 
+// n("<<4 5 6 7> <7!3 9>>!8"
+n("4!8"
+          .add("-14"))
   .s("gm_church_organ, supersaw").scale("g:minor").distort("4:.2")
-  .lpf(400).lpenv(1).decay(.2)
+  .lpf(400).lpenv(2).decay(.2)
   .delay(".5").room(1)
   ._pianoroll()
