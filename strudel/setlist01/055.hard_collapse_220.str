@@ -15,8 +15,6 @@ bass_l: n("0!8".add(-14)).scale("g:major").s("supersaw")
   .decay(.1).distort("5:.3")
   .rel(.3).room(1)
 
-_pad: s("tones").fit().scrub("<<.3!7 .15> .4>")
-  .mask("- - x x") //fill x
+pad: s("tones").fit().scrub("<<.3!7 .15> .4>")
   .seg(8).clip("<.2 .4>").decay(.06)
   .almostNever(ply(2))
-
