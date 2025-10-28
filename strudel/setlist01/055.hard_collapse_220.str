@@ -8,7 +8,7 @@ kick: s("bd:3!2").gain(1.6)
 rim: s("rim:1").struct(rand.round().rib(4, 2).seg(8))
 
 // bass_h: n("0!8".add(-14)).scale("g:major").s("saw")
-//   .decay(.4).lpf(200).lpenv(2).lpq(25)
+//   .decay(.4).lpf(200).lpenv(2).lpq(25) //"<100 600>"
 //   .rel(.3).room(1)
 
 bass_l: n("0!8".add(-14)).scale("g:major").s("supersaw")
