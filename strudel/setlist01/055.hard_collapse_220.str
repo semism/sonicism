@@ -16,5 +16,6 @@ bass_l: n("0!8".add(-14)).scale("g:major").s("supersaw")
   .rel(.3).room(1)
 
 pad: s("tones").fit().scrub("<<.3!7 .15> .4>")
+  .struct(rand.round().rib(14, 2).seg(16))
   .seg(8).clip("<.2 .4>").decay(.06)
   .almostNever(ply(2))
