@@ -1,21 +1,25 @@
 samples('github:semism/nibbles')
 
-setcpm(220/4)
+setcpm(220/4) //kick rim lbasss
 
 kick: s("bd:3!2").gain(1.6)
-snare: s("sd:2")
-hat: s("hh!4")
+// snare: s("sd:2")
+// hat: s("hh!4")
 rim: s("rim:1").struct(rand.round().rib(4, 2).seg(8))
 
-bass_h: n("0!8".add(-14)).scale("g:major").s("saw")
-  .decay(.4).lpf(200).lpenv(2).lpq(25)
-  .rel(.3).room(1)
+// bass_h: n("0!8".add(-14)).scale("g:major").s("saw")
+//   .decay(.4).lpf(200).lpenv(2).lpq(25)
+//   .rel(.3).room(1)
 
 bass_l: n("0!8".add(-14)).scale("g:major").s("supersaw")
   .decay(.1).distort("5:.3")
   .rel(.3).room(1)
 
-pad: s("tones").fit().scrub("<<.3!7 .15> .4>")
-  .struct(rand.round().rib(14, 2).seg(16))
-  .seg(8).clip("<.2 .4>").decay(.06)
-  .almostNever(ply(2))
+// pad: s("tones").fit().scrub("<<.3!7 .15> .4>")
+//   .struct(rand.round().rib(14, 2).seg(16))
+//   .seg(8).clip("<.2 .4>").decay(.06)
+//   .almostNever(ply(2))
+
+all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
+all(x=>x.whenKey("Control:o", x=>x.s("gm_voice_oohs").color("blue")))
+all(x=>x.whenKey("Control:e", x=>x.off(1/8, x=>x.s("gm_voice_oohs:5").color("green"))))
