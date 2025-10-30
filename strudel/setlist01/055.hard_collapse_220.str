@@ -1,4 +1,5 @@
 samples('github:semism/nibbles')
+samples('github:semism/smpad')
 
 setcpm(220/4) //kick rim lbasss
 
