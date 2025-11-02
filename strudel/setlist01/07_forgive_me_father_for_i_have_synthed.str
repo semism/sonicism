@@ -9,7 +9,9 @@ kap: s("nibble/3").fit()
   .almostNever(ply("2 | 4")).color("yellow")
   ._scope()
 
-shkelm: s("sbd").beat("0, 2, 3?", 4).every(4, x=>x.ply(2))
+shkelm: s("bd")
+  .beat("0, 1, 3?", 4)
+  .every(4, x=>x.ply(2))
 snare: s("sd!2")
 
 bass: n("0!8".add(-14)).scale("g:major").s("supersaw").rel(.3).attack(.2).room(1)
@@ -17,7 +19,17 @@ bass_gallop: n("0!16").scale("g1:major").s("saw")
   .lpf(irand(10).mul(900).rib(44, 1)).lpenv(2).dec(.4)
 
 lead: n(irand(8).seg(16).rib(77, 1)) //123
-  .scale("g4:major").s("saw").lpf(1000).lpenv("1 | 2").room(2)
+  .scale("g4:major").s("saw").lpf(4000).lpenv("1 | 2").room(2)
+
+hornsaw: n(irand(8).seg(16).rib(77, 1))
+  .scale("g1:major:pentatonic").s("supersaw")
+  .decay(.1).sustain(.3).attack(.4)
+  .hpf(400).fm(2).fmh(3).fmattack(.05)
+  .distort("5:.15").coarse(7)
+  .room(2).roomsize(2)
+
+gringo: n(irand(8).seg(16).rib(77, 1))
+  .scale("g1:major:pentatonic").s("square, sine").sustain(1)._scope()
 
 pink: s("pink!8").color("pink").clip(rand).jux(rev)
   .scope()
