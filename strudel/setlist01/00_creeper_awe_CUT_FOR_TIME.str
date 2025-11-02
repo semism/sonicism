@@ -5,15 +5,16 @@ shkelm: s("sbd!2").room(.1).duck("2:3:4")
 amin: s("breaks/4").fit().gain(2)
 
 wall: n(irand(8).struct("x x - x x!4").add("7,0,.1,.42")
-        .rib(31, 2)).s("<supersaw -!7>, gm_church_organ")
-        .scale("e1:minor")
+        .rib(31, 2)).s("<supersaw -!7>, sine")
+        .scale("e1:minor").distort("2:.3")
         .decay(.4).orbit(2)
 
 spooktober:
-n(irand(8).seg("8").add("0, 2")
-        .rib("<31!4 13!4>", 2)).s("gm_xylophone, tri")
-        .decay(rand).distort("5:.2").phaser(4)
-        .scale("e4:minor").orbit(4)
+n(irand(8).seg("8")
+        .rib("<31!4 13!4>", 2)).s("bytebeat, supersaw")
+        .decay(rand).distort("4:.15")
+        .lpf(2000)
+        .scale("e3:minor").orbit(4).scope()
 
 church: n("<[[6 7 8 4] 4 4@2] -!3>, -4, -2"
         .add("7,0,.1")
