@@ -12,7 +12,7 @@ wall: n(irand(8).struct("x x - x x!4").add("7,0,.1,.42")
 spooktober:
 n(irand(8).seg("8")
         .rib("<31!4 13!4>", 2)).s("bytebeat, supersaw")
-        .decay(rand).distort("4:.15")
+        .distort("4:.15")
         .lpf(2000)
         .scale("e3:minor").orbit(4).scope()
 
