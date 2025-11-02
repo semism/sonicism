@@ -3,13 +3,13 @@ samples('github:semism/nibbles')
 setcpm(110/4)
 
 kap: s("nibble/3").fit()
-  .scrub(irand(8).div(8).seg("<16>").rib(1, 4)).clip(irand(10).div(10).rib(2, 2))
+  .scrub(irand(8).div(8).seg("<16 ->").rib(1, 4)).clip(irand(10).div(10).rib(2, 2))
   .distort("2.2:.7")
   .delay(".5")
   .almostNever(ply("2 | 4")).color("yellow")
-  ._scope()
+  .scope()
 
-shkelm: s("bd")
+shkelm: s("bd").duck("2:3")
   .beat("0, 1, 3?", 4)
   .every(4, x=>x.ply(2))
 snare: s("sd!2")
@@ -18,18 +18,18 @@ bass: n("0!8".add(-14)).scale("g:major").s("supersaw").rel(.3).attack(.2).room(1
 bass_gallop: n("0!16").scale("g1:major").s("saw")
   .lpf(irand(10).mul(900).rib(44, 1)).lpenv(2).dec(.4)
 
-lead: n(irand(8).seg(16).rib(77, 1)) //123
+lead: n(irand(8).seg(16).rib("<77!2 123!2>", 1)) //123
   .scale("g4:major").s("saw").lpf(4000).lpenv("1 | 2").room(2)
 
-hornsaw: n(irand(8).seg(16).rib(77, 1))
-  .scale("g1:major:pentatonic").s("supersaw")
+hornsaw: n(irand(8).seg(16).rib(77, 1)).orbit(3)
+  .scale("g1:phrygian").s("supersaw")
   .decay(.1).sustain(.3).attack(.4)
   .hpf(400).fm(2).fmh(3).fmattack(.05)
   .distort("5:.15").coarse(7)
   .room(2).roomsize(2)
 
-gringo: n(irand(8).seg(16).rib(77, 1))
-  .scale("g1:major:pentatonic").s("square, sine").sustain(1)._scope()
+gringo: n(irand(8).seg(16).rib(77, 1)).orbit(2)
+  .scale("g1:phrygian").s("square, sine").sustain(1).scope()
 
 pink: s("pink!8").color("pink").clip(rand).jux(rev)
   .scope()
