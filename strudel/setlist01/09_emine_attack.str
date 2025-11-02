@@ -35,6 +35,6 @@ const melody = arrange(
   [1, "11 12 10 7 4 8!2 12 5 3 10 7 4 8!2 [4 5]"],
 )
 
-sint: melody.n().s("saw").scale("e4:minor")
+sint: melody.n().s("supersaw").scale("e4:minor")
   .decay(3).room(2).delay(.2)
-  .cutoff(4000).distort("5:.1")
+  .cutoff(2000).hpf(400)
