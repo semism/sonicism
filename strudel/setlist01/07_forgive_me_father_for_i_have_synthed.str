@@ -13,11 +13,11 @@ kap: s("nibble/3").fit()
 shkelm: s("bd")
   .fm(2).fmh(3).room(.6).distort("4:.3")
   .beat("0, 1 , 2?, 3", 4)
-  .every(4, x=>x.ply(2))
-snare: s("sd!2").distort("3:.4")
+  .every(4, x=>x.ply(2)).scope()
+snare: s("sd!2").distort("3:.4").scope()
 
-lead: n(irand(8).seg(16).rib("<77!2 123!4>", 1)) //123
-  .scale("g4:major").s("saw").lpf(4000).lpenv("1 | 2").room(2)
+lead: n(irand(8).seg(16).rib("<77>", 1)) //123
+  .scale("g4:major").s("saw").lpf(4000).lpenv("1 | 2").room(2)._punchcard()
 
 bass: n("0!8".add(-14)).scale("g:major").s("supersaw").rel(.3).attack(.2).room(1)
 bass_gallop: n("0!16").scale("g1:major").s("saw").pan(sine.slow(2))
