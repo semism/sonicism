@@ -40,6 +40,6 @@ rrxova: s("nibble/4").fit()
   // .scrub(irand(8).div(8).seg("<4>").rib(1, 4)).clip(irand(10).div(10).rib(2, 2))
   // .scrub("<.25 -!3>") //uneurrx.75  kjorrug.25 meprukatastrof.5 "<.75 .25 .37 .5>"
   // .jux(rev)
-  .distort("2.2:.7").lpf(2000)
+  .distort("2.2:.7").lpf(2000).pan(0)
   .almostNever(ply("2 | 4")).color("yellow")
   ._scope()
