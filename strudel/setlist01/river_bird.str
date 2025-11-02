@@ -43,7 +43,7 @@ ship: n(irand(10).seg(16)).s("saw")
 swans: n(irand(10).seg(8).s("sine"))
         .rib(22, 2)
         .off(1/32, x=>x.s("gm_voice_oohs").room("1:1").pan("<-1 0 1>").add(7).gain(2))
-        .scale("a3:minor").gain(1.2)
+        .scale("a3:major").gain(1.2)
 
 _whistle: n(irand(10)
         .struct("x@3 - - x!3")
