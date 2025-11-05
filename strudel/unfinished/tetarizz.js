@@ -24,19 +24,22 @@ var t_notes = note(`<
 [[a1 a2]*4]
 >`)
 
-tetris: t_notes.sound("saw, sine")
-  // .slow(2)
+tetris: t_notes.add("0,-7.2").sound("saw, sine")
+  .slow(2)
   // .fast("2 1")
   .clip(".5 1 .5 .2")
-  .room(1.2).roomsize(7).add(note("-7.2"))
-  .lpf(400).lpenv(4).lpq(5)
-squeak: 
-t_notes
-  .s("saw").clip(".5 1 .5 .2")
-  .add(note(8.5)).gain(.4)
-  .lpf(400).lpenv(4).lpq(8).sometimesBy(.3, ply(2))
+  .room(1.2).roomsize(7)
+  .lpf(saw.range(10, 50).pow(2).slow(128))
+  // .lpf(2000)
+  .lpenv(4).lpq(5)
 
-kick:s("sbd*4")
-snare: s("<- <sd cp>>*4")
-hihat: s("white!8").decay(".3*4 .4").pan("<.88 1>").gain("<.58 .32>");
-sub: note("[e2 e3]*4").s("supersaw").add(note(-15.5)).gain("<1.2 .8>")
+// aliens: t_notes.add(8.5)
+//   .s("sine")
+//   .gain(.4).pan(sine)
+//   .lpf(300).lpenv(2).lpq(30)
+//   .sometimesBy(.3, ply(2))
+
+// kick:s("sbd*4")
+// snare: s("<- <sd cp>>*4")
+// hihat: s("white!8").decay(".3*4 .4").pan("<.88 1>").gain("<.58 .32>");
+// sub: note("[e2 e3]*4").s("supersaw").add(note(-15.5)).gain("<1.2 .8>")
