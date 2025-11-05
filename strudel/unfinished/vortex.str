@@ -1,8 +1,12 @@
 setcpm(160/4)
 
 vortex: s("saw!6").lpf(sine.range(300, 600)).pan(sine)
+
 breath: n("0!3".add(-14)).scale("a:minor").s("supersaw").lpf(sine.range(200, 300))
 
 revolution: n("<0,2,4>").scale("a:minor").s("supersaw").delay(.4)
   .sustain(4).attack(4)
-  .pan(sine.slow(32)).hpf(600)
+  .pan(sine.slow(32)).hpf(600).cutoff(1000)
+
+war: n(irand(16).seg(8).rib(44, 4)).scale("a:minor").s("gm_gunshot").delay(.4)
+  .pan(sine.slow(16))
