@@ -32,7 +32,7 @@ raincloud: chord("<Am Em Dm [Gm D#] Dm>/2").s("piano").voicing()
   .scope()
 
 raindance: chord("<Am Em Dm [Gm D#] Dm>/2").seg(2).s("saw").voicing()
-  .distort("2:.3").pan(0).lpf(400).lpenv(2).lpq(15)
+  .pan(0).lpf(itri.range(800, 1200)).lpenv(2).lpq(15)
   .scope()
 
 flood: chord("<Am Em Dm [Gm D#] Dm>/2").seg(1).s("gm_violin").voicing()
