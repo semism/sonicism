@@ -27,14 +27,16 @@ stormcloud: s("supersaw!12").gain(rand.round().rib(32,2)).distort("3:.2").pan(pe
   .lpf("4000!2 3000!2 2000!2 1000!2")
   .scope()
 
-raincloud: chord("<Am Em Dm [Gm D#] Dm>/2").s("piano").voicing()
+const chords = "<Am Em Dm [<Gm C2> D#] Dm>/2" // "<-!3 [<Gm C2> D#] Dm>/2" 
+
+raincloud: chord(chords).s("piano").voicing()
   .distort("1").pan(1)
   .scope()
 
-raindance: chord("<Am Em Dm [Gm D#] Dm>/2").seg(2).s("saw").voicing()
+raindance: chord(chords).seg("<1 2>").s("saw").voicing()
   .pan(0).lpf(itri.range(800, 1200)).lpenv(2).lpq(15)
   .scope()
 
-flood: chord("<Am Em Dm [Gm D#] Dm>/2").seg(1).s("gm_violin").voicing()
+flood: chord(chords).seg(1).s("gm_violin").voicing()
   .distort("2:.3").lpf(400).lpenv(2).lpq(15)
   .scope()
