@@ -23,5 +23,5 @@ a: s("sd!1").lpf(2000).room(.5)
 i: s("hh!3").room(.5)
 n: s("<rim:0 rim:2>!12").gain(rand.rib(32,2).sub(1)).clip(.3).lpf(1000)
 
-stormcloud: s("supersaw!12").gain(rand.round().rib(32,2)).distort(2).pan(perlin)
+stormcloud: s("supersaw!12").gain(rand.round().rib(32,2)).distort("3:.2").pan(perlin)
   .scope()
