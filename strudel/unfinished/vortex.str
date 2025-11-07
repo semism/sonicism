@@ -1,6 +1,6 @@
 setcpm(160/4)
 
-vortex: s("saw!6").lpf(sine.range(300, 600)).pan(sine)
+vortex: s("saw!6").lpf(sine.range(300, 600)).pan(sine).scope()
 
 breath: n("0!3".add(-14)).scale("a:minor").s("supersaw").lpf(sine.range(200, 300))
 
@@ -24,3 +24,4 @@ i: s("hh!3").room(.5)
 n: s("<rim:0 rim:2>!12").gain(rand.rib(32,2).sub(1)).clip(.3).lpf(1000)
 
 stormcloud: s("supersaw!12").gain(rand.round().rib(32,2)).distort(2).pan(perlin)
+  .scope()
