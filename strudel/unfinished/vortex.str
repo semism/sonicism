@@ -26,3 +26,11 @@ n: s("<rim:0 rim:2>!12").gain(rand.rib(32,2).sub(1)).clip(.3).lpf(1000)
 stormcloud: s("supersaw!12").gain(rand.round().rib(32,2)).distort("3:.2").pan(perlin)
   .lpf("4000!2 3000!2 2000!2 1000!2")
   .scope()
+
+raincloud: chord("<Am Em Gm [D D#]>/2").s("piano").voicing()
+  .distort("1").pan(1)
+  .scope()
+
+raindance: chord("<Am Em Gm [D D#]>/2").seg(2).s("saw").voicing()
+  .distort("2:.3").pan(0).lpf(400).lpenv(2).lpq(15)
+  .scope()
