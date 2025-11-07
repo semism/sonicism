@@ -11,7 +11,7 @@ revolution: n("0,2,4").scale("a:minor").s("supersaw").delay(.4)
 war: n(irand(16).seg(3).rib(44, 4)).scale("a:minor").s("gm_gunshot").delay(.4)
   .pan(sine.slow(16))
 
-time: n("0,2,<4 5 8 12>".add("<0!8 7!8>")).scale("a:minor").s("gm_string_ensemble_2").delay(.4)
+time: n("0,2,<4 8 6 12>".add("<0!8 7!8>")).scale("a:minor").s("gm_string_ensemble_2").delay(.4)
   .rel(.1).attack(4)
   .pan(sine.slow(64)).hpf(1200)
 
