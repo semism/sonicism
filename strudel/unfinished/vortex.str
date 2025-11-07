@@ -15,12 +15,12 @@ time: n("0,2,4".add("<0!8 7!8>")).scale("a:minor").s("gm_string_ensemble_2").del
   .rel(8).attack(4)
   .pan(sine.slow(64)).hpf(1200)
 
-bells: s("gm_slap_bass_2!3").rel(.2)
-ringing: s("gm_tinkle_bell!1").rel(.2)
+bells: s("<gm_slap_bass_2 -!2>").rel(.2).delay(.5)
+ringing: s("gm_tinkle_bell").rel(.2).pan(sine)
 
-r: s("sbd!6")
-a: s("sd!1")
-i: s("hh!3")
-n: s("<rim:0 rim:2>!12").gain(rand.rib(32,2).sub(1)).clip(.3)
+r: s("bd!2").lpf(200).room(.5)
+a: s("sd!1").lpf(2000).room(.5)
+i: s("hh!3").room(.5)
+n: s("<rim:0 rim:2>!12").gain(rand.rib(32,2).sub(1)).clip(.3).lpf(1000)
 
-stormcloud: s("supersaw!12").gain(rand.rib(32,2).sub(1)).distort(3).pan(perlin)
+stormcloud: s("supersaw!12").gain(rand.round().rib(32,2)).distort(2).pan(perlin)
