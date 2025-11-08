@@ -35,7 +35,7 @@ raincloud: chord(chords).s("piano").voicing()
 
 raindance: chord(chords).seg("<1 2>").s("sine").voicing()
   .lpf(itri.range(300, 1500).slow(2)).lpenv(5).lpq(30)
-  .scope().jux(rev).delay(".66:.33:1")
+  .scope().jux(rev).delay(".66:.33:.4")
 
 flood: chord(chords).seg(1).s("gm_violin").voicing()
   .distort("2:.3").lpf(400).lpenv(2).lpq(15)
