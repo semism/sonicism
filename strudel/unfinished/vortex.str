@@ -16,7 +16,7 @@ time: n("0,2,<4 8 6 12>".add("<0!8 7!8>")).scale("a:minor").s("gm_string_ensembl
   .pan(sine.slow(64)).hpf(1200)
 
 bells: s("<gm_slap_bass_2 -!2>").rel(.2).delay(.5)
-ringing: s("gm_tinkle_bell").rel(.2).pan(sine)
+// ringing: s("gm_tinkle_bell").rel(.2).pan(sine)
 
 r: s("bd!2").lpf(200).room(.5)
 a: s("sd!1").lpf(2000).room(.5)
@@ -34,9 +34,9 @@ raincloud: chord(chords).s("piano").voicing()
   .scope()
 
 raindance: chord(chords).seg("<1 2>").s("saw").voicing()
-  .pan(0).lpf(itri.range(800, 1200)).lpenv(2).lpq(15)
+  .pan(0).lpf(itri.range(300, 2000).slow(2)).lpenv(2).lpq(20)
   .scope()
 
-flood: chord(chords).seg(1).s("gm_violin").voicing()
-  .distort("2:.3").lpf(400).lpenv(2).lpq(15)
-  .scope()
+// flood: chord(chords).seg(1).s("gm_violin").voicing()
+//   .distort("2:.3").lpf(400).lpenv(2).lpq(15)
+//   .scope()
