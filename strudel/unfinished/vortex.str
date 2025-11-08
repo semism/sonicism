@@ -4,22 +4,22 @@ vortex: s("saw!6").lpf(sine.range(300, 600)).pan(sine).scope()
 
 breath: n("0!3".add(-14)).scale("a:minor").s("supersaw").lpf(sine.range(200, 300))
 
-revolution: n("0,2,4").scale("a:minor").s("supersaw").delay(.4)
-  .sustain(4).attack(4)
-  .pan(sine.slow(32)).hpf(600).cutoff(1000)
+// revolution: n("0,2,4").scale("a:minor").s("supersaw").delay(.4)
+//   .sustain(4).attack(4)
+//   .pan(sine.slow(32)).hpf(600).cutoff(1000)
 
 war: n(irand(16).seg(3).rib(44, 4)).scale("a:minor").s("gm_gunshot").delay(.4)
   .pan(sine.slow(16))
 
-time: n("0,2,<4 8 6 12>".add("<0!8 7!8>")).scale("a:minor").s("gm_string_ensemble_2").delay(.4)
-  .rel(.1).attack(4)
-  .pan(sine.slow(64)).hpf(1200)
+// time: n("0,2,<4 8 6 12>".add("<0!8 7!8>")).scale("a:minor").s("gm_string_ensemble_2").delay(.4)
+//   .rel(.1).attack(4)
+//   .pan(sine.slow(64)).hpf(1200)
 
 bells: s("<gm_slap_bass_2 -!2>").rel(.2).delay(.5)
 // ringing: s("gm_tinkle_bell").rel(.2).pan(sine)
 
 r: s("bd!2").lpf(200).room(.5)
-a: s("sd!1").lpf(2000).room(.5)
+a: s("sd!1").lpf(2000).room(.5).delay(.2)
 i: s("hh!3").lpf(sine.range(3000, 5000)).room(.5)
 n: s("<rim:0 rim:2>!12").gain(rand.rib(32,2).sub(1)).clip(.3).lpf(2000)
 
@@ -33,9 +33,9 @@ raincloud: chord(chords).s("piano").voicing()
   .distort("1").pan(1).jux(rev)
   .scope()
 
-// raindance: chord(chords).seg("<1 2>").s("saw").voicing()
-//   .lpf(itri.range(300, 1500).slow(2)).lpenv(5).lpq(30)
-//   .scope().jux(rev).delay(".66:.33:1")
+raindance: chord(chords).seg("<1 2>").s("sine").voicing()
+  .lpf(itri.range(300, 1500).slow(2)).lpenv(5).lpq(30)
+  .scope().jux(rev).delay(".66:.33:1")
 
 flood: chord(chords).seg(1).s("gm_violin").voicing()
   .distort("2:.3").lpf(400).lpenv(2).lpq(15)
