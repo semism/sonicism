@@ -37,4 +37,4 @@ const melody = arrange(
 
 sint: melody.n().s("supersaw, gm_distortion_guitar").scale("e4:minor")
   .decay(3).room(2).delay(.2)
-  .cutoff(2000).hpf(400)
+  .cutoff(2000).hpf(400).fm(1).fmwave("white")
