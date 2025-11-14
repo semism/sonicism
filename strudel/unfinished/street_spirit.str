@@ -8,8 +8,8 @@ street: n("<2 3 1 0>*8").s("saw")
   .delay(.2).rel(.3).lpf(sine.range(200, 1200).slow(4))
   .scale("<a:minor!3 e:minor>")
 
-spirit: n("<2 3 _ 1>*4".add(7)).s("piano")
-  .delay(.2).rel(.3).pan(.4)
+spirit: n("<0 4 2 4 3 _ 1>*4".add(7)).s("piano")
+  .delay(.2).rel(.3).pan(1)
   .scale("<a:minor!3 e:minor>")
 
 const chords = "<Am Em C G E>/2"
