@@ -5,15 +5,15 @@ a: s("sd!2").lpf(2000).room(.5).delay(.2)
 n: s("<rim:0 rim:2>!8").gain(rand.rib(32,2).sub(1.2)).clip(.3).lpf(2000)
 
 const notes =  arrange(
-  [1,"a1 e2 e3 a3 d3 a3 e3 a3"],
-  [1,"c3 a3 e3 a3 b3 a3 e2 a3"],
-  [1,"a1 e2 [e3,e4] [a3, a4] [d3,d4] [a3, a4] [e3,e4] [a3, a4]"],
-  [1,"[c3, c4] [a3, a4] [e3,e4] [a3, a4] [b3,b4] [a3, a4] [e2,e3] [a3, a4]"],
-  [1,"a1 e2 [e3,e4] [a3, a4] [d3,d4] [a3, a4] [e3,e4] [a3, a4]"],
-  [1,"[c3, c4] [a3, a4] [e3,e4] [a3, a4] [b3,b4] [a3, a4] [e2,e3] [a3, a4]"],
+  [1,"a1 e2 e3 a2 d3 a2 e3 a2"],
+  [1,"c3 a2 e3 a2 b2 a2 e2 a2"],
+  [1,"a1 e2 [e3,e4] [a2, a3] [d3,d4] [a2, a3] [e3, e4] [a2, a3]"],
+  [1,"[c3, c4] [a2, a3] [e3,e4] [a2, a3] [b2,b3] [a2, a3] [e2,e3] [a2, a3]"],
+  [1,"a1 e2 [e3,e4] [a2, a3] [d3,d4] [a2, a3] [e3, e4] [a2, a3]"],
+  [1,"[c3, c4] [a2, a3] [e3,e4] [a2, a3] [b2,b3] [a2, a3] [e2,e3] [a2, a3]"],
 )
 
-feidaut: note(notes.add(12)).s("piano, supersaw")
+feidaut: note(notes.add(12)).s("piano")
   .delay(.2).rel(.3).lpf("400").lpenv(8).lpq(12)
 
 street: n("<2 3 1 0>*8").s("saw")
