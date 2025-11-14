@@ -12,7 +12,7 @@ spirit: n("<0 4 2 4 3 _ 1>*4".add(7)).s("piano")
   .delay(.2).rel(.3).pan(1)
   .scale("<a:minor!3 e:minor>")
 
-const chords = "<Am!3 Em C G E>/2"
+const chords = "<Am Em C G E>/2"
 
 raincloud: chord(chords).s("piano").voicing()
   .distort("1").pan(.7).jux(rev).add(note("-12"))
@@ -22,7 +22,7 @@ song: chord(chords).seg("2").s("gm_acoustic_bass").voicing()
   .pan(.2).distort("1:.4")
   .scope()
 
-chug: chord(chords).seg("8").s("gm_fretless_bass")
-  .lpf(sine.range(100, 120).fast(4)).lpq(15)
-  .distort("2:.4")._pianoroll()
+chug: chord(chords).seg("8").s("gm_fretless_bass, saw")
+  .lpf(sine.range(100, 200).fast(4)).lpq(15).voicing()
+  ._pianoroll()
 
