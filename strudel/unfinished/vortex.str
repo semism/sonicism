@@ -28,7 +28,7 @@ stormcloud: s("supersaw!12").gain(rand.round().rib(32,2)).distort("3:.2").pan(pe
 const chords = "<Am Em Dm [<Gm C2> D#] Dm>/2" // "<-!3 [<Gm C2> D#] Dm>/2" 
 
 raincloud: chord(chords).s("piano").voicing()
-  .distort("1").pan(1).jux(rev)
+  .distort("1").pan(.4).jux(rev)
   .scope()
 
 flood: chord(chords).seg(1).s("gm_violin").voicing()
