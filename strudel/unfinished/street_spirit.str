@@ -15,23 +15,24 @@ feidaut: note(notes.add(12)).s("piano")
 
 r: s("bd!4").lpf(200).room(.5)
 a: s("sd!2").lpf(2000).room(.5).delay(.2)
-n: s("<rim:0 rim:2>!8").gain(rand.rib(32,2).sub(1.2)).clip(.3).lpf(2000)
+i: s("<rim:0 rim:2>!8").gain(rand.rib(32,2).sub(1.2)).clip(.3).lpf(900).room(.4)
+n: s("<sh:0 hh:2>!8").gain(rand.rib(32,2).sub(1.2)).clip(.3).lpf(2000)
 scratch: note(notes).s("pink").distort("5:.02").coarse(8).pan(rand).clip(rand)
 
 
-street: n("<2 3 1 0>*8").s("saw")
-  .delay(.2).rel(.3).lpf(sine.range(200, 1200).slow(4))
-  .scale("a:minor")
+// street: n("<2 3 1 0>*8").s("saw")
+//   .delay(.2).rel(.3).lpf(sine.range(200, 1200).slow(4))
+//   .scale("a:minor")
 
-spirit: n("<0 4 2 4 3 _ 1>*4".add(7)).s("piano")
-  .delay(.2).rel(.3).pan(1)
-  .scale("a:minor")
+// spirit: n("<0 4 2 4 3 _ 1>*4".add(7)).s("piano")
+//   .delay(.2).rel(.3).pan(1)
+//   .scale("a:minor")
 
 
-const chords = "<Am Em C G E>/2"
+const chords = "<Am Em C G E>/4"
 
 raincloud: chord(chords).s("piano").voicing()
-  .distort("1").pan(.7).jux(rev).add(note("-12"))
+  .distort("1").pan(.7).add(note("-12"))
   .scope()
 
 song: chord(chords).seg("2").s("gm_acoustic_bass").voicing()
