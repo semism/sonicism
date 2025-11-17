@@ -20,13 +20,13 @@ n: s("<sh:0 hh:2>!8").gain(rand.rib(32,2).sub(1.2)).clip(.3).lpf(2000)
 scratch: note(notes).s("pink").distort("5:.02").coarse(8).pan(rand).clip(rand)
 
 
-// street: n("<2 3 1 0>*8").s("saw")
-//   .delay(.2).rel(.3).lpf(sine.range(200, 1200).slow(4))
-//   .scale("a:minor")
+street: n("<2 3 1 0>*8").s("saw")
+  .delay(.2).rel(.3).lpf(sine.range(200, 1200).slow(4))
+  .scale("a:minor")
 
-// spirit: n("<0 4 2 4 3 _ 1>*4".add(7)).s("piano")
-//   .delay(.2).rel(.3).pan(1)
-//   .scale("a:minor")
+spirit: n("<0 4 2 4 3 _ 1>*4".add(7)).s("gm_violin, piano")
+  .delay(.2).rel(.3).pan(".90 1")
+  .scale("a:minor")
 
 
 const chords = "<Am Em C G E>/4"
