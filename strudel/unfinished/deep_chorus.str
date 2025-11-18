@@ -13,7 +13,7 @@ hat: s("white!8").clip(.1).gain(rand.rib(2, 1))
 
 const chords = "<Am Em C G E F Em>/4"
 
-ch: chord(chords).s("gm_voice_oohs").voicing()
+irma: chord(chords).s("gm_voice_oohs").voicing()
   .off(1/4, x=>x.s("numbers:0").ply(2).pan(0.2))
   .distort("5:.04").pan(.7).delay(".2, .5").decay(4).room(4)
   .scope()
