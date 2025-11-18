@@ -1,0 +1,17 @@
+setcpm(140/4)
+
+submarine: n("0".seg(8)).scale("<a:minor e:minor c:major g:major e:major f:major e:minor>/4").s("supersaw")
+  .delay(.2).rel(.3).lpf(100).lpenv(2).lpq(30).orbit(2)
+
+cjau: n("-7").seg("16").s("saw").scale("<a:minor e:minor c:major g:major e:major f:major e:minor>/4")
+  .distort("5:.085").pan(rand.rib(12, 1)).clip(rand.rib(23, 1)).lpf(200).lpenv(2).lpq(40)
+
+kick: s("bd:1!4").room(.3).duck("2:3:4").duckattack(.2)
+snare: s("sd:1!2").room(.3)
+
+
+const chords = "<Am Em C G E F Em>/4"
+
+ch: chord(chords).s("gm_voice_oohs").voicing()
+  .distort("1").pan(.7).orbit(3)
+  .scope()
