@@ -8,12 +8,13 @@ cjau: n("-7").seg("16").s("saw").scale("<a:minor e:minor c:major g:major e:major
 
 kick: s("bd:1!4").room(.3).duck("2:3:4").duckattack(.2)
 snare: s("sd:1!2").room(.3)
+hat: s("white!8").clip(.1).gain(rand.rib(2, 1))
 
 
 const chords = "<Am Em C G E F Em>/4"
 
 ch: chord(chords).s("gm_voice_oohs").voicing()
-  .distort("1").pan(.7).delay(.2).decay(1)
+  .distort("1").pan(.7).delay(.2).decay(1).room(4)
   .scope()
 
 robosong: chord(chords).s("supersaw").voicing()
