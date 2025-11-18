@@ -13,5 +13,9 @@ snare: s("sd:1!2").room(.3)
 const chords = "<Am Em C G E F Em>/4"
 
 ch: chord(chords).s("gm_voice_oohs").voicing()
-  .distort("1").pan(.7).orbit(3)
+  .distort("1").pan(.7).delay(.2).decay(1)
+  .scope()
+
+robosong: chord(chords).s("supersaw").voicing()
+  .distort("1:.2").orbit(3)
   .scope()
