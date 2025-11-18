@@ -1,6 +1,6 @@
 setcpm(140/4)
 
-submarine: n("0".seg(8)).scale("<a:minor e:minor c:major g:major e:major f:major e:minor>/4").s("supersaw")
+submarine: n("0".seg(8).add(-21)).scale("<a:minor e:minor c:major g:major e:major f:major e:minor>/4").s("saw")
   .delay(.2).rel(.3).lpf(100).lpenv(2).lpq(30).orbit(2)
 
 cjau: n("-7").seg("16").s("saw").scale("<a:minor e:minor c:major g:major e:major f:major e:minor>/4")
