@@ -3,6 +3,9 @@ setcpm(140/4)
 submarine: n("0".seg(8).add(-21)).scale("<a:minor e:minor c:major g:major e:major f:major e:minor>/4").s("saw")
   .delay(.2).rel(.3).lpf(100).lpenv(2).lpq(30).orbit(2)
 
+_mjau: n("-14 -8 -10 -7").seg("8").s("saw").scale("<a:minor e:minor c:major g:major e:major f:major e:minor>/4")
+  .distort("5:.3").pan(rand.rib(12, 1)).clip(rand.rib(23, 1)).rel(0.5)
+
 cjau: n("-7").seg("16").s("saw").scale("<a:minor e:minor c:major g:major e:major f:major e:minor>/4")
   .distort("5:.085").pan(rand.rib(12, 1)).clip(rand.rib(23, 1)).lpf(200).lpenv(2).lpq(40)
 
