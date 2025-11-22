@@ -1,9 +1,10 @@
+
 setcpm(135/4)
 
 shkelmi: s("sbd!4").duck("2:3:4")
 lodr: s("sd").struct("x - - x?").delay(.2).gain(.4)
 ksul: s("white!8").clip(".2 .25").delay(.2).gain(rand.mul(1.4))
-shek: s("sh").struct("- x x x").room(1)
+// shek: s("sh").struct("- x x x").room(1)
 
 const pat = "[<[0 1] [-2 _]>]!2 2!2 [3 2]!2 <1 4>!2";
 
@@ -18,15 +19,15 @@ strujaxhija: n(pat).s("saw")
         .lpf(saw.range(200, 600).slow(64)).lpenv(2).lpq(10)
         .scale("e3:minor").color("cyan")._scope()
 
-// strujabilbili: n(pat.struct("- - x x - x x -")).s("saw")
-//         .distort("3:.2").decay(.1)
-//         .lpf(1900).lpenv(2).lpq(45).pan(sine.slow(32))
-//         .scale("e3:minor").color("cyan").scope()
+strujabilbili: n(pat.struct("- - x x - x x -")).s("saw")
+        .distort("3:.2").decay(.1).delay(.5)
+        .lpf(1900).lpenv(2).lpq(45).pan(sine.slow(32))
+        .scale("e3:minor").color("cyan").scope()
 
-// pishtoll_llazer: n(pat.struct("x x - - x - - x")).s("saw")
-//         .distort("3:.2").decay(.1)
-//         .lpf(400).lpenv(2).lpq(45)
-//         .scale("e3:minor").color("magenta").scope()
+pishtoll_llazer: n(pat.struct("x x - - x - - x")).s("saw")
+        .distort("3:.2").decay(.1).delay(.5)
+        .lpf(400).lpenv(2).lpq(45)
+        .scale("e3:minor").color("magenta").scope()
 
 fog: s("supersaw -!7").rel(.6).delay(".5").distort("2:.4").room("2:10")
   .orbit(4)
