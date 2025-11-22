@@ -28,5 +28,6 @@ strujaxhija: n(pat).s("saw")
 //         .lpf(400).lpenv(2).lpq(45)
 //         .scale("e3:minor").color("magenta").scope()
 
-fog: s("supersaw -!7").rel(.6).delay(".5").distort("2:.2").orbit(4)
+fog: s("supersaw -!7").rel(.6).delay(".5").distort("2:.4").room("2:10")
+  .orbit(4)
   ._scope()
