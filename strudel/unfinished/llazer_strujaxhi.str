@@ -30,9 +30,9 @@ struja: n(pat.struct("x!8")).orbit(2)
         .lpf(100).lpenv(4).lpq(4).phaser(2)
         .scale("e1:minor").scope()
 
-strujaxhija: n(pat.struct("x!8")).s("saw") //pat2.struct("x!8")
+strujaxhija: n(pat).s("saw") //pat2.struct("x!8")
         .distort("3:.2").decay(.4)
-        .lpf(400).lpenv(2).lpq(10).room(2)
+        .lpf(400).lpenv(2).lpq(10) //room(1.5)
         .scale("e3:minor").color("cyan")._scope()
 
 _strujabilbili: n(pat.struct("- - - - - x x -")).s("saw")
