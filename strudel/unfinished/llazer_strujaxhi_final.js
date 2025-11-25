@@ -2,9 +2,8 @@ setcpm(135/4)
 
 shkelmi: s("sbd!4").duck("2:3:4")
 lodr: s("oh!2").delay(.2).gain(.4).clip(.2)
-ksul: s("white!8").clip(".2 .25").delay(.2)
-  .lpf(7000)
-  .gain(rand.mul(1.4))
+ksul: s("white!16").clip(".1")
+  .gain(rand.mul(1.4).rib(32,2))
 shek: s("sh").struct("x!2")
   .delay(.3).room(1)
 
