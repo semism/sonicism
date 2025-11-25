@@ -8,6 +8,9 @@ ksul: s("white!8").clip(".2 .25").delay(.2)
 shek: s("sh").struct("- x x x")
   .delay(.3).room(1)
 
+
+const pat2 = "[<[0 1] [-2 _]>]!2 2!2 [3 2]!2 <1 4>!2";
+
 const pat = arrange([1,"[0 1]!2 2!2 [3 2]!2 <1 4>!2"],
                     [1, irand(8).seg(16).rib("99", 1)],
                     [1,"[4 5]!2 3!2 [3 2]!2 <1 4>!2"],
