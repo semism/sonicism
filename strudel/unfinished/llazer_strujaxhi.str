@@ -18,19 +18,18 @@ shkallet: n(irand(8).seg(8).rib("99", 1).add("7,0").add(pat)) //add 0 on off
         .s("saw")
         .distort("5:.4")
         .attack(.2).decay(.01).pan(sine)
-        .hpf(1800)
         .scale("e1:minor").scope()
 
 struja: n(pat.struct("x!8")).orbit(2)
         .s("supersaw")
         .distort("5:.4")
-        .attack(.2).decay(.01)
+        .attack(.15).decay(.01)
         .lpf(100).lpenv(4).lpq(4).phaser(2)
         .scale("e1:minor").scope()
 
 strujaxhija: n(pat).s("saw")
         .distort("3:.2").decay(.4)
-        .lpf(saw.range(800, 2900).slow(128)).lpenv(2).lpq(10)
+        .lpf(200).lpenv(2).lpq(20)
         .scale("e3:minor").color("cyan")._scope()
 
 strujabilbili: n(pat.struct("- - x x - x x -")).s("saw")
