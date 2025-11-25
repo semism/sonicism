@@ -32,13 +32,13 @@ strujaxhija: n(pat).s("saw")
         .lpf(200).lpenv(2).lpq(20)
         .scale("e3:minor").color("cyan")._scope()
 
-strujabilbili: n(pat.struct("- - x x - x x -")).s("saw")
-        .distort("3:.05").decay(.1).delay(.5)
+strujabilbili: n(pat.struct("- - - - - x x -")).s("saw")
+        .distort("3:.2").decay(.1).delay(.5)
         .lpf(1900).lpenv(2).lpq(45).pan(sine.slow(32))
         .scale("e3:minor").color("cyan").scope()
 
-pishtoll_llazer: n(pat.struct("x x - - x - - x")).s("saw")
-        .distort("2:.1").decay(.1).delay(.5)
+pishtoll_llazer: n(pat.struct("x x - - - - - -")).s("saw")
+        .distort("3:.2").decay(.1).delay(.5)
         .lpf(400).lpenv(2).lpq(45)
         .scale("e3:minor").color("magenta").scope()
 
