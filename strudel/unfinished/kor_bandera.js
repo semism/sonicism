@@ -28,8 +28,12 @@ bass: n("0!16".add(-7).add("<0 3 4 5>")).scale(scales).s("supersaw")
 
 
 
-lead2: n(irand(6).seg(8).add("7").add("<0 3 4 5>").rib("<99 5 32 30>", 4)).scale(scales)
+lead: n(irand(6).seg(8).add("7").add("<0 3 4 5>").rib("<99 5 32 30>", 4)).scale(scales)
   .s("gm_shamisen").distort("2").pan(sine.slow(16))
   .delay(".2,.5")
   .crush(6).lpf(1400).lpenv(3).lpq(10)
+  ._pianoroll()
+
+lead2: n(irand(6).seg(4).add("7, 14").add("<0 3 4 5>").rib("<99 5 32 30>", 4)).scale(scales)
+  .s("piano").pan(0).distort(1)
   ._pianoroll()
