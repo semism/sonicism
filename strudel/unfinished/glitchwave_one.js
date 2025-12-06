@@ -23,7 +23,7 @@ bass: n("0".seg(8))
         .orbit(3)
         .scale("e1:minor")
 
-sub_zero: note("<a2!2>").s("numbers:0").delay(.2).speed(".5!7 .-1")
+sub_zero: note("<a2!2>").s("numbers:0").delay(.2).speed("<.5!7 .-1>")
 
 
 top_echo: n(irand(8).rib(24, 4).seg(8).add("<0!4 -2!4>"))
