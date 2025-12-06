@@ -13,7 +13,7 @@ n(irand(8).seg(16).rib("99", 1).add("7,14,0")) //add 0 on off
         .distort("5:.3")
         .attack(.2).decay(sine.range(.2, .4).fast(4)).hold(2)
         .fm(sine.range(0, 64)).fmh(sine.range(0, 12).fast(4))
-        // .pan(sine)
+        // .pan(sine).hpf(400) //inout
         .orbit(2)
         .scale("e1:minor")._scope()
 
