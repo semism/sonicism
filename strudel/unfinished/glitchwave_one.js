@@ -37,7 +37,7 @@ top_echo: n(irand(7).rib(2, 4).seg(8).add("<0!4 -2!4>"))
 tweet: n(irand(7).rib(2, 4).seg(2).add("<0!4 -2!4>")).pan(.7).s("saw").scale("e6:minor")
 
 top: n(irand(7).rib(2, 4).seg(8).add("<0!4 -2!4>"))
-        .s("saw").delay(.1).clip(.9)
+        .s("pulse").delay(.1).clip(.9)
          .orbit(4).pan(.3)
         .scale("e5:minor")
 
