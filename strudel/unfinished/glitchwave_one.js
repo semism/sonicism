@@ -8,7 +8,7 @@ ksul: s("white!8").clip(".1")
 snare: s("white!2, sd").clip(".2").hpf(400).distort(1)
 
 shkallet: 
-n(irand(8).seg(16).rib("<99!4 29!4>", 1).add("7,14,0")) //add 0 on off
+n(irand(8).seg(16).rib("<99!2 29!2>", 1).add("7,14,0")) //add 0 on off
         .s("saw")
         .distort("4:.3")
         .attack(.2).decay(sine.range(.2, .4).fast(4)).hold(2)
@@ -23,7 +23,7 @@ bass: n("0".seg(8))
         .orbit(3)
         .scale("e1:minor")
 
-// sub_zero: note("<a2!2>").s("numbers:0").delay(.2).speed("<.5!7 .-1>")
+sub_zero: note("<a2!2>").s("numbers:0").delay(.2).speed("<.5!7 .-1>")
 
 
 top_echo: n(irand(7).rib(2, 4).seg(8).add("<0!4 -2!4>"))
@@ -34,14 +34,21 @@ top_echo: n(irand(7).rib(2, 4).seg(8).add("<0!4 -2!4>"))
         .gain(.2)
         .scale("e4:minor")
 
-bottom: n(irand(7).rib(2, 4).seg(8).add("<0!4 -2!4>"))
+tweet: n(irand(7).rib(2, 4).seg(2).add("<0!4 -2!4>")).pan(.7).s("saw").scale("e6:minor")
+
+top: n(irand(7).rib(2, 4).seg(8).add("<0!4 -2!4>"))
         .s("saw").delay(.1).clip(.9)
-         .orbit(4)
+         .orbit(4).pan(.3)
+        .scale("e5:minor")
+
+bottom: n(irand(7).rib(2, 4).seg(8).add("<0!4 -2!4>"))
+        .s("saw").clip(.2)
+        .orbit(4)
         .scale("e1:minor")
 
 sub_bass: n("0".seg(8))
-        .s("saw").delay(.1).clip(.9)
-         .orbit(4)
+        .s("saw").delay(.1).clip(.9).almostNever(x=>x.clip(.4))
+        .orbit(4)
         .scale("e2:minor")
 
 
