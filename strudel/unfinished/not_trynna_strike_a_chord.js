@@ -12,6 +12,10 @@ line: n("[0!2] 0 0 [3!2] 4 0 0 4".add("0, -7"))
   .room(1).size(6)
   .every("4", x=>x.clip(".5 .7").ply(2))
 
+top_line: n("[0!2] 0 - [3!2] 4 0 0 4".add("7").add("<0!2 3 5>"))
+  .scale("a:minor").s("supersaw").distort("5:.2").clip(.4).echo(2,2,.5)
+  ._pianoroll()
+
 bass: n("0!16".add(-7)).scale("a:minor").s("saw").room(2).size(15).vib("5")
   .distort("3:.2")
   .orbit(2)
