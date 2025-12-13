@@ -23,6 +23,11 @@ lead: n(irand(14).seg(8).rib(10, 1).mask("x -".early(.5))).scale("<C:major!2 D:m
 .delay(.25).delaytime(.25).delayfeedback(.4)
 .velocity(.5)
 
-high: n(irand(14).seg(8).rib(10, 1).add(7)).scale("<C:major!2 D:minor!2>").s("saw")
-.echo(2, .25, .5).phaser("2 8").rev()
-.pan(.6)
+high: n(irand(14).seg(8).rib(10, 1).add(7)).scale("<C:major!2 D:minor!2>").s("square")
+.lpf(3400).lpq(12)
+.echo(2, .25, .5)
+.phaser("2 8").rev()
+.pan(.6).velocity(.2)
+
+
+
