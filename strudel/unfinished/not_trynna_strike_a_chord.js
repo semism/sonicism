@@ -3,7 +3,7 @@ setcpm(140/4)
 kick: s("bd:3!4").gain(1.6).duck("2:3")
   .duckattack("<.2 0 .2 0>*2")
 snare: s("sd:2!2")
-hat: s("hh!8")
+hat: s("<hh hh:2>!16").gain(2).pan("<0 1>")
 rim: s("rim:1").struct(rand.round().rib(4, 2).seg(8))
 
 
