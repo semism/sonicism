@@ -18,15 +18,15 @@ line2: n("[0!2] 0 0 [3!2] 4 0 0 4".add("0, -7"))
 
 top_line: n("[0!2] 0 - 0 2 - 0 2".add("<7 8 9 6>"))
   .scale("a:minor").s("supersaw").distort("5:.2")
-  // .pan(sine.slow(32))
+  .pan(sine.slow(32))
   .pianoroll()
 
 bottom_line: n(sine.seg(16).range(0,"<15!3 12>").add("-14"))
-.scale("a:minor").s("supersaw").pan(sine.seg(16).slow(32))
+.scale("a:minor").s("supersaw, gm_distortion_guitar").pan(sine.seg(16).slow(32))
 
 bass: n("0".seg("8 16").add(-7)).scale("a:minor").s("saw").room(2).size(15)
   .distort("3:.2")
-  .lpf(sine.range(200, 600).slow(4))
+  .lpf(sine.range(100, 200).slow(4))
   .lpenv(saw.range(1, 4).slow(4))
   .lpq(tri.range(1, 15).slow(4))
   .orbit(2)
