@@ -8,7 +8,7 @@ clap: s("cp!2".early(.02)).bank("akailinn")
 hat: s("hh!8").bank("akailinn").velocity(rand.rib(76, 2).mul(.5))
 cow: s("cb").struct("x x*3 x - - - - - x".late(.1)).bank("akailinn")
   .crush(4).delay(.1).delaytime(".4").pan(".3 .1 .4 - - - - - 1")
-  .velocity(.7)
+  .velocity(.4)
 
 bass: n("<0 1>!8".add("-7 ,-14")).scale("<C:major!2 D:minor!2>").s("saw")
      .lpf(200).lpenv(2).lpq(5)
@@ -28,6 +28,3 @@ ooh: n(irand(14).seg(8).rib(10, 1)).scale("<C:major!2 D:minor!2>").s("gm_voice_o
 .delay(.25).delaytime(.25).delayfeedback(.4)
 .orbit(2)  
 .velocity(.5)
-
-
-
