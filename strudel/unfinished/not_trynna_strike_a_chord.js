@@ -16,7 +16,7 @@ line2: n("[0!2] 0 0 [3!2] 4 0 0 4".add("0, -7"))
   .room(1).size(6)
   .every("4", x=>x.clip(".5 .7").ply(2))
 
-top_line: n("[0!2] 0 - 0 2 - 0 2".add("<7 8 9 6>"))
+top_line: n("[0!2] 0 - 0 2 - 0 2".add("<7 8 9 [[6 5]!4]>"))
   .scale("a:minor").s("supersaw").distort("5:.2")
   .pan(sine.slow(32))
   .pianoroll()
