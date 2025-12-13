@@ -2,7 +2,7 @@ setcpm(140/4)
 
 kick: s("bd:3!4").gain(1.6).duck("2:3")
   .duckattack("<.2 0 .2 0>*2")
-snare: s("sd:2!2")
+snare: s("sd:2!")
 hat: s("<hh hh:2>!16").gain(2).velocity(rand.range(1,2)).pan("<0 1>")
 rim: s("rim:1").struct(rand.round().rib(4, 2).seg(8))
 
@@ -17,7 +17,7 @@ line2: n("[0!2] 0 0 [3!2] 4 0 0 4".add("0, -7"))
   .every("4", x=>x.clip(".5 .7").ply(2))
 
 top_line: n("[0!2] 0 - 0 2 - 0 2".add("<7 8 9 [[6 5]!4]>"))
-  .scale("a:minor").s("supersaw").distort("5:.2").echo(4 ,2, .5)
+  .scale("a:minor").s("supersaw").distort("5:.2").echo(4 , 2, .5)
   .pan(sine.slow(32))
   .pianoroll()
 
