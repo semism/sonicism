@@ -1,0 +1,51 @@
+samples('github:semism/smbreaks')
+samples('github:semism/nibbles')
+
+setCpm(170/4)
+
+rrxova: s("numbers:3").fit() //nibble/4
+  .scrub(irand(8).div(8).seg("<4>").rib(1, 4)).clip(irand(10).div(10).rib(2, 2))
+  // .scrub("<.25 -!3>") //uneurrx.75  kjorrug.25 meprukatastrof.5 "<.75 .25 .37 .5>"
+  .jux(rev)
+  // .pan(0)
+  .distort("2.2:.7").lpf(2000)
+  .almostNever(ply("2 | 4")).color("yellow")
+
+kick: s("sbd!4").duck(2)
+snare: s("sd!2")
+
+bass: n(irand(12).seg(4).rib(93, 4).add(-14)) 
+  .scale("f:minor").orbit(2).release(1)
+  .s("saw").delay(".2 .5 .1").decay(.4)
+  ._pianoroll()
+
+acid: n(irand(12).seg(16).rib(93, 4).add(-7)) 
+  .scale("f:minor")
+  .s("sawtooth").lpf(300).room(1).roomsize(5)
+  .lpenv(itri.range(0, 2).pow(2).slow(4))
+  .lpq(15)
+
+amen: n("<4!3 1>/2").s("breaks/2").fit()
+  .scrub(irand(16).div(16).seg(8).rib(1, 2))
+  .almostNever(ply("2 | 4"))
+
+mjau: n(irand(12).seg(16).rib(93, 4))
+  .scale("f:minor")
+  .decay(.4).attack(.08)
+  .s("sawtooth").lpf(300).room(1).roomsize(5)
+  .lpenv(itri.range(0, 2).pow(2).slow(4))
+  .lpq(15)
+
+kumpiter: n(irand(12).seg("16, 8").rib(93, 4))
+  .scale("f5:minor").s("gm_distortion_guitar, supersaw")
+  .delay(".5")
+  .clip(.5)
+  .fm(itri.range(0, 4).slow(4)).fmh(itri.range(0, 4).slow(4))
+  .gain(.4)
+  .color("green")._pianoroll()
+
+
+
+
+
+
