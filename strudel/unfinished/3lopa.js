@@ -13,7 +13,7 @@ cow: s("cb").struct("x x*3 x - - - - - x".late(.1)).bank("akailinn")
 squeak: note("[c5 c6] -!3".late(.5)).s("saw, brown").clip(.2).penv("<14 -14>").delay(.8).delaytime(.25)
 
 bass: n("<0 1>!8".add("-7 ,-14")).scale("<C:major!2 D:minor!2>").s("saw")
-     .lpf(200).lpenv(2).lpq(5)
+     .lpf(300).lpenv(2).lpq(5)
      // .crush(4) //bit crush on off
      .rel(.1)
 
