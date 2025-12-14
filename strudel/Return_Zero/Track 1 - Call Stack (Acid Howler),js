@@ -1,0 +1,35 @@
+setCps(140/60/4)
+
+bike: n("1").scale("A1:minor").s("pulse, gm_trumpet, gm_voice_oohs")
+  .room(2).roomsize(3)
+  .detune(1).rel(10).beat(4, 64).gain(.3).orbit(3)
+
+  
+howlin: n("<1 1*2?>").scale("A2:minor").s("gm_voice_oohs:5")
+  .room(2).roomsize(3)
+  .detune(1).rel(10).beat(4, 64).gain(.7)
+  .orbit(2)
+
+
+kick: s("sbd!4").distort("1:.7").duck("2:3:4:5").duckattack(.2)
+  ._scope()
+snare: s("- sd - <sd:1 sd:2>").clip(".1")
+hihat: s("white!16")
+  .clip(".4 .2 .1").pan(".77 -.77 .44")
+
+
+bass: n(irand(8).seg("16")) //start with 8th and play 16th notes to harmonize with lead
+  .scale("A1:minor").s("sawtooth, saw")
+  .rib(0, 1)
+  // .rib("<0!4 5!4>", "<1 1 1 2>")
+  .lpf(2000).lpenv(4).lpq(10).orbit(4)._pianoroll()
+
+bass_lead: n(irand(8).seg("16").sometimesBy(.12, x=>x.add(7)))
+  .scale("A2:minor").s("sawtooth, saw")
+  .rib(0, 1)
+  // .rib("<0!4 5!4>", "<1 1 1 2>")
+ // .lpf("400 1000").lpenv(2)
+  //.lpq(sine.range(0,20)).orbit(5)
+ .lpf("100").lpenv(2)
+ .lpq(20).orbit(5)
+  ._scope()
