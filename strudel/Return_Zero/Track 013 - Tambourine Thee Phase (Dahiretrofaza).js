@@ -1,0 +1,38 @@
+setcpm(200/4)
+register('robot', x => x.fm(rand.rib(10, 4).mul(10).fast(2)).fmh(saw))
+
+//tease:
+_dahiretrofaza: n("<0@4 [2 3] [2 1] -1@2>*2".add("-7, -14, 7, 21")) //start at 2x slow from base
+  .rel(.1)
+  .robot()
+  .scale("f3:minor").s("gm_synth_strings_1").gain(.6)
+  // .delay(".1, .5")
+  // .clip("<.1!7 1>")
+  // .jux(rev)
+
+kick: s("bd").beat("<4 [8, 10]>", 16).room(.1)
+snare: s("sd").room(.1)
+hat: s("[hh]!8").room(.1)
+  .gain(rand.rib(32, 3))
+rimbass: s("rim:1!8").room(.1).pan(rand.rib(32, 2)).sometimesBy(.05, x=>ply(4)) 
+  .s("wt_digital, wt_digital_echoes").every("16", x=>x.gain(0))
+
+robobass: n("0 1 <3 2 4.5 2> <4!3 0>".add("<0 0.2>"))
+  .robot()
+  .scale("f2:minor").s("supersaw") 
+
+// strum: n("<0!4 [3!2] [2!2] -1@2>*4".add("-7, -14"))
+//   .delay(.5).coarse(2)
+//   .distort("3:.1")
+//   .scale("f3:minor").s("gm_electric_guitar_clean, gm_overdriven_guitar")
+
+// chipmunk: n("0 1".add("<0 0.2>")
+//             .add("<0@4 [2 3] [2 1] -1@2>*4")
+//            )
+//   .fast(2)
+//   .clip(rand)
+//   .jux(rev)
+//   .robot()
+//   .scale("f5:minor").s("saw, gm_overdriven_guitar")
+
+
