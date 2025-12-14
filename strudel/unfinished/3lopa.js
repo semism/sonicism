@@ -8,12 +8,13 @@ clap: s("cp!2".early(.02)).bank("akailinn")
 hat: s("hh!8").bank("akailinn").velocity(rand.rib(76, 2).mul(.5))
 cow: s("cb").struct("x x*3 x - - - - - x".late(.1)).bank("akailinn")
   .crush(4).delay(.1).delaytime(".4").pan(".3 .1 .4 - - - - - 1")
-  .velocity(.4)
+  .velocity("<.1 .2 .3 .4>/2")
+
 squeak: note("[c5 c6] -!3".late(.5)).s("saw, brown").clip(.2).penv("<14 -14>").delay(.8).delaytime(.25)
 
 bass: n("<0 1>!8".add("-7 ,-14")).scale("<C:major!2 D:minor!2>").s("saw")
      .lpf(200).lpenv(2).lpq(5)
-     .crush(4) //bit crush on off
+     // .crush(4) //bit crush on off
      .rel(.1)
 
 lead: n(irand(14).seg(8).rib(10, 1).mask("x -".early(.5))).scale("<C:major!2 D:minor!2>").s("saw")
@@ -28,6 +29,5 @@ high: n(irand(14).seg(8).rib(10, 1).add(7)).scale("<C:major!2 D:minor!2>").s("sq
 .echo(2, .25, .5)
 .phaser("2 8").rev()
 .pan(.6).velocity(.2)
-
 
 
