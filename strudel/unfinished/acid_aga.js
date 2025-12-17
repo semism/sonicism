@@ -1,6 +1,13 @@
 samples('github:semism/smbreaks')
 
+
+
 setcpm(120/4)
+
+await initHydra()
+osc(30, 0.2, 300)
+.color(0.9, 0.7, 0.8).kaleid()
+.luma().modulate(osc(1, -0.9, 300)).scale(2).out()
 
 let acid_lpf_mod = sine.range(150, 350).slow(16)
 let acid_env_mod = sine.range(2, 3).slow(32)
@@ -32,4 +39,3 @@ let hat = s("hh").clip(.2)
 
 drums: stack(kick, snare, clap, hat).bank("tr505").room(.3).size(6)
 
-// all(x=>x.hpf(70))
