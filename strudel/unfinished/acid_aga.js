@@ -19,7 +19,7 @@ acid_layer_sub: acid_bass
   .off(1/4, x=>x.s("supersaw")).velocity(.35)
 
 bass: n("{-7 0@2 2 7 0 0 2}*2".add("-7"))
-  .scale("<a:minor>").s("sine")
+  .scale(pick(chords, 1)).s("sine") // add supersaw
   .att(sine.range(0.02, .1))
 
 let kick = s("bd!4")
