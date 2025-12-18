@@ -1,6 +1,4 @@
-samples('github:semism/smbreaks')
-
-
+samples('github:semism/nibbles')
 
 setcpm(120/4)
 
@@ -22,10 +20,10 @@ let acid_bass = n("{-7 0@2 2 7 0 0 2}*2".add("-7"))
   .distort("2.2:.4")
 
 acid_layer_main: acid_bass.room(.5).size(6)
-_acid_layer_sub: acid_bass  
+acid_layer_sub: acid_bass  
   .off(1/4, x=>x.s("supersaw")).velocity(.35)
 
-bass: n("{-7 0@2 2 7 0 0 2}*2".add("-7"))
+_bass: n("{-7 0@2 2 7 0 0 2}*2".add("-7"))
   .scale(pick(chords, 1)).s("sine") // add supersaw
   .att(sine.range(0.02, .1))
 
@@ -38,3 +36,4 @@ let hat = s("hh").clip(.2)
   .velocity(".4 .3 .8 .5")
 
 drums: stack(kick, snare, clap, hat).bank("tr505").room(.2).size(6)
+osicalate: n("{-7 0@2 2 7 0 0 2}*2".add("-7")).scale(pick(chords, 1)).s("sbd").ply(12).room(2).size(3).velocity(.2)
