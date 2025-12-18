@@ -36,4 +36,5 @@ let hat = s("hh").clip(.2)
   .velocity(".4 .3 .8 .5")
 
 drums: stack(kick, snare, clap, hat).bank("tr505").room(.2).size(6)
-osicalate: n("{-7 0@2 2 7 0 0 2}*2".add("-7")).scale(pick(chords, 1)).s("sbd").ply(12).room(2).size(3).velocity(.2)
+osicalate: n("{-7 0@2 2 7 0 0 2}*2").scale(pick(chords, 1))
+  .s("sbd").ply(saw.range(1,10).slow(10)).room(2).size(3).velocity(.2)
