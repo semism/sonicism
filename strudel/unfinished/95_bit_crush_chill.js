@@ -25,12 +25,4 @@ perc_bass: n("0".add(-14))
   .delay(.5).delaytime("0 .25 0 0")
   .lpf(150).lpq(15).crush(4)
 
-contrabass: n("{- - - 5*3 6@2 4@2}/2".add("-7, 0, 7"))
-  .scale(pick(chords, 0)).s("sine").att(.4).decay(.4)
-  .room(1).size(12)
-
-supersaw: n("{- - - - 6 2 4 2}/2".add("-7, 0, 7"))
-  .scale(pick(chords, 0)).s("supersaw")
-  .att(.4).decay(.05).room(.4).size(12).chorus(1)
-
 amin: s("breaks:2/2").fit().scrub(".50 .25")
