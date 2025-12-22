@@ -29,8 +29,8 @@ contrabass: n("{- - - 5*3 6@2 4@2}/2".add("-7, 0, 7"))
   .scale(pick(chords, 0)).s("sine").att(.4).decay(.4)
   .room(1).size(12)
 
-// supersaw: n("{- - - - 6 2 4 2}/2".add("-7, 0, 7"))
-//   .scale(pick(chords, 0)).s("supersaw")
-//   .att(.4).decay(.05).room(.4).size(12).chorus(1)
+supersaw: n("{- - - - 6 2 4 2}/2".add("-7, 0, 7"))
+  .scale(pick(chords, 0)).s("supersaw")
+  .att(.4).decay(.05).room(.4).size(12).chorus(1)
 
-amin: s("breaks:2/2").fit()
+amin: s("breaks:2/2").fit().scrub(".50 .25")
