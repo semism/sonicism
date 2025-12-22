@@ -3,12 +3,12 @@ samples('github:semism/smbreaks')
 setcpm(95/4)
 let chords = ["<e:minor a:minor e:minor g:minor>", "a:minor"];
 
-kick: s("bd").bank("tr707")
+kick: s("bd").bank("tr707").room(1).size(12).velocity(.5)
   .struct("1 - - 1  - 1 - 1  - - - 1  - - 1 -")
   .clip(.05).duck(2)
 
 hat: s("white")
-  .clip(.2)
+  .clip(.2).room(1).size(12)
   .struct("<0 1*2> 1 0 1*2 0 1 0 1".early(.25))
   .velocity(".4 .3 .8 .5".mul(.5))
 
