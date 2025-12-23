@@ -1,0 +1,41 @@
+samples('github:semism/smbreaks')
+setcpm(70/4)
+
+//in order
+dum: s("bd").beat("0, 8, 16, 24", 32).delay(.5).hpf(150)
+  .off(1/4, x=>x.s("lt").ply(2)).duck(2)
+  ._scope()
+tak: s("- - rim - - - rim - - - - - rim:2 - rim  - - - rim - - - rim - - - rim - rim - rim:2 -").hpf(3000).delay(.5)
+._scope()
+cb: s("pink").beat("0, 1, 6", 16).delay(".2, .5, .1").clip(.2)
+  .color("pink")._scope()
+
+amin: s("breaks:3/2, breaks:4/2").fit() //brk 3 alt 4
+
+bass: note("e2, e3!8").s("gm_electric_bass_finger:3")
+  .every(4, ply(2))
+  .gain(1.2)
+  .distort("4.5:.3")
+
+arpeg: n("<0, -7, <7 ->>!16".add(berlin.fast(2).mul(7).rib("<12!2 14 53>", 2))) //berlin saw perlin 1s =>16ths and
+  .scale("e:minor").rel(.01).attack(.3).s("tri,supersaw").gain(.6).pan(sine.slow(2))
+  ._pianoroll()
+
+const melody = arrange(
+  [1, "0@2"],
+  [1, "1!2"],
+  [1, "0@2"],
+  [1, "4!2"],
+  [1, "[5 4] 2 3!2"],
+  [1, "4 5 6!2"],
+  [1, "[5 4] 9 [11 12] [[11 12]!3]"],
+  [1, "11 12 10 7 4 8!2 12"],
+  [1, "11 12 10 7 4 8!2 12 5 3 10 7 4 8!2 [4 5]"],
+  [1, "6 6 7 6"],
+  [1, "6 5 5 4"],
+  [1, "11 12 10 7 4 8!2 12 5 3 10 7 4 8!2 [4 5]"],
+)
+
+sint: melody.n().s("supersaw, gm_distortion_guitar").scale("e4:minor")
+  .decay(3).room(2).delay(.2)
+  .cutoff(2000).hpf(400).fm(1).fmwave("white")
