@@ -3,9 +3,9 @@ setCps(120/60/4)
 kick: s("bd!4").bank("akailinn").duck("2")
 kick2: s("sbd!2")
 snare: s("sd!2").bank("akailinn")
-snare2: s("sd!2".early(.04)).velocity(.5).pan(.6)
-clap: s("cp!2".early(.02)).bank("akailinn")
-hat: s("hh!8").bank("akailinn").velocity(rand.rib(76, 2).mul(.5))
+snare2: s("sd!2".early(.04)).velocity(.5).pan(.6).hpf(400)
+clap: s("cp!2".early(.02)).bank("akailinn").lpf(4000)
+rim: s("hh oh*2 - - - - - oh").bank("akailinn").velocity("<[.3 .7 .4] [.2 .2 .5]>")
 cow: s("cb").struct("x x*3 x - - - - - x".late(.1)).bank("akailinn")
   .crush(4).delay(.1).delaytime(".4").pan(".3 .1 .4 - - - - - 1")
   .velocity("<.1 .2 .3 .4>/2")
@@ -17,7 +17,7 @@ bass: n("<0 1>!8".add("-7 ,-14")).scale("<C:major!2 D:minor!2>").s("saw")
      // .crush(4) //bit crush on off
      .rel(.1)
 
-lead: n(irand(14).seg(8).rib(10, 1).mask("x -".early(.5))).scale("<C:major!2 D:minor!2>").s("saw")
+lead: n(irand(14).seg(8).rib(10, 1).mask("x -".early(.5))).scale("<C:major!2 D:minor!2>").s("supersaw")
 .lpf(1200).lpenv(2).lpq(5)
 .hold(.2).decay(.5).sus(saw.range(0.5, 0.7).slow(4)).rel(.8)
 .echo(2, .25, .5)
@@ -29,5 +29,4 @@ high: n(irand(14).seg(8).rib(10, 1).add(7)).scale("<C:major!2 D:minor!2>").s("sq
 .echo(2, .25, .5)
 .phaser("2 8").rev()
 .pan(.6).velocity(.2)
-
 
