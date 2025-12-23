@@ -1,0 +1,29 @@
+setcpm(140/4)
+
+submarine: n("0".seg(8).add(-21)).scale("<a:minor e:minor c:major g:major e:major f:major e:minor>/4").s("square")
+  .decay(.2).rel(.1).attack(.5).room(.6).roomsize(100)
+  .lpf(200).lpenv(2).lpq(20).orbit(2)
+
+mjau: n("-14 -8 -10 -7").seg("8").s("saw").scale("<a:minor e:minor c:major g:major e:major f:major e:minor>/4")
+  .distort("2:.3").lpf(800)
+  .pan(rand.rib(12, 1)).clip(rand.rib(23, 1))
+  .rel(".2 .4")
+
+cjau: n("-7").seg("16").s("saw").scale("<a:minor e:minor c:major g:major e:major f:major e:minor>/4")
+  .distort("5:.085").pan(rand.rib(12, 1)).clip(rand.rib(23, 1)).lpf(200).lpenv(2).lpq(40)
+
+kick: s("bd:1!4").room(.3).duck("2:3:4").duckattack(.2)
+snare: s("sd:1!2").room(.3)
+hat: s("white!8").clip(.1).gain(rand.rib(2, 1))
+
+const chords = "<Am Em C G E F Em>/4"
+
+irma: chord(chords).s("gm_voice_oohs").voicing()
+  .off(1/4, x=>x.s("numbers:0").ply(2).pan(0.2))
+  .distort("5:.03").pan(.7).delay(".2, .5").decay(4).room(4)
+  .every(16, x=>x.fast(8).clip(.2))
+  .scope()
+
+robosong: chord(chords).s("supersaw").voicing()
+  .distort("1:.2").orbit(3)
+  .scope()
