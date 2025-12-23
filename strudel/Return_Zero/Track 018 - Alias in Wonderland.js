@@ -1,0 +1,50 @@
+setcpm(135/4)
+
+shkelmi: s("sbd!4").duck("2:3:4")
+lodr: s("oh!2").delay(.2).gain(.4).clip(.2)
+ksul: s("white!16").clip(".1")
+  .gain(rand.mul(1.4).rib(32,2))
+shek: s("sh").struct("x!2")
+  .delay(.3).room(1)
+
+
+const pat = "[<[0 1] [-2 _]>]!2 2!2 [3 2]!2 <1 4>!2";
+
+const pat2 = arrange([1,"[0 1]!2 2!2 [3 2]!2 <1 4>!2"],
+                    [1, irand(8).seg(16).rib("99", 1)],
+                    [1,"[4 5]!2 3!2 [3 2]!2 <1 4>!2"],
+                    [1,"[3 1]!2 3!2 [2 3]!2 <1 0>!2"]
+                   );
+
+shkallet: n(irand(8).seg(8).rib("99", 1).add("7,14?,0").add(pat2)) //add 0 on off
+        .s("saw")
+        .distort("5:.4")
+        .attack(.2).decay(.01).pan(sine)
+        .scale("e1:minor").scope()
+
+struja: n(pat.struct("x!8")).orbit(2)
+        .s("supersaw")
+        .distort("5:.4")
+        .attack(.15).decay(.01)
+        .lpf(100).lpenv(4).lpq(4).phaser(2)
+        .scale("e1:minor").scope()
+
+strujaxhija: n(pat2.struct("x!8")).s("saw") //pat2.struct("x!8")
+        .distort("3:.2").decay(.1).delay(1)
+        .lpf(600).lpenv(2).lpq(20).room(1.5).roomsize(5)
+        .scale("e3:minor").color("cyan")._scope()
+
+strujabilbili: n(pat.struct("- - - - - x x -")).s("saw")
+        .distort("3:.2").decay(.1).delay(.5)
+        .lpf(1900).lpenv(2).lpq(45).pan(sine.slow(32))
+        .scale("e3:minor").color("cyan").scope()
+
+pishtoll_llazer: n(pat.struct("x x - - - - - -")).s("saw")
+        .distort("3:.2").decay(.1).delay(.5)
+        .lpf(400).lpenv(2).lpq(45)
+        .scale("e3:minor").color("magenta").scope()
+
+fog: n(pat).s("supersaw -!7").rel(.7).delay(".2, .5").distort("2:.2").room("2:10")
+  .fm(2).fmh(2).fmwave("saw").phaser(10)
+  .orbit(4)
+  ._scope()
