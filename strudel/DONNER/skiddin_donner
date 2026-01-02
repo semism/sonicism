@@ -1,0 +1,5 @@
+
+setcpm(140/4)
+
+cjau: n("-7").seg("16").s("saw").scale("<a:minor e:minor c:major g:major e:major>/4").distort("5:.085").pan(rand.rib(12, 1)).clip(rand.rib(23, 1)).lpf(200).lpenv(2).lpq(40)
+.midi('DONNER B1')
