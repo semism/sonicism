@@ -11,5 +11,5 @@ amen: s("breaks/4:5").fit().gain(1.4);
 //   .lpf(200).lpenv(2).lpq(12)
 //   .delay(.4).distort("3:.2")
 
-// strings: note("<g1 a1 a#1 c2>".add(28).add("<0!2 7!2>")).s("gm_string_ensemble_1")
-//   .room(2).velocity(.4)
+// strings: note("<g1 a1 a#1 c2>".add(35).add("7")).s("gm_string_ensemble_1")
+//   .room(2).velocity(.2).decay(.5).ply(4).sometimesBy(.25, x=> x.clip(.2))
