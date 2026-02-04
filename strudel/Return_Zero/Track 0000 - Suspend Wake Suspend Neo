@@ -11,8 +11,8 @@ bass: note("<g1 a1 a#1 c2>!16").s("supersaw") //2nds to 16ths
   .lpf(200).lpenv(2).lpq(12)
   .delay(.4).distort("3:.2")
 
-strings: note("<g1 a1 a#1 c2> -".early(.25).fast(16).add(35).add(7)).s("gm_string_ensemble_1")
-  .room(2).velocity(.4).clip("<.8!3 .9>").ply(8)
+strings: note("<g1 a1 a#1 c2> -".early(.25).fast(16).add(35).add(7)).s("gm_overdriven_guitar").pan(1)
+  .room(2).velocity(.6).clip("<.8!3 .9>").ply(8)
 
 synth: note(irand(16).seg(8).rib(32,4).scale("g3:dorian")).s("square").unison(2)
   .delay(.4)
