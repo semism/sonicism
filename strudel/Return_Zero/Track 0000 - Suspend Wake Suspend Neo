@@ -8,14 +8,14 @@ hat: s("hh!8").velocity(rand.range(0.01, 0.5).rib(44, 4)).delay(.4).room(.4)
 cb: s("cb").velocity(.4).delay(.4).room(.4).pan(1)
 
 bass: note("<g1 a1 a#1 c2>!16").s("supersaw")//2nds to 16ths
-  .lpf(600).lpenv(2).lpq(12)
+  .lpf(300).lpenv(2).lpq(12)
   .delay(.4).distort("3:.5")
 
 strings: note("<g1 a1 a#1 c2> -".early(.25).fast(16).add(35).add(7))
   .s("gm_overdriven_guitar").pan(1)
   .room(2).velocity(.6).clip("<.8!3 .9>").ply(8)
 
-_synth: note(irand(16).seg(8).rib(32,4).scale("g2:dorian"))
+synth: note(irand(16).seg(8).rib(32,4).scale("g2:dorian"))
   .s("square").unison(2)
-  .delay(.4)
+  .delay(.4).clip(.4)
   .room(2).size(4).velocity("<.5 .55 .6 .7>")
