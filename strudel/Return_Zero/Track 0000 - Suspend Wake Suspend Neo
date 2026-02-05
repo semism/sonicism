@@ -7,7 +7,7 @@ crash: s("<-!3 cr>").delay(.4).room(.4)
 hat: s("hh!8").velocity(rand.range(0.5, 1).rib(44, 4)).delay(.4).room(.4)
 cb: s("cb").velocity(.4).delay(.4).room(.4).pan(1)
 
-bass: note("<g1 a1 a#1 c2>!16").s("supersaw")//2nds to 16ths
+bass: note("<g1 a1 a#1 c2>!16").s("supersaw")//2nds to 16ths .add("<0 1 2 3>")
   .lpf(300).lpenv(2).lpq(12)
   .delay(.4).distort("3:.5")
 
