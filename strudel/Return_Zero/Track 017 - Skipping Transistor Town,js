@@ -7,7 +7,7 @@ const scales = "<e:minor [c:major d:major] g:major d:major>/4";
 const kit = "akaimpc60"
 
 kick: s("bd!4").bank(kit).duck("2:3")
-snare: s("sd!2").struct("- x - x").bank(kit).ply("1 2")
+snare: s("sd!2").struct("- x - x").bank(kit).ply("1 2").velocity(.7)
 hat: s("hh").struct("x x - x x x - x x x x - x x x x").bank(kit).gain(rand.rib(44,3))
 ophat: s("oh").struct("x - x - - - x - - - - x - - x -").bank(kit).delay(.5).gain(".5 .8")
 
