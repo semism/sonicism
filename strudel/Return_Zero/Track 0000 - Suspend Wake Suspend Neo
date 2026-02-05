@@ -1,19 +1,19 @@
 samples('github:semism/smbreaks')
 setCpm(102/4)
 
-amen: s("breaks:5").slow(4).fit().gain(4); //slow 1 to 4 
+amen: s("breaks:5").slow(4).fit().gain(6); //slow 1 to 4 
 kick: s("sbd!4")
-crash: s("<-!3 cr>").velocity(.5).delay(.4).room(.4)
-hat: s("hh!8").velocity(rand.range(0.01, 0.5).rib(44, 4)).delay(.4).room(.4)
+crash: s("<-!3 cr>").delay(.4).room(.4)
+hat: s("hh!8").velocity(rand.range(0.5, 1).rib(44, 4)).delay(.4).room(.4)
 cb: s("cb").velocity(.4).delay(.4).room(.4).pan(1)
 
 bass: note("<g1 a1 a#1 c2>!16").s("supersaw")//2nds to 16ths
   .lpf(300).lpenv(2).lpq(12)
   .delay(.4).distort("3:.5")
 
-strings: note("<g1 a1 a#1 c2> -".early(.25).fast(16).add(35).add(7))
-  .s("gm_overdriven_guitar").pan(1)
-  .room(2).velocity(.6).clip("<.8!3 .9>").ply(8)
+// strings: note("<g1 a1 a#1 c2> -".early(.25).fast(16).add(35).add(7))
+//   .s("gm_overdriven_guitar").pan(1)
+//   .room(2).velocity(.6).clip("<.8!3 .9>").ply(8)
 
 synth: note(irand(16).seg(8).rib(32,4).scale("g2:dorian"))
   .s("square").unison(2)
