@@ -21,4 +21,4 @@ synth: n(irand(16).seg(8).rib(32,4)).scale("g2:dorian")
   .room(2).size(4).velocity("<.5 .55 .6 .7>")
 
 pulse: n("<-!4 -!2 0!2>").scale("g5:dorian")
-  .s("square").clip(.2).ply(8 | 4)
+  .s("square").clip(.15).ply("2 4").pan(0)
