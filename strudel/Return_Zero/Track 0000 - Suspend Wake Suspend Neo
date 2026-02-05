@@ -5,7 +5,7 @@ amen: s("breaks:5").slow(4).fit().gain(6); //slow 1 to 4
 kick: s("sbd!4")
 crash: s("<-!3 cr>").delay(.4).room(.4)
 hat: s("hh!8").velocity(rand.range(0.5, 1).rib(44, 4)).delay(.4).room(.4)
-cb: s("cb").velocity(.4).delay(.4).room(.4).pan(1)
+cb: s("cb").delay(.4).room(.4).pan(1)
 
 bass: note("<g1 a1 a#1 c2>!16").s("supersaw")//2nds to 16ths .add("<0 1 2 3>")
   .lpf(300).lpenv(2).lpq(12)
@@ -21,4 +21,4 @@ synth: n(irand(16).seg(8).rib(32,4)).scale("g2:dorian")
   .room(2).size(4).velocity("<.5 .55 .6 .7>")
 
 pulse: n("<-!4 -!2 0!2>").scale("g5:dorian")
-  .s("square").clip(.2).ply(2 | 4).delay(.6)
+  .s("square").clip(.2).ply(8 | 4)
