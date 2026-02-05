@@ -11,9 +11,9 @@ bass: note("<g1 a1 a#1 c2>!16").s("supersaw")//2nds to 16ths
   .lpf(300).lpenv(2).lpq(12)
   .delay(.4).distort("3:.5")
 
-voices: note("<g1 a1 a#1 c2> -".early(.25).fast(16).add(28).add(7))
+voices: note("<g1 a1 a#1 c2>".early(.25).fast(4).add(28).add(7))
   .s("gm_voice_oohs").pan("0 1")
-  .room(2).velocity(.9).clip("<.8!3 .9>").ply(8)
+  .room(2).velocity(.9).clip("<.8!3 .9>").ply(4)
 
 synth: n(irand(16).seg(8).rib(32,4)).scale("g2:dorian")
   .s("square").unison(2)
