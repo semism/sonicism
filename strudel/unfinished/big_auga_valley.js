@@ -16,7 +16,6 @@ auga2: auga.lpf(tri2.mul(1))
 auga_room: auga.room(5).size(4).velocity(.8)
   ._spectrum()
 
-
  distant_horn: s("supersaw*4")
   .n(irand(16).seg(4).rib("<3 5 64 3>", 4))
   .scale("<c2:minor a1:minor>").delay(.5).delayfeedback(.6).delaytime(.25)
@@ -32,9 +31,9 @@ fajlli: s("gm_church_organ")
   .orbit(4)
 
 
-amen0: s("breaks").fit().lpf(1500).orbit(2)
+amen0: s("breaks").fit().lpf(2500).room(2).orbit(2)
 
-amen2: s("breaks:2").fit().pan(1).lpf(800).scrub("[.25 .53] .25 .75 .25").orbit(3)
+amen2: s("breaks:2").fit().pan(1).lpf(1800).scrub("[.25 .53] .25 .75 .25").orbit(3)
 
 hihat: s("white!8".late(".25 .1")).clip(.1).pan(.11)
 .lpf(sine.range(500, 2500).fast(16))
@@ -42,10 +41,3 @@ hihat: s("white!8".late(".25 .1")).clip(.1).pan(.11)
 
 
 kick: s("bd:4 bd:4 bd:4*2 bd:4").duck("2:3:4:5")
-
-snare: s("- sd:4 - sd:4").delay(.5).delaytime(".15")
-
-ohat: s("oh:2 oh:2")
-
-hhat: s("hh:4!8".late(.125))
-
