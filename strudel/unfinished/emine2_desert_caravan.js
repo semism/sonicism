@@ -1,6 +1,12 @@
 samples('github:semism/smbreaks')
 setcpm(70/4)
 
+nausea: n("<0!4 2!2 5!2>").scale("d1:minor").s("supersaw")
+  .orbit(3).orbit(4)
+  .att(.1).rel(.2)
+  .lpf(500).lpa(.3).lpe(tri.range(1, 5).slow(4))
+  .lpq(saw.range(1, 25).slow(2))
+
 amen: s("breaks:4/2").fit().duck("2:3").duckdepth(.5)
   .scrub(irand(16).div(16).seg(8).rib(43, 1))
   .delay(".5, .1").gain(.3)
@@ -11,11 +17,18 @@ floor: s("bd!4").duck("4")
 
 snare_bass_synth: n(irand(5).seg(8)
               .rib(142, 2).add("-28")).scale("d1:minor").s("sd:2").ply(16).orbit(2).orbit(4)
-              .velocity(.07).delay(".5:.5:.5")._pianoroll()
+              .velocity(.07).delay(".5:.5:.5")
+  .distort(1)
+  ._pianoroll()
+
+
+synth: n(irand(5).seg(8).rib(142, 2)).scale("d3:minor").s("saw").orbit(3)
+  .delay(".5:.5:.5").hpf(1200).lpf(1700).lpa(.3).hpr(.3)
+  .att(.1).rel(.2)
 
 wt: s("basique").bank("wt_digital").seg(4).n("<0 2 0 ->").scale("d2:minor")
   .warp("0.4 .5".slow(2))
-  .warpmode("asym")
+  .warpmode("asym")._spectrum()
 
 water: n(irand(5).seg(4).rib("<142 <152!2 123 45>>/2", 2))
   .scale("d3:minor")
