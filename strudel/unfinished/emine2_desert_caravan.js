@@ -2,10 +2,10 @@ samples('github:semism/smbreaks')
 setcpm(70/4)
 
 nausea: n("<0!4 2!2 5!2>").scale("d1:minor").s("supersaw")
-  .orbit(3).orbit(4)
   .att(.1).rel(.2)
-  .lpf(500).lpa(.3).lpe(tri.range(1, 5).slow(4))
-  .lpq(saw.range(1, 25).slow(2))
+  .lpf(500).lpa(.3).lpe(tri.range(1, 2).slow(4))
+  .lpq(saw.range(6, 12).slow(2))
+  .hpf(200)
 
 amen: s("breaks:4/2").fit().duck("2:3").duckdepth(.5)
   .scrub(irand(16).div(16).seg(8).rib(43, 1))
