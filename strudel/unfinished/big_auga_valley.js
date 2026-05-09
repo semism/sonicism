@@ -16,6 +16,10 @@ auga2: auga.lpf(tri2.mul(1))
 auga_room: auga.room(5).size(4).velocity(.8)
   ._spectrum()
 
+piano: s("piano")
+  .n("<{3, 5, 0} 3 5 0>".early(.25)).scale("c4:minor")
+  .release(2).att(.2)
+
  distant_horn: s("saw")
   .n(irand(16).seg(4).rib("<3 5 64 3>", 4))
   .scale("<c2:minor a1:minor>").delay(.5).delayfeedback(.6).delaytime(.25)
