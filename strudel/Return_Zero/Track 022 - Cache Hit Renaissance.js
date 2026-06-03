@@ -1,6 +1,6 @@
 samples('github:semism/nibbles')
 
-setcpm(140/4) //kick rim lbasss
+setcpm(140/4) //go up to 220 then bring the collapse
 
 kick: s("sbd:3!2").gain(1.6)
 snare: s("sd:2").delay(.05).room(1).release(2).lpf(4000)
