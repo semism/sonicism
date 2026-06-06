@@ -28,7 +28,7 @@ cheni: s("animals!8").speed("<1.3!4 2!4>").clip(irand(5).div(10).rib(12, 2))
 uki: s("<-!14 animals!2>").speed(2)
 
 flaka: n(irand(8).rib("<77!10 72!2 22!2 71!2>", 2).seg("8").add("<-14!8 -7!8>")) //seg reach 8
-  .scale("f:major")
+  .scale("f:major") //goes to prophesize the branch at 170 bpm and switches to minor
   .s("supersaw, supersaw, sine") //tones/4
   .orbit(3).rel(.1).jux(rev)
   .distort("2.6:.2")
