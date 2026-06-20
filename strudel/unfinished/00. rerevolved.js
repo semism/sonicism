@@ -17,9 +17,7 @@ bass: n("[0!2] 0 0 [3!2] 4 0 0 4".add("0, -7"))
 
 top_line: n("[0!2] 0 - 0 2 - 0 2".add("<7 8 9 [[6 5]!4]>").add(7))
   .scale("a:minor").s("sine").echo(4 , 2, .5).room(1).lpf(2000).lpenv(2).lpq(22)
-  .pan(sine.slow(32))
+  .pan(sine.slow(32)).fast(2)
   .pianoroll()
-
-
 
 
