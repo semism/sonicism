@@ -1,6 +1,6 @@
 samples('github:semism/smbreaks')
 
-setCpm(140/4)
+setCpm(90/4)
 
 amen: s("breaks/2").n("<0@7 1>").fit().gain(2) //reach 3
 .scrub(irand(16).div(16).seg(8).rib(5, 2))
@@ -11,7 +11,6 @@ line1: n("[0!2] 0 0 [3!2] 4 0 0 4".add("7, 14, 28"))
 
 line2: n("[0!2] 0 0 [3!2] 4 0 0 4".add("0, -7"))
   .scale("a:minor").s("sine").delay(".2, .5").gain(.7)
-  .lpf(saw.range(300, 300)) //incr
   .lpa(.4).lpenv(4) 
   .room(1).size(4)
   .every("4", x=>x.clip(".5 .7").ply(2))
