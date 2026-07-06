@@ -1,5 +1,15 @@
+// shati levron ara
+// fshati nuk luzon si mapara
+// fushat e thara
+// zateken gozhda shara
+
+// popujt e perchara
+// traunat e shperlara
+// se de vrasen lepra
+// me pushken perpara
+
 //kallxom kush jom une shtaj
-//kallxom taj xhi perfaqsojsh
+//kallxom mu xhi perfaqsoj
 //ku kom fjet un udh e shpaj
 //vec i fundit perfundoj
 
