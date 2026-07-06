@@ -5,7 +5,7 @@
 
 // popujt e perchara
 // traunat e shperlara
-// se de vrasen lepra
+// se de vrasem lepra ne
 // me pushken perpara
 
 //kallxom kush jom une shtaj
@@ -13,10 +13,15 @@
 //ku kom fjet un udh e shpaj
 //vec i fundit perfundoj
 
+// kallxom kush jom une shtaj
+// kallxom taj xhi perfaqsojsh
+// e sedi shtetit a ja ndajn
+// se un ken e dashuroj
+
 setcpm(60/4)
 
 var climb = "<0 3 5 7>"
-climb = "0"
+// climb = "0"
 const pat = n(irand(12).seg(8).rib("<316!2 314 316 314 316>", 1).add(climb)).scale("g:minor");
 
 harp: pat.s("harp").decay(.4)
@@ -42,14 +47,3 @@ piano_chords: chord("<Gm [- Gm Dm -!13]>").voicing()
 bass: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("pulse, sine").scale("<g:minor d:minor>").
   distort(".5:.3").att(.05).rel(.3).lpf(350).lpenv(.2)
 saw: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.1)
-
-
-
-
-
-
-
-
-
-
-
