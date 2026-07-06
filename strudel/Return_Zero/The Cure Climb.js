@@ -6,7 +6,7 @@
 // popujt e perchara
 // traunat e shperlara
 // se de vrasem lepra ne
-// me pushken perpara
+// me shpaten perpara
 
 //kallxom kush jom une shtaj
 //kallxom mu xhi perfaqsoj
@@ -15,13 +15,13 @@
 
 // kallxom kush jom une shtaj
 // kallxom taj xhi perfaqsojsh
-// e sedi shtetit a ja ndajn
+// en kti mbretit xhi ja ndajn
 // se un ken e dashuroj
 
 setcpm(60/4)
 
 var climb = "<0 3 5 7>"
-// climb = "0"
+climb = "0"
 const pat = n(irand(12).seg(8).rib("<316!2 314 316 314 316>", 1).add(climb)).scale("g:minor");
 
 harp: pat.s("harp").decay(.4)
