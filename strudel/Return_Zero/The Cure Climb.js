@@ -6,16 +6,21 @@
 // popujt e perchara
 // traunat e shperlara
 // se de vrasem lepra ne
-// me shpaten perpara
+// me pushken perpara
 
-//kallxom kush jom une shtaj
-//kallxom mu xhi perfaqsoj
-//ku kom fjet un udh e shpaj
-//vec i fundit perfundoj
+// kallxom kush jom une shtaj
+// kallxom mu xhi perfaqsoj
+// ku kom fjet un udh e shpaj
+// vec i fundit perfundoj
+
+// kallxom xhi kom per detyr
+// kallxoma raftin ku perkas
+// nshtresen e ujtit nder yndyr
+// saunde leprin pse ta vras
 
 // kallxom kush jom une shtaj
 // kallxom taj xhi perfaqsojsh
-// en kti mbretit xhi ja ndajn
+// ska kti mbretit xhi ja ndajn
 // se un ken e dashuroj
 
 setcpm(60/4)
@@ -40,9 +45,9 @@ kick: s("bd:2 - bd -").bank("dr550").room(.2).vel(rand.range(.3, .4))
 hat: s("-!7 oh").bank("dr550").room(.2).delay(.1).vel(rand.range(.13, .35))
 tom: s("<[lt lt - -] [mt - - mt]>").bank("dr550").room(.2).delay(.1).vel(rand.range(.3, .6))
 
-piano_chords: chord("<Gm [- Gm Dm -!13]>").voicing()
-  .lpf(1200)
-  .s("piano").rel("<1 [- .4 1 -!13]>").vel(.3)
+// piano_chords: chord("<Gm [- Gm Dm -!13]>").voicing()
+//   .lpf(1200)
+//   .s("piano").rel("<1 [- .4 1 -!13]>").vel(.3)
 
 bass: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("pulse, sine").scale("<g:minor d:minor>").
   distort(".5:.3").att(.05).rel(.3).lpf(350).lpenv(.2)
