@@ -19,7 +19,9 @@ radio: pat.s("piano")
 
 kick: s("bd:2 - [bd!2] -").bank("dr550").room(.2).vel(rand.range(.3, .4))
 hat: s("-!7 oh").bank("dr550").room(.2).delay(.1).vel(rand.range(.13, .35))
-snare: s("- sd - sd").vel(rand.range(.58, .99)).every(4, x=>x.ply(2)).every(8, x=>x.ply(4))
+snare: s("- sd - sd").vel(rand.range(.58, .99))
+  .every(4, x=>x.ply(2))
+  .every(8, x=>x.ply(4))
 hh: s("<oh hh>!16")
   .bank("dr550").vel(rand.range(.058, .199)).pan(.2)
 
@@ -32,13 +34,13 @@ rythm_guitar: chord("<Am Cm>").voicing()
   .late(rand.range(0,.0075))
   .jux(rev) //onoff
 
-var arp = n("<0 3 5 7>*8").scale("<a:minor c:minor>")
+var arp = n("<0 3 5 7>*16").scale("<a2:minor c:minor>")
 
-const lead_guitar =  arp.s("gm_electric_guitar_jazz").attack(.1)
+const lead_guitar =  arp.s("saw").attack(.1).lpf(400)
 
-lead_left: lead_guitar.transpose(-7).pan(0).vel(rand.range(.8,1))
+lead_left: lead_guitar.transpose(-7).pan(0).vel(rand.range(.8,1)).lpq(10).lpenv(3)
 
-lead_right: lead_guitar.transpose(0).pan(1).vel(rand.range(.8,1))
+lead_right: lead_guitar.transpose(0).pan(1).vel(rand.range(.8,1)).lpq(12).lpenv(2)
 
 
 
