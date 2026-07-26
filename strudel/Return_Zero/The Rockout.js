@@ -36,7 +36,7 @@ rythm_guitar: chord("<Am Cm>").voicing()
 
 var arp = n("<0 3 5 7>*16").scale("<a2:minor c:minor>")
 
-const lead_guitar =  arp.s("saw").attack(.1).lpf(400)
+const lead_guitar =  arp.s("saw").attack(.1).lpf(sine.range(200,600))
 
 lead_left: lead_guitar.transpose(-7).pan(0).vel(rand.range(.8,1)).lpq(10).lpenv(3)
 
