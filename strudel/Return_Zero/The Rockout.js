@@ -19,7 +19,7 @@ radio: pat.s("piano")
 
 kick: s("bd:2 - [bd!2] -").bank("dr550").room(.2).vel(rand.range(.3, .4))
 hat: s("-!7 oh").bank("dr550").room(.2).delay(.1).vel(rand.range(.13, .35))
-snare: s("- sd - sd").vel(rand.range(.58, .99)).every(4, x=>x.ply(4)).every(8, x=>x.ply(2))
+snare: s("- sd - sd").vel(rand.range(.58, .99)).every(4, x=>x.ply(2)).every(8, x=>x.ply(4))
 hh: s("<oh hh>!16")
   .bank("dr550").vel(rand.range(.058, .199)).pan(.2)
 
