@@ -11,11 +11,11 @@ mel: pat.s("gm_guitar_harmonics")
   .pan(.67)
   .ply(2)
 
-radio: pat.s("piano")
-  .decay(.2)
-  .ply("<<2 8> 4 2 4>")
-  .transpose(-14)
-  .fm("<8 16>".slow(4))
+// radio: pat.s("piano")
+//   .decay(.2)
+//   .ply("<<2 8> 4 2 4>")
+//   .transpose(-14)
+//   .fm("<8 16>".slow(4))
 
 kick: s("bd:2 - [bd!2] -").bank("dr550").room(.2).vel(rand.range(.3, .4))
 snare: s("- sd - sd").vel(rand.range(.58, .99))
@@ -43,8 +43,9 @@ lead_right: lead_guitar.transpose(0).pan(1).vel(rand.range(.8,1)).lpq(12).lpenv(
 
 lead_low: lead_guitar.s("supersaw").transpose(-7)
 
-bass: n("<0 0 - 0 0 0 0 0>*4").scale("<a2:minor c:minor>")
-  .transpose(-14).s("saw").lpf(200).rel(.6).att(0)
+bass: pat
+  .transpose(-28).s("saw").lpf(300).att(0)
+  .distort("2:.3")
 
 
 
