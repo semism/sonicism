@@ -4,17 +4,17 @@ var climb = "<0 3 5 7>"
 climb = "0"
 const pat = n(irand(12).seg(8).rib("<414 16>", 1).add(climb)).scale("a:minor");
 
-mel: pat.s("gm_guitar_harmonics")
-  .decay(.4)
-  .room(1).size(4)
-  .pan(1)
-  .ply(2)
+// mel: pat.s("gm_guitar_harmonics")
+//   .decay(.4)
+//   .room(1).size(4)
+//   .pan(1)
+//   .ply(2)
 
-radio: pat.s("piano")
-  .decay(.2)
-  .ply("<<2 8> 4 2 4>")
-  .fm("<8 16>".slow(4))
-  .pan(0)
+// radio: pat.s("piano")
+//   .decay(.2)
+//   .ply("<<2 8> 4 2 4>")
+//   .fm("<8 16>".slow(4))
+//   .pan(0)
 
 kick: s("bd:2 - [bd!2] -").bank("dr550").room(.2).vel(rand.range(.3, .4))
 snare: s("- sd - sd").vel(rand.range(.58, .99))
@@ -29,10 +29,10 @@ var rythm_guitar =
   .s("gm_distortion_guitar")
   .room(2).delay(.25)
 
-support_rythm_guitar: 
-rythm_guitar.transpose("-7")
-  .late(rand.range(.0125,.0075))
-  .pan(perlin.range(0,1).fast(2)).vel(.5)
+// support_rythm_guitar: 
+// rythm_guitar.transpose("-7")
+//   .late(rand.range(.0125,.0075))
+//   .pan(perlin.range(0,1).fast(2)).vel(.5)
 
 rythm_guitar: rythm_guitar  
   .lpf(saw.range(2200, 3000)) //remove effect drama
