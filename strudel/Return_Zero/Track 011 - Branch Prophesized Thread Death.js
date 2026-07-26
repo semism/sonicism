@@ -1,48 +1,74 @@
-samples('github:semism/smbreaks')
+setcpm(90/4)
 samples('github:semism/nibbles')
+var climb = "<0 3 5 7>"
+climb = "0"
+const pat = n(irand(12).seg(8).rib("<414 16>", 1).add(climb)).scale("a:minor");
 
-setCpm(170/4)
+guitar: pat.s("gm_distortion_guitar")
+  .decay(.4).lpf(400).lpq(12).lpenv(2)
+  .pan(1)
+  .ply("<2 1 2 4>")
 
-rrxova: s("numbers:3").fit() //nibble/4
-  .scrub(irand(8).div(8).seg("<4>").rib(1, 4)).clip(irand(10).div(10).rib(2, 2))
-  // .scrub("<.25 -!3>") //uneurrx.75  kjorrug.25 meprukatastrof.5 "<.75 .25 .37 .5>"
-  .jux(rev)
-  // .pan(0)
-  .distort("2.2:.7").lpf(2000)
-  .almostNever(ply("2 | 4")).color("yellow")
+radio: pat.s("square")
+  .decay(.2)
+  .ply(2).pan(0)
+  .fm(sine.range(8, 32).slow(4)).vel(.5)
 
-kick: s("sbd!4").duck(2)
-snare: s("sd!2")
+kick: s("bd:2 - [bd!2] -").bank("dr550").room(.2).vel(rand.range(.3, .4))
+snare: s("- sd - sd").vel(rand.range(.58, .99))
+  .every(4, x=>x.ply(2))
+  .every(8, x=>x.ply(4))
+hh: s("<oh hh>!16")
+  .bank("dr550").vel(rand.range(.058, .199)).pan(.2)
 
-bass: n(irand(12).seg(4).rib(93, 4).add(-14)) 
-  .scale("f:minor").orbit(2).release(1)
-  .s("saw").delay(".2 .5 .1").decay(.4)
-  ._pianoroll()
 
-acid: n(irand(12).seg(16).rib(93, 4).add(-7)) 
-  .scale("f:minor")
-  .s("sawtooth").lpf(300).room(1).roomsize(5)
-  .lpenv(itri.range(0, 2).pow(2).slow(4))
-  .lpq(15)
+vox: s("nibble/2").fit() //remove /2
+  // .fast(2)
+  // .slow(2)
+  .distort("3:.2")
+  // .jux(rev)
 
-amen: n("<4!3 1>/2").s("breaks/2").fit()
-  .scrub(irand(16).div(16).seg(8).rib(1, 2))
-  .almostNever(ply("2 | 4"))
+vox2: s("numbers:7").fit().scrub("0.25!4").delay(.75)
 
-mjau: n(irand(12).seg(16).rib(93, 4))
-  .scale("f:minor")
-  .decay(.4).attack(.08)
-  .s("sawtooth").lpf(300).room(1).roomsize(5)
-  .lpenv(itri.range(0, 2).pow(2).slow(4))
-  .lpq(15)
 
-kumpiter: n(irand(12).seg("16, 8").rib(93, 4))
-  .scale("f5:minor").s("gm_distortion_guitar, supersaw")
-  .delay(".5")
-  .clip(.5)
-  .fm(itri.range(0, 4).slow(4)).fmh(itri.range(0, 4).slow(4))
-  .gain(.4)
-  .color("green")._pianoroll()
+var rythm_guitar =
+  chord("<Am Cm>").voicing()
+  .transpose("-14")
+  .s("gm_distortion_guitar")
+  .room(2).delay(.25)
+
+// support_rythm_guitar: 
+// rythm_guitar.transpose("-7").every(2, x=>silence)
+//   .late(rand.range(.0125,.0075))
+//   .pan(perlin.range(0,1).fast(2)).vel(.5)
+
+rythm_guitar: rythm_guitar  
+  .lpf(saw.range(2200, 3000)) //remove effect drama
+  .late(rand.range(0,.0075))
+  .jux(rev) //onoff
+  .ply(16) //ply to strum
+
+
+var arp = n("<0 3 5 7>*16").scale("<a2:minor c:minor>")
+
+const lead_guitar =  arp.s("saw").attack(.1).decay(.2).distort("3:.1")
+
+lead_left: lead_guitar.transpose(-7).pan(0).vel(sine.range(1, .8))
+  .lpf(sine.range(1600,300).slow(4)).lpq(22).lpenv(2)
+
+lead_right: lead_guitar.pan(1).vel(sine.range(.8, 1))
+  .lpf(sine.range(2200,500).slow(2)).lpq(5).lpenv(3)
+
+bass: pat
+  .transpose(-28).s("saw").lpf(300).att(0)
+  .distort("2:.3")
+
+
+
+
+
+
+
 
 
 
