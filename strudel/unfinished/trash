@@ -1,0 +1,41 @@
+
+samples('github:semism/smbreaks')
+
+
+setcpm(110/4)
+
+const scale = "<a:minor g:major g:minor f:minor>"
+
+pedal_guitar:
+  n("<[0, 3 ,5] [- 5 [- 2] -]>").scale(scale)
+ .s("supersaw")
+ .delay(.5).transpose("<-15 -14>")
+ .velocity(.35)
+ .attack(.2)
+
+synth:
+ n(irand(12).seg(8).rib(5000, 2))
+  .scale(scale).transpose(7)
+  .s("gm_kalimba")
+  .pan(perlin.range(0, 1).fast(2))
+  .decay(.3).delay(.25)
+  .velocity(rand.range(.5, .8))
+
+bass:
+ n("0 0? 0 - 0 - 0 0").fast(4).slow(2)
+  .scale(scale).distort("2.5:.45")
+  .s("sine").transpose(-14)
+  .decay(.8)
+  .velocity(rand.range(.4, 1))
+  .lpf(200)
+  .room(.2)
+
+amen: s("<breaks:3/2 >").fit()
+  .scrub(irand(16).div(16).seg(8).rib("<2048 16>", 1))
+
+
+
+
+
+
+
