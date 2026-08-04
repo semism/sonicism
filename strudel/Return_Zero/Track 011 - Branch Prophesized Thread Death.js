@@ -1,5 +1,8 @@
 setCpm(170/4)
 
+samples('github:semism/smbreaks')
+samples('github:semism/nibbles')
+
 rrxova: s("numbers:3").fit() //nibble/4
   .scrub(irand(8).div(8).seg("<4>").rib(1, 4)).clip(irand(10).div(10).rib(2, 2))
   // .scrub("<.25 -!3>") //uneurrx.75  kjorrug.25 meprukatastrof.5 "<.75 .25 .37 .5>"
