@@ -46,10 +46,15 @@ snare: s("- sd:1 - sd:1").vel(rand.range(.2, .9))
 snare_ghost: s("- pink - pink").clip(.12)
 perc_saw: n("0 - 0 -".fast(8).late("<.25 .125>")).scale(scale).s("saw")
   .clip(.5).lpf(600).lpq(12).delay(.25).att(.1).distort("2:.2")
+
+squeaky_org:
+n("<- 0>").scale(scale).s("gm_voice_oohs").speed(-1).transpose(7)
+  .clip(.5).lpf(800).lpq(20).lpenv(2).clip(.025).distort("8:.2")
+
 rim: s("- <spacedrum_rim [yamahary30_rim:1!2]>".late(.125))
     .velocity(rand.range(.2, 1).fast(2))
 
-dek: s("nibble/2?").fit()
+dek: s("nibble/2").fit()
   .scrub("- .44 - .44").clip(.4)
   .lpf(3200).lpq(12)
 
