@@ -21,7 +21,7 @@ sand:
  .pan(sine.slow(4))
 
 xylo:
- n(irand(12).seg(8).rib(5000, 2))
+ n(irand(12).seg(8).rib(488, 2))
   .scale(scale).transpose(7)
   .s("gm_kalimba")
   .pan(perlin.range(0, 1).fast(2))
