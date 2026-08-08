@@ -12,7 +12,7 @@ kick: s("sbd!4").duck("2").duckatt(".2")
 // snare_ghost: s("- pink - pink").clip(.12)
 // perc_saw: n("0 - 0 -".fast(8).late("<.25 .125>")).scale(scale).s("saw")
 //   .clip(.5).lpf(600).lpq(12).delay(.25).att(.1).distort("2:.2")
-// ohat: s("- oh - oh - oh - oh").vel(rand.range(.85, .9))
+// ohat: s("- oh - oh - oh - oh").vel(rand.range(.45, .55))
 
 // squeaky_org:
 // n("<- 0>").scale(scale).s("gm_voice_oohs").speed(-1).transpose(7)
@@ -36,19 +36,19 @@ reed_bass:
   .s("gm_reed_organ")
   .decay(.3).delay(.25)
 
-_xylo:
- n(irand(12).seg(8).rib(488, 1))
-  .mask("<0 [0 1]>")
-  .scale(scale).transpose("<7 14!3>")
-  .s("gm_kalimba, gm_xylophone")
-  .pan(perlin.range(0, 1).fast(2))
-  .decay(.3).delay(.25)
-  .velocity(rand.range(.7, .9)).fm(32).fmh(4)
+// pulse:
+//  n(irand(12).seg(8).rib(488, 1))
+//   .mask("<0 [0 1]>")
+//   .scale(scale).transpose("<7 14!3>")
+//   .s("pulse")
+//   .pan(perlin.range(0, 1).fast(2))
+//   .decay(.3).delay(.25)
+//   .velocity(rand.range(.7, .9)).fm(32).fmh(4)
 
 
 // sand:
 //   n(irand(16).seg(16).rib("488", 2)).scale(scale)
-//  .orbit(2)
+//  // .orbit(2)
 //  .s("supersaw")
 //  .transpose(-14)   
 //  .delay(.5)
@@ -67,6 +67,6 @@ _xylo:
 //   .delay(.125).velocity(rand.range(.7,1))
 
 
-// // dek: s("nibble/2").fit()
-// //   .scrub("- .44 - .44").clip(.4)
-// //   .lpf(3200).lpq(12)
+// dek: s("nibble/2").fit()
+//   .scrub("- .44 - .44").clip(.4)
+//   .lpf(3200).lpq(12)
