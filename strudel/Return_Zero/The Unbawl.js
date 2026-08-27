@@ -32,7 +32,7 @@ bass: n(irand(10).seg("8")).s("saw, gm_voice_oohs")
   .room(.2)
   .orbit(4)
 
-treb: n(irand(10).seg(4)).s("saw, gm_voice_oohs").gain(.32)
+treb: n(irand(10).seg(8)).s("saw, gm_voice_oohs").gain(.32)
   .rib("<14 24>", 2)
   .scale("a3:minor")
   .late(.25)
