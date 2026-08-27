@@ -13,7 +13,7 @@ hat: s("[- white]!4").gain(.6)
 
 vox: s("numbers:7").scrub(".2 .2 .25 .15")
   .velocity(rand.range(.7,1))
-  .coarse("<1 2 4 8 16 32 1>")
+  .coarse("<1 2 4 8 16 8 1>")
 
 sub: n(irand(10).seg("4"))
   .rib("<14 24>", 2)
