@@ -17,8 +17,9 @@ vox: s("numbers:7").scrub(".2 .2 .25 .15")
 
 sub: n(irand(10).seg("4"))
   .rib("<14 24>", 2)
-  .s("supersaw")
-  .scale("a0:minor").s("tri, pulse").orbit(5)
+  .s("supersaw").unison(22)
+  .scale("a0:minor").stack(s("sine!4"))
+  .orbit(5)
 
 bass: n(irand(10).seg("8")).s("saw, gm_voice_oohs")
   .rib("<14 24>", 2)
