@@ -51,4 +51,8 @@ bass: n(irand(10).seg("8")).s("saw, gm_voice_oohs")
 //   .lpf(7500)
 //   .orbit(4)
 
+amen: s("breaks:4/2").fit()
+  .scrub(irand(16).div(16).seg(8).rib(1, 2))
+  .almostNever(ply("2 | 4"))
+
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
