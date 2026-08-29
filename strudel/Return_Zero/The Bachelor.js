@@ -5,7 +5,7 @@ samples('github:semism/nibbles')
 kick: s("sbd bd sbd bd").distort("1:.7").duck("2:3:.15:4")
   ._scope()
 
-snare: s("- sd - sd")
+snare: s("- sd:4 - sd:1").bank("tr707").delay(.2)
 shak: s("tambourine")
   .struct("x x - x x - - x").delay(.25)
   .velocity(rand.range(1, 2))
