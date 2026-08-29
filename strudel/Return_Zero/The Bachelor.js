@@ -34,10 +34,10 @@ sub: n("0!8")
 
 beqo:
 s("beqar/8").fit()
-// .scrub("0.75!4")
+// .scrub("<0 .75 .5 .25>")
 .gain(1.7)
 .room(.2).size(5)
-.orbit(3)
+// .orbit(3)
 
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
