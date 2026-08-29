@@ -36,7 +36,7 @@ bass2: n("0 - 0 0 1 0 0 -").s("supersaw")
   .scale("<f#:minor!7 a:major>")
   .scaleTrans(-7)
   .lpf(800)
-  .lpenv(3).lpq(12)
+  // .lpenv(3).lpq(12)
   .decay(.4)
   .distort("3:.5")
   .unison(22)
@@ -45,10 +45,10 @@ bass2: n("0 - 0 0 1 0 0 -").s("supersaw")
 
 beqo:
 s("beqar/8").fit()
-// .scrub("<0 .75 .5 .25>")
+.scrub("<0 .75 .5 .25>")
 .gain(1.7)
 .room(.2).size(5)
-// .orbit(3)
+.orbit(3)
 
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
