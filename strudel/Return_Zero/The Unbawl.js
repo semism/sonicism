@@ -3,7 +3,7 @@ setCps(120/60/4)
 kick: s("sbd bd sbd bd").distort("1:.7").duck("2:3:4:5").duckattack(.2).duckdepth(.8)
   ._scope()
 snare: s("- sd - sd")
-shak: s("tambourine - tambourine -").delay(.1).vel(rand.range(4, 5))
+shak: shak: s("tambourine").struct("x x - x x - - x").delay(.1).vel(rand.range(4, 5))
 
 
 hat: s("[- white]!4").gain(.6)
