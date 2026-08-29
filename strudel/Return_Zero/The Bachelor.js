@@ -2,7 +2,7 @@ setCps(144/60/4)
 
 samples('github:semism/nibbles')
 
-kick: s("sbd bd sbd bd").distort("1:.7").duck("2:3:4")
+kick: s("sbd bd sbd bd").distort("1:.7").duck("2:3:.15:4")
   ._scope()
 
 snare: s("- sd - sd")
@@ -43,9 +43,9 @@ bass2: n("0 - 0 0 1 0 0 -").s("supersaw")
   .room(.2)
   .orbit(4)
 
-beqo_vox_chops:
-s("beqar:1/8").fit()
-.scrub("<<0 .12 .5 .62> -!3>").delay(.1)
+// beqo_vox_chops:
+// s("beqar:1/8").fit()
+// .scrub("<<0 .12 .5 .62> -!3>").delay(.1)
 
 beqo: s("beqar/8").fit()
 .gain(1.4)
