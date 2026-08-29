@@ -1,4 +1,5 @@
 setCps(120/60/4)
+samples('github:semism/smbreaks')
 
 kick: s("sbd bd sbd bd").distort("1:.7").duck("2:3:4:5").duckattack(.2).duckdepth(.8)
   ._scope()
