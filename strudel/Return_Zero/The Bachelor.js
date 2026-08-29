@@ -53,9 +53,11 @@ beqo: s("beqar/8").fit()
 beqo_vox:
 s("beqar:1/8").fit()
 // .scrub("<<0 .12 .5 .62> -!3>")
-.scrub("<0@2 .25!2 .5! .62@2>".fast(2))
+// .scrub("<0@2 .25!2 .5! .62@2>".fast(2))
+.lpf(900)
 .delay(.1)
 .gain(1.7)
 .orbit(3)
+._scope()
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
