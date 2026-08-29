@@ -43,21 +43,19 @@ bass2: n("0 - 0 0 1 0 0 -").s("supersaw")
   .room(.2)
   .orbit(4)
 
-beqo_vox_chops:
-s("beqar:1/8").fit()
-.scrub("<<0 .12 .5 .62> -!3>").delay(.1)
-
-// beqo:
-// s("beqar/8").fit()
-// // .scrub("<0 .75 .5 .25>")
-// .gain(1.4)
-// .room(.2).size(5)
-// .orbit(3)
-
-// beqo_vox:
+// beqo_vox_chops:
 // s("beqar:1/8").fit()
-// // .scrub("<0 ->")
-// .gain(1.7)
-// .orbit(3)
+// .scrub("<<0 .12 .5 .62> -!3>").delay(.1)
+
+beqo:
+s("beqar/8").fit()
+.scrub("<0 .75 .5 .25>")
+.gain(1.4)
+.orbit(3)
+
+beqo_vox:
+s("beqar:1/8").fit()
+.gain(1.7)
+.orbit(3)
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
