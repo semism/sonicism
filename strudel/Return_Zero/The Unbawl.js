@@ -1,6 +1,9 @@
 setCps(120/60/4)
 samples('github:semism/smbreaks')
 
+amen: s("breaks:4/2").fit()
+  .scrub(irand(16).div(16).seg(8).rib(1, 2))
+  .almostNever(ply("2 | 4"))
 kick: s("sbd bd sbd bd").distort("1:.7").duck("2:3:4:5").duckattack(.2).duckdepth(.8)
   ._scope()
 tom: s("{- <mt!3 lt>}!4").late(.25).coarse(8)
@@ -52,8 +55,6 @@ bass: n(irand(10).seg("8")).s("saw, gm_voice_oohs")
 //   .lpf(7500)
 //   .orbit(4)
 
-amen: s("breaks:4/2").fit()
-  .scrub(irand(16).div(16).seg(8).rib(1, 2))
-  .almostNever(ply("2 | 4"))
+
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
