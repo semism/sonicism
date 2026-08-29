@@ -43,13 +43,11 @@ bass2: n("0 - 0 0 1 0 0 -").s("supersaw")
   .room(.2)
   .orbit(4)
 
-// beqo_vox_chops:
-// s("beqar:1/8").fit()
-// .scrub("<<0 .12 .5 .62> -!3>").delay(.1)
+beqo_vox_chops:
+s("beqar:1/8").fit()
+.scrub("<<0 .12 .5 .62> -!3>").delay(.1)
 
-beqo:
-s("beqar/8").fit()
-.scrub("<0 .75 .5 .25>")
+beqo: s("beqar/8").fit()
 .gain(1.4)
 .orbit(3)
 
