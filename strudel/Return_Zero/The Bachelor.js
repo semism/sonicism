@@ -47,7 +47,6 @@ bass2: n("0 - 0 0 1 0 0 -").s("supersaw")
 // s("beqar:1/8").fit()
 // .scrub("<<0 .12> -!3>")
 // .jux(rev)
-// .room(.2).size(5)
 
 // beqo:
 // s("beqar/8").fit()
@@ -60,7 +59,6 @@ bass2: n("0 - 0 0 1 0 0 -").s("supersaw")
 // s("beqar:1/8").fit()
 // // .scrub("<0 ->")
 // .gain(1.7)
-// .room(.2).size(5)
 // .orbit(3)
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
