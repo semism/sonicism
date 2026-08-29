@@ -50,5 +50,11 @@ s("beqar/8").fit()
 .room(.2).size(5)
 .orbit(3)
 
+beqo_vox:
+s("beqar:1/8").fit()
+.scrub("<0 ->")
+.gain(1.7).jux(rev)
+.room(.2).size(5)
+.orbit(3)
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
