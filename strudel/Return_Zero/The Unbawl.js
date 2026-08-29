@@ -3,7 +3,8 @@ samples('github:semism/smbreaks')
 
 amen: s("breaks:4/2").fit()
   .scrub(irand(16).div(16).seg(8).rib(1, 2))
-  .almostNever(ply("2 | 4"))
+  .almostNever(ply("2 | 4")).delay(.25).velocity(.65)
+
 kick: s("sbd bd sbd bd").distort("1:.7").duck("2:3:4:5").duckattack(.2).duckdepth(.8)
   ._scope()
 tom: s("{- <mt!3 lt>}!4").late(.25).coarse(8)
