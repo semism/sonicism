@@ -38,7 +38,7 @@ beep: n("-!7 0").s("supersaw")
   .lpf(3000)
   .lpenv(2).lpq(12)
   .decay(.4)
-  .distort("3:.4")
+  .distort("3:.3")
   .unison(22)
 
 bass2: n("0 - 0 0 1 0 0 -").s("supersaw")
