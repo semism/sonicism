@@ -2,7 +2,7 @@ setCps(144/60/4)
 
 samples('github:semism/nibbles')
 
-_kick: s("sbd bd sbd bd").distort("1:.7").duck("3:4")
+kick: s("sbd bd sbd bd").distort("1:.7").duck("3:4")
   ._scope()
 
 snare: s("- sd:4 - sd:1").bank("tr707").delay(.2)
