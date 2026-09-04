@@ -63,13 +63,11 @@ beqo: s("beqar/8").fit()
 // .scrub("<0 -!3>")
 .attack(.2)
 // .scrub("<0@2 .25!2 .5! .62@2>".fast(2))  
-.gain(1.4)
 .orbit(3)
 
 beqo_vox:
 s("beqar:1/8").fit()
 // .scrub("<<0 .12 .5 .62> -!3>")
-// .scrub("<0@2 .25!2 .5! .62@2>".fast(2))
 // .hpf(1400)
 .lpf(1200)
 .delay(.1)
