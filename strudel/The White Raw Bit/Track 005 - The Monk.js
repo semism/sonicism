@@ -1,4 +1,4 @@
-tCps(105/60/4)
+setCps(105/60/4)
 samples('github:semism/smbreaks')
 
 amen: s("breaks:3/2").fit()
@@ -26,16 +26,17 @@ var prog2 = "<e:pentatonic!2 e:phrygian ->";
 
 var seq = arrange([32, prog0],[16, prog1], [8, prog2])
 
+var hornpat = "- - 0 0 - <- 0 - -> - <- -1 - ->".add("<0 2 -1 4>");
 
 monk:  n("[- 0]!8".add(-14).slow(2))
   .scale("d:minor").s("supersaw")
-  .hold(1)
+  .decay(.4)
   .delay(.5)
   .vowel("<a e oe a>").gain(8)
   .orbit(3)
 
-monk2:  n("- - 0 0 - - - -").delay(.25).rel(.2).att(.15)
-  .s("supersaw").scale(seq)
+monk2:  n(hornpat).delay(.25).rel(.2).att(.15)
+  .s("supersaw").scale("d:minor")
   .unison(22).room(3).detune(sine.range(0.5, 2).fast(2))
   .orbit(2)
 
@@ -49,7 +50,7 @@ sub: n("0 -12 0 0 0 0 -12 0".transpose(-14))
 .scope()
 
 
-treb: n("0 - 0 2 0 0 - 0".transpose(7)).fast(2)
+treb: n("0 - 0 2 0 0 - 0".transpose(7)).fast(1)
   .s("saw")
   .scale(seq)
   .lpf(sine.range(1200, 2600).fast(8)).lpa(1).lpr(0)
@@ -58,3 +59,6 @@ treb: n("0 - 0 2 0 0 - 0".transpose(7)).fast(2)
   .orbit(5)
 ._pianoroll()
 
+
+
+all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
