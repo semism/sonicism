@@ -24,7 +24,10 @@ var prog0 = "<d:minor!2 [c:major d:minor]!2>";
 var prog1 = "<a:minor c:major a:minor c:major d:major e:minor f:minor d:major>";
 var prog2 = "<e:pentatonic!2 e:phrygian ->";
 
-var seq = arrange([32, prog0],[16, prog1], [8, prog2])
+var seq = arrange([32, prog0],
+                  // [16, prog1], 
+                  // [8, prog2]
+                 )
 
 var hornpat = "- - 0 0 - <- 0 - -> - <- -1 - ->".add("<0 2 -1 4>");
 
@@ -50,7 +53,7 @@ sub: n("0 -12 0 0 0 0 -12 0".transpose(-14))
 .scope()
 
 
-treb: n("0 - 0 2 0 0 - 0".transpose(7)).fast(1)
+treb: n("0 - 0 2 0 0 - 0".transpose(7)).fast(2)
   .s("saw")
   .scale(seq)
   .lpf(sine.range(1200, 2600).fast(8)).lpa(1).lpr(0)
