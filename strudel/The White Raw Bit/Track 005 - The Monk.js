@@ -70,3 +70,4 @@ treb: n("0 - 0 2 0 0 - 0".transpose(7)).fast(2)
 
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
+all(x=>x.whenKey("Control:o", x=>x.hpf(sine.range(500, 1400).mul(2).slow(4))))
