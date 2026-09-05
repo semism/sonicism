@@ -31,6 +31,10 @@ var seq = arrange([32, prog0],
 
 var hornpat = "- - 0 0 - <- 0 - -> - <- -1 - ->".add("<0 2 -1 4>");
 
+delta: n(hornpat.add(14)).s("triangle")
+  .decay(0.5).late(.25)
+  .scale(seq).room(1).size(10)
+
 monk:  n("[- 0]!8".add(-14).slow(2))
   .scale("d:minor").s("supersaw")
   .decay(.4)
