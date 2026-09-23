@@ -39,7 +39,7 @@ rythm_guitar: rythm_guitar
   .ply(16) //ply to strum
 
 
-var arp = n("<0 3 5 7>*16").scale("<a2:minor c:minor>")
+var arp = n("0 3 5 7 0 0 3 0 5 _ 2 3 1 _ 1 3").scale("<a2:minor c:minor>")
 
 const lead_guitar =  arp.s("saw").attack(.1).decay(.2).distort("3:.1")
 
