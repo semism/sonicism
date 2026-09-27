@@ -27,13 +27,13 @@ var rythm_guitar =
   .s("gm_distortion_guitar")
   .room(2).delay(.25)
 
-// support_rythm_guitar: 
-// rythm_guitar.transpose("-7").every(2, x=>silence)
-//   .late(rand.range(.0125,.0075))
-//   .pan(perlin.range(0,1).fast(2)).vel(.5)
+support_rythm_guitar: 
+rythm_guitar.transpose("-7").every(2, x=>silence)
+  .late(rand.range(.0125,.0075))
+  .pan(perlin.range(0,1).fast(2)).vel(.5)
 
 rythm_guitar: rythm_guitar  
-  .lpf(saw.range(2200, 3000)) //remove effect drama
+  .lpf(saw.range(1500, 2000)) //remove effect drama
   .late(rand.range(0,.0075))
   .jux(rev) //onoff
   .ply(16) //ply to strum
@@ -52,7 +52,6 @@ lead_right: lead_guitar.pan(1).vel(sine.range(.8, 1))
 bass: pat
   .transpose(-28).s("saw").lpf(300).att(0)
   .distort("2:.3")
-
 
 
 
