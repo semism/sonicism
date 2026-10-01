@@ -46,24 +46,24 @@ ohat: s("oh").bank("rm50")
           >*8`)
 
 var bassPat = `<
-          -7@8
-          -5@3 -1 -7@4
-          -7@8
-          -4@3 -5 -7@2 -14@2
+          0@8
+          2@3 6 0@4
+          0@8
+          3@3 2 0@2 -7@2
           >*8`;
 
-bass_line: n(bassPat.trans("-7")).scale("g#:major")
+bass_line: n(bassPat.trans("-14")).scale("g#:major")
           .s("wt_digital").n(2)
           .compressor(-20)
           .lpf(800)
           .lfo({da:2500, s:3, rt:1}).lpe(3).lpd(.7)
           .unison(3).detune(.1)
-          .fm(4).fmdec(wchoose([".5",2],["1",1]))
+          .fm(4).fmdec(.5)
           .set.mix(vel("1@2 1 .5 .7 0.9@2 .4"))
 
-sub: n(bassPat.trans(-7))
+sub: n(bassPat.trans(-14))
   .scale("g#:minor").s("wt_digital").n(3)
-  .unison(3)
+  .unison(3).o(4)
   .lpf(100).lfo({da:500, s:3, rt:1}).lpe(2).lpd(.7).soft(.4)
 
 horn: n(`<
