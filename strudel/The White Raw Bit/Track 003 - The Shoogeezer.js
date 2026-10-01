@@ -18,10 +18,10 @@ var arp = n("0 3 5 7 0 0 3 0 5 _ 2 3 1 _ 1 3").scale("<a2:minor c:minor>")
 const lead_guitar =  arp.s("saw").attack(.1).decay(.2).distort("3:.1")
 
 lead_left: lead_guitar.transpose(-7).pan(0).vel(sine.range(1, .8))
-  .lpf(sine.range(1600,300).slow(4)).lpq(22).lpenv(2)
+  .lpf(sine.range(1600,300).slow(4)).lfo().lpq(22).lpenv(2)
 
 lead_right: lead_guitar.pan(1).vel(sine.range(.8, 1))
-  .lpf(sine.range(2200,500).slow(2)).lpq(5).lpenv(3)
+  .lpf(sine.range(2200,500).slow(2)).lfo().lpq(5).lpenv(3)
 
 bass: pat
   .transpose(-28).s("saw").lpf(300).att(0)
@@ -40,7 +40,8 @@ rythm_guitar.transpose("-7").every(2, x=>silence)
   .pan(perlin.range(0,1).fast(2)).vel(.5)
 
 rythm_guitar: rythm_guitar  
-  .lpf(saw.range(1500, 2000)) //remove effect drama
+  .lpf(saw.range(1500, 2000))
+  .lfo() //remove effect drama
   .late(rand.range(0,.0075))
   .jux(rev) //onoff
   .ply(16) //ply to strum
