@@ -5,8 +5,9 @@ climb = "0"
 const pat = n(irand(12).seg(8).rib("<414 16>", 1).add(climb)).scale("a:minor");
 
 
-kick: s("bd:2 - [bd!2] -").bank("dr550").room(.2).vel(rand.range(.3, .4))
-snare: s("- sd - sd").vel(rand.range(.58, .99))
+kick: s("bd:2 - [bd!2] -").bank("dr550").room(.2).vel(rand.range(.3, .4)).soft(.4)
+snare: s("- sd - sd").bank("dr550")
+  .vel(rand.range(.58, .99))
   .every(4, x=>x.ply(2))
   .every(8, x=>x.ply(4))
 hh: s("<oh hh>!16")
