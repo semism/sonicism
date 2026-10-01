@@ -92,14 +92,15 @@ bai: n(`<
 >*8`.add("<7!2 -!6 5!4 -!4>")).scale("g#:major").s("saw")
   .distort(5).ph("5").lfo()
   .jux(rev)
-  .lpf(120).lpenv(3).lpq(20).lpa("<.7!2 -!.6 .2!4 -!4>").postgain(.3)
+  .lpf(120).lpenv(3).lpq(20).lpa("<.7!2 -!.6 .2!4 -!4>").postgain(.1)
 
-lead: n(`<
-0!8
-3!8
-5!8
-0 1 0 3 4 5 8 2
-  >*8`.add("<7!8 5!8>")).scale("g#:major").s("saw")
-  .distort(5).ph("5").lfo()
-  .lpf(900).lpenv(3).lpq(20).lpa("<.7!4 .2!4 .9!4 .2!4>")
-  .postgain(.1)
+// lead: n(`<
+// 0!8
+// 3!8
+// 5!8
+// 0 1 0 3 4 5 8 2
+//   >*8`.add("<0!8 -2!8>")).scale("g#:major").s("saw")
+//   .distort(4)
+//   .room(.5)
+//   .lpf(900).lpenv(2).lpq(12).lfo().lpa("<.7!4 .2!4 .9!4 .2!4>")
+//   .postgain(.1)
