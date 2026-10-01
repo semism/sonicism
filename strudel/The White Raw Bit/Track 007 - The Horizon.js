@@ -5,11 +5,12 @@ climb = "0"
 
 var pat = n(irand(12).seg(8).rib("<414 16>", 1).add(climb)).scale("a:minor");
 
-// lead: pat
-//   .s("sine")
-//   .fm(2).fmdec(.4)
-//   .unison(3).detune(1).room(.5).delay(.5).delays(1/4)
-//   .set.mix(vel("<.2 .3 .2 .3 .4@2 .9@2>*8").fast(2))
+_lead: pat
+  .s("sine")
+  .fm(2).fmdec(.4)
+  .unison(3).detune(1).room(.5).delay(.5).delays(1/4)
+  .set.mix(vel("<.2 .3 .2 .3 .4@2 .9@2>*8").fast(2))
+  .pan(perlin.seed(4).range(.2, .9).rib(2048,"2"))
 
 kick: s("bd:2 - - <- bd> bd bd - -").bank("dr550").room(.2).vel(rand.range(.3, .4)).soft(1.5)
 snare: s("- sd - sd").bank("dr550")
@@ -38,7 +39,7 @@ riff_guitar:
         ))
   .scale("a:minor")
   .s("gm_distortion_guitar")
-  .lpf(1200)
+  .lpf(2200)
   .lfo()
   .late(rand.range(0,.0075))
   .delay(.25).delays(1/4)
