@@ -4,14 +4,15 @@ samples('github:semism/smbreaks')
 
 amen: s("breaks:4/2").fit()
   .scrub(irand(10).div(16).seg(8).rib("<2 144>", 1))
-  .almostNever(ply("2 | 4")).delay(.25).velocity(.65)
+  .almostNever(ply("2 | 4"))
+  .velocity(rand.seed(33).range(.2,.9).rib(12, 2))
 
 kick: s("bd").bank("tr909")
   .struct(`<
           - - 1 -
           1 - 1 -
           - 1 - 1
-          1 - 1 1
+          1 - 1 -
           >*8`).soft(.4)
 .duck(4).datt(.2)
 
@@ -27,7 +28,7 @@ snare: s("sd").bank("kr55")
           - - 1 -
           - - 1 -
           - - 1 -
-          1 - 1 1
+          - - 1 -
           >*8`)
 
 hat: s("hh").bank("spacedrum")
@@ -43,15 +44,6 @@ ohat: s("oh").bank("rm50")
           - - - 1
           - - - -
           >*8`)
- 
-buttons: n(`<
-          - - -7 -
-          - - -7 -
-          >*8`.early("<.25!8 .125!8 .25!8 .125!8>"))
-  .scale("g#:major")
-  .s("wt_digital")
-  .compressor(-20)
-
 
 var bassPat = `<
           -7@8
@@ -63,10 +55,10 @@ var bassPat = `<
 bass_line: n(bassPat.trans("-7")).scale("g#:major")
           .s("wt_digital").n(2)
           .compressor(-20)
-          .lpf(1200).o(4)
-          .lfo({da:2500, s:3, rt:1}).lpe(2).lpd(.7)
-          .unison(3).detune(.7)
-          .set.mix(vel("1@2 1 .5 .7 0.9@3".fast(2)))
+          .lpf(800).o(4)
+          .lfo({da:1500, s:3, rt:1}).lpe(3).lpd(.7)
+          .unison(3).detune(1)
+          .set.mix(vel("1@2 1 .5 .7 0.9@2 .4"))
 
 sub: n(bassPat.trans(-14))
   .scale("g#:minor").s("wt_digital").n(3)
@@ -94,13 +86,13 @@ bai: n(`<
   .jux(rev)
   .lpf(120).lpenv(3).lpq(20).lpa("<.7!2 -!.6 .2!4 -!4>").postgain(.1)
 
-// lead: n(`<
-// 0!8
-// 3!8
-// 5!8
-// 0 1 0 3 4 5 8 2
-//   >*8`.add("<0!8 -2!8>")).scale("g#:major").s("saw")
-//   .distort(4)
-//   .room(.5)
-//   .lpf(900).lpenv(2).lpq(12).lfo().lpa("<.7!4 .2!4 .9!4 .2!4>")
-//   .postgain(.1)
+lead: n(`<
+0!8
+5 3 5 4 - 2 5 -
+3 - 3!6
+0 1 0 3 4 5 8 2
+  >*8`.add("<0!8 -2!8>")).scale("g#:major").s("supersaw")
+  .unison(4)
+  .room(.5)
+  .lpf(900).lfo().lpenv(2).lpq(12)
+  .lpa(wchoose(["<.7!4 .2!4 .9!4 .2!4>",2], ["0",1]))
