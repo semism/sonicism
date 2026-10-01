@@ -23,13 +23,6 @@ oh: s("<oh>*4")
   .bank("dr550").vel(rand.seed(2).range(.1, .4)).pan(.8)
 
 
-bass: pat
-  .transpose(-28).s("saw")
-  .lpf(140).lpe(1).att(0)
-  .fm(4).fmdec(.1).fmh(2)
-  .unison(3).detune(1).room(.5).delay(.25).delays(1/4)
-
-
 bass: n("7!8").scale("a:minor")
   .transpose(-28).s("saw")
   .lpf(140).lpe(1).att(0)
@@ -67,6 +60,8 @@ bass: n("7!8").scale("a:minor")
 //   .jux(rev) //onoff
 //   // .ply(16) //ply to strum
 //   .delay(.25).delays(1/4)
+
+
 
 
 
