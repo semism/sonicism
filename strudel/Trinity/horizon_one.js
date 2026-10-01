@@ -98,18 +98,17 @@ phone_pluck: n(`<
   .fm(4).fmdec(.2).fmh(2)
   .compressor(-10).pan(perlin.seed(2).range(.2,.8).rib(4096, 4))
 
-lead: n(`<
-0!7 -
-5 3 5 4 - 2 5 -
-3 - 3!6
-0 1 0 3 4 5 8 2
-  >*8`.add(stack("<0!8 -2!8>",
-                 note("7").vel(rand.seed(2).range(.5, 1).rib(24, 2)))))
-  .scale("g#:major").s("supersaw")
-  .unison(4)
-  .room(.5).rel(.2)
-  .lpf(900).lfo().lpenv(2).lpq(12)
-  .lpa(wchoose(["<.7!4 .2!4 .9!4 .2!4>",2], ["0", 6]))
-  .pan(.6)
-
+// lead: n(`<
+// 0!7 -
+// 5 3 5 4 - 2 5 -
+// 3 - 3!6
+// 0 1 0 3 4 5 8 2
+//   >*8`.add(stack("<0!8 -2!8>",
+//                  note("7").vel(rand.seed(2).range(.5, 1).rib(24, 2)))))
+//   .scale("g#:major").s("supersaw")
+//   .unison(4)
+//   .room(.5).rel(.2)
+//   .lpf(900).lfo().lpenv(2).lpq(12)
+//   .lpa(wchoose(["<.7!4 .2!4 .9!4 .2!4>",2], ["0", 6]))
+//   .pan(.6)
 
