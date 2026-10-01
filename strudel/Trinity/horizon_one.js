@@ -84,15 +84,17 @@ bai: n(`<
 >*8`.add("<7!2 -!6 5!4 -!4>")).scale("g#:major").s("saw")
   .distort(5).ph("5").lfo()
   .jux(rev)
-  .lpf(120).lpenv(3).lpq(20).lpa("<.7!2 -!.6 .2!4 -!4>").postgain(.1)
+  .lpf(120).lpenv(3).lpq(20).lpa("<.7!2 -!.6 .2!4 -!4>").postgain(.2)
 
 lead: n(`<
 0!8
 5 3 5 4 - 2 5 -
 3 - 3!6
 0 1 0 3 4 5 8 2
-  >*8`.add("<0!8 -2!8>")).scale("g#:major").s("supersaw")
+  >*8`.add(stack("<0!8 -2!8>",
+                 note("7").vel(rand.seed(2).range(.5, 1).rib(24, 2)))))
+  .scale("g#:major").s("supersaw")
   .unison(4)
   .room(.5)
   .lpf(900).lfo().lpenv(2).lpq(12)
-  .lpa(wchoose(["<.7!4 .2!4 .9!4 .2!4>",2], ["0",1]))
+  .lpa(wchoose(["<.7!4 .2!4 .9!4 .2!4>",2], ["0", 6]))
