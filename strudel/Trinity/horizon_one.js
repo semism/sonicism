@@ -6,7 +6,7 @@ amen: s("breaks:4/2").fit()
   .scrub(irand(10).div(16).seg(8).rib("<2 144>", 1))
   .almostNever(ply("2 | 4")).delay(.25).velocity(.65)
 
-kick: s("bd").bank("rolandsh09")
+kick: s("bd").bank("tr909")
   .struct(`<
           - - 1 -
           1 - 1 -
@@ -52,29 +52,26 @@ buttons: n(`<
   .s("wt_digital")
   .compressor(-20)
 
-sub: n(`<
-0 - 0 -
-0 - - -
-0 - 0 -
-0@4
->*8`.trans("-21").add("<0 3 0 5>")).scale("g#:major")
-          .s("saw")
-          .compressor(-20)
-          .lpf(400).lpenv(3)
-          .room(1.4).size(10).soft(.4)
 
-bass_line: n(`<
+var bassPat = `<
           -7@8
           -5@3 -1 -7@4
           -7@8
           -4@3 -5 -7@2 -14@2
-          >*8`.trans("-7")).scale("g#:major")
+          >*8`;
+
+bass_line: n(bassPat.trans("-7")).scale("g#:major")
           .s("wt_digital").n(2)
           .compressor(-20)
-          .lpf(1200).lfo().lpenv(3)
-          .unison(3)
-          .room(.2).o(4)
-          // .set.mix(vel("1@2 1 .5 .7 0.9@3".fast(2)))
+          .lpf(1200).o(4)
+          .lfo({da:2500, s:3, rt:1}).lpe(2).lpd(.7)
+          .unison(3).detune(.7)
+          .set.mix(vel("1@2 1 .5 .7 0.9@3".fast(2)))
+
+sub: n(bassPat.trans(-14))
+  .scale("g#:minor").s("wt_digital").n(3)
+  .unison(3)
+  .lpf(100).lfo({da:500, s:3, rt:1}).lpe(2).lpd(.7).soft(.4)
 
 horn: n(`<
 -@56
