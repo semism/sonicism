@@ -46,6 +46,17 @@ buttons: n(`<
   .compressor(-20)
 
 
+sub: n(`<
+0 - 0 -
+0 - - -
+0 - 0 -
+0@4
+>*8`.trans("-14").add("<0 3 0 5>")).scale("g#:major")
+          .s("supersaw")
+          .compressor(-20)
+          .lpf(400).lfo().lpenv(3)
+          .room(1)
+
 bass_line: n(`<
           -7@8
           -5@3 -1 -7@4
