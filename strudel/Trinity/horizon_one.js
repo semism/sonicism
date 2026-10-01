@@ -4,7 +4,7 @@ samples('github:semism/smbreaks')
 
 amen: s("breaks:4/2").fit()
   .scrub(irand(10).div(16).seg(8).rib("<2 144>", 1))
-  .almostNever(ply("2 | 4"))
+  .ply("2")
   .velocity(rand.seed(33).range(.2,.9).rib(12, 2))
 
 kick: s("bd").bank("tr909")
@@ -56,12 +56,12 @@ bass_line: n(bassPat.trans("-7")).scale("g#:major")
           .s("wt_digital").n(2)
           .compressor(-20)
           .lpf(800)
-          .lfo({da:1500, s:3, rt:1}).lpe(3).lpd(.7)
+          .lfo({da:2500, s:3, rt:1}).lpe(3).lpd(.7)
           .unison(3).detune(.1)
           .fm(4).fmdec(wchoose([".5",2],["1",1]))
           .set.mix(vel("1@2 1 .5 .7 0.9@2 .4"))
 
-sub: n(bassPat.trans(-14))
+sub: n(bassPat.trans(-7))
   .scale("g#:minor").s("wt_digital").n(3)
   .unison(3)
   .lpf(100).lfo({da:500, s:3, rt:1}).lpe(2).lpd(.7).soft(.4)
@@ -87,16 +87,16 @@ bai: n(`<
   .jux(rev)
   .lpf(120).lpenv(3).lpq(20).lpa("<.7!2 -!.6 .2!4 -!4>").postgain(.2)
 
-lead: n(`<
-0!7 -
-5 3 5 4 - 2 5 -
-3 - 3!6
-0 1 0 3 4 5 8 2
-  >*8`.add(stack("<0!8 -2!8>",
-                 note("7").vel(rand.seed(2).range(.5, 1).rib(24, 2)))))
-  .scale("g#:major").s("supersaw")
-  .unison(4)
-  .room(.5).rel(.2)
-  .lpf(900).lfo().lpenv(2).lpq(12)
-  .lpa(wchoose(["<.7!4 .2!4 .9!4 .2!4>",2], ["0", 6]))
-  .pan(.6)
+// lead: n(`<
+// 0!7 -
+// 5 3 5 4 - 2 5 -
+// 3 - 3!6
+// 0 1 0 3 4 5 8 2
+//   >*8`.add(stack("<0!8 -2!8>",
+//                  note("7").vel(rand.seed(2).range(.5, 1).rib(24, 2)))))
+//   .scale("g#:major").s("supersaw")
+//   .unison(4)
+//   .room(.5).rel(.2)
+//   .lpf(900).lfo().lpenv(2).lpq(12)
+//   .lpa(wchoose(["<.7!4 .2!4 .9!4 .2!4>",2], ["0", 6]))
+//   .pan(.6)
