@@ -2,7 +2,7 @@ setcpm(133/4)
 
 samples('github:semism/smbreaks')
 
-amen: s("breaks:4/2").fit()
+amen: s("breaks:3/2").fit()
   .scrub(irand(10).div(16).seg(8).rib("<2 144>", 1))
   .ply("2")
   .velocity(rand.seed(33).range(.2,.9).rib(12, 2))
