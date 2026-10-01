@@ -30,6 +30,20 @@ bass: n("7 7 7 7 7 7 [7 8] [7 7]").scale("a:minor")
   .fm(4).fmdec(.1).fmh(2)
   .unison(3).detune(1).room(.5).delay(.25).delays(1/4)
 
+riff_guitar:
+  n("<2 0 2 0 -2 0 2 0>*8")
+    .add(
+      stack(
+        note(-12.5),
+        ))
+  .scale("a:minor")
+  .s("gm_distortion_guitar")
+  .lpf(1200)
+  .lfo() //remove effect drama
+  .late(rand.range(0,.0075))
+  .delay(.25).delays(1/4)
+  .soft(.4)
+
 
 var arp = n("0 3 5 7 0 0 3 0 5 _ 2 3 1 _ 1 3").scale("<a2:minor c:minor>")
 
@@ -42,8 +56,9 @@ lead_right: lead_guitar.pan(1).vel(sine.range(.8, 1))
   .lpf(sine.range(2200,500).slow(2)).lfo().lpq(5).lpenv(3)
 
 
+
 var rythm_guitar =
-  chord("<Am Cm>").voicing()
+  chord("<Am>").voicing()
   .transpose("-14")
   .s("gm_distortion_guitar")
   .room(2).delay(.25)
@@ -61,19 +76,6 @@ rythm_guitar: rythm_guitar
   .ply(16) //ply to strum
   .delay(.25).delays(1/4)
 
-
-riff_guitar:
-  n("<2 0 2 0 -2 0 2 0>*8")
-    .add(
-      stack(
-        note(-12.5),
-        ))
-  .scale("a:minor")
-  .s("gm_distortion_guitar")
-  .lpf(1200)
-  .lfo() //remove effect drama
-  .late(rand.range(0,.0075))
-  .delay(.25).delays(1/4)
 
 
 
