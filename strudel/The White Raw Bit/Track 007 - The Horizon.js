@@ -5,11 +5,11 @@ climb = "0"
 
 var pat = n(irand(12).seg(8).rib("<414 16>", 1).add(climb)).scale("a:minor");
 
-lead: pat
-  .s("sine")
-  .fm(2).fmdec(.4)
-  .unison(3).detune(1).room(.5).delay(.5).delays(1/4)
-  .set.mix(vel("<.2 .3 .2 .3 .4@2 .9@2>*8").fast(2))
+// lead: pat
+//   .s("sine")
+//   .fm(2).fmdec(.4)
+//   .unison(3).detune(1).room(.5).delay(.5).delays(1/4)
+//   .set.mix(vel("<.2 .3 .2 .3 .4@2 .9@2>*8").fast(2))
 
 kick: s("bd:2 - - <- bd> bd bd - -").bank("dr550").room(.2).vel(rand.range(.3, .4)).soft(1.5)
 snare: s("- sd - sd").bank("dr550")
@@ -42,25 +42,38 @@ lead_right: lead_guitar.pan(1).vel(sine.range(.8, 1))
   .lpf(sine.range(2200,500).slow(2)).lfo().lpq(5).lpenv(3)
 
 
-// var rythm_guitar =
-//   chord("<Am Cm>").voicing()
-//   .transpose("-14")
-//   .s("gm_distortion_guitar")
-//   .room(2).delay(.25)
+var rythm_guitar =
+  chord("<Am Cm>").voicing()
+  .transpose("-14")
+  .s("gm_distortion_guitar")
+  .room(2).delay(.25)
 
-// support_rythm_guitar: 
-// rythm_guitar.transpose("-7").every(2, x=>silence)
-//   .late(rand.range(.0125,.0075))
-//   .pan(perlin.range(0,1).fast(2)).vel(.5)
+support_rythm_guitar: 
+rythm_guitar.transpose("-7").every(2, x=>silence)
+  .late(rand.range(.0125,.0075))
+  .pan(perlin.range(0,1).fast(2)).vel(.5)
 
-// rythm_guitar: rythm_guitar  
-//   .lpf(saw.range(1500, 2000))
-//   .lfo() //remove effect drama
-//   .late(rand.range(0,.0075))
-//   .jux(rev) //onoff
-//   .ply(16) //ply to strum
-//   .delay(.25).delays(1/4)
+rythm_guitar: rythm_guitar  
+  .lpf(saw.range(1500, 2000))
+  .lfo() //remove effect drama
+  .late(rand.range(0,.0075))
+  .jux(rev) //onoff
+  .ply(16) //ply to strum
+  .delay(.25).delays(1/4)
 
+
+riff_guitar:
+  n("<2 0 2 0 -2 0 2 0>*8")
+    .add(
+      stack(
+        note(-12.5),
+        ))
+  .scale("a:minor")
+  .s("gm_distortion_guitar")
+  .lpf(1200)
+  .lfo() //remove effect drama
+  .late(rand.range(0,.0075))
+  .delay(.25).delays(1/4)
 
 
 
