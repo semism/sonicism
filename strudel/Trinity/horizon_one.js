@@ -88,7 +88,7 @@ bai: n(`<
   .lpf(120).lpenv(3).lpq(20).lpa("<.7!2 -!.6 .2!4 -!4>").postgain(.2)
 
 lead: n(`<
-0!8
+0!7 -
 5 3 5 4 - 2 5 -
 3 - 3!6
 0 1 0 3 4 5 8 2
@@ -96,6 +96,7 @@ lead: n(`<
                  note("7").vel(rand.seed(2).range(.5, 1).rib(24, 2)))))
   .scale("g#:major").s("supersaw")
   .unison(4)
-  .room(.5)
+  .room(.5).rel(.2)
   .lpf(900).lfo().lpenv(2).lpq(12)
   .lpa(wchoose(["<.7!4 .2!4 .9!4 .2!4>",2], ["0", 6]))
+  .pan(.6)
