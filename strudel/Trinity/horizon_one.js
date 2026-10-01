@@ -89,14 +89,15 @@ bai: n(`<
 
 
 phone_pluck: n(`<
+0 - 0 - 4 - 8 -
 -!7 0
 - - - - 4 - - 5
 3 - 3 -!5
-0 - 0 - 4 - 8 -
-  >*16`.add("<0!4 5!4>"))
+  >*16`.add("<0!2 3!2>"))
   .scale("g#:major").s("sine")
-  .fm(4).fmdec(.2).fmh(2)
+  .fm(4).fmdec(.2).fmh(1)
   .compressor(-10).pan(perlin.seed(2).range(.2,.8).rib(4096, 4))
+  .delay(1).ds(1/2)
 
 lead: n(`<
 0!7 -
