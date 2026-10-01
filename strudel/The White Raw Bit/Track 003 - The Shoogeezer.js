@@ -4,15 +4,6 @@ var climb = "<0 3 5 7>"
 climb = "0"
 const pat = n(irand(12).seg(8).rib("<414 16>", 1).add(climb)).scale("a:minor");
 
-guitar: pat.s("gm_distortion_guitar")
-  .decay(.4).lpf(400).lpq(12).lpenv(2)
-  .pan(1)
-  .ply("<2 1 2 4>")
-
-radio: pat.s("square")
-  .decay(.2)
-  .ply(2).pan(0)
-  .fm(sine.range(8, 32).slow(4)).vel(.5)
 
 kick: s("bd:2 - [bd!2] -").bank("dr550").room(.2).vel(rand.range(.3, .4))
 snare: s("- sd - sd").vel(rand.range(.58, .99))
@@ -20,23 +11,6 @@ snare: s("- sd - sd").vel(rand.range(.58, .99))
   .every(8, x=>x.ply(4))
 hh: s("<oh hh>!16")
   .bank("dr550").vel(rand.range(.058, .199)).pan(.2)
-
-var rythm_guitar =
-  chord("<Am Cm>").voicing()
-  .transpose("-14")
-  .s("gm_distortion_guitar")
-  .room(2).delay(.25)
-
-support_rythm_guitar: 
-rythm_guitar.transpose("-7").every(2, x=>silence)
-  .late(rand.range(.0125,.0075))
-  .pan(perlin.range(0,1).fast(2)).vel(.5)
-
-rythm_guitar: rythm_guitar  
-  .lpf(saw.range(1500, 2000)) //remove effect drama
-  .late(rand.range(0,.0075))
-  .jux(rev) //onoff
-  .ply(16) //ply to strum
 
 
 var arp = n("0 3 5 7 0 0 3 0 5 _ 2 3 1 _ 1 3").scale("<a2:minor c:minor>")
@@ -54,6 +28,22 @@ bass: pat
   .distort("2:.3")
 
 
+var rythm_guitar =
+  chord("<Am Cm>").voicing()
+  .transpose("-14")
+  .s("gm_distortion_guitar")
+  .room(2).delay(.25)
+
+support_rythm_guitar: 
+rythm_guitar.transpose("-7").every(2, x=>silence)
+  .late(rand.range(.0125,.0075))
+  .pan(perlin.range(0,1).fast(2)).vel(.5)
+
+rythm_guitar: rythm_guitar  
+  .lpf(saw.range(1500, 2000)) //remove effect drama
+  .late(rand.range(0,.0075))
+  .jux(rev) //onoff
+  .ply(16) //ply to strum
 
 
 
