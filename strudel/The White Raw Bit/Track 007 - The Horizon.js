@@ -9,9 +9,9 @@ amen: s("breaks:3/2").fit()
 
 kick: s("bd").bank("tr909")
   .struct(`<
-          - - 1 -
+          - 1 - 1
           1 - 1 -
-          - - 1 -
+          - 1 - 1
           1 - 1 -
           >*8`).soft(.4)
 .duck(4).datt(.2)
