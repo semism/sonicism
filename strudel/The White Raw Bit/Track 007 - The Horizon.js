@@ -74,26 +74,26 @@ sub: n(bassPat.trans(-14))
   .unison(3).o(4)
   .lpf(100).lfo({da:500, s:3, rt:1}).lpe(2).lpd(.7).soft(.4)
 
-// horn: n(`<
-// -@56
-// <0 1>@3 -2@5
-// >*8`.add(-7)).scale("g#:major").s("supersaw")
-//   .rel(.2)
-//   .room(1).lpf(1000)
+horn: n(`<
+-@56
+<0 1>@3 -2@5
+>*8`.add(-7)).scale("g#:major").s("supersaw")
+  .rel(.2)
+  .room(1).lpf(1000)
 
-// bai: n(`<
-// - - - 0
-// - 0 - 0
-// - - 1 -
-// 0 - - -
-// - - - 0
-// - 0 - 0
-// - - 1 -
-// 0 - - -
-// >*8`.add("<7!2 -!6 5!4 -!4>")).scale("g#:major").s("saw")
-//   .distort(5).ph("5").lfo()
-//   .jux(rev)
-//   .lpf(120).lpenv(3).lpq(20).lpa("<.7!2 -!.6 .2!4 -!4>").postgain(.1)
+bai: n(`<
+- - - 0
+- 0 - 0
+- - 1 -
+0 - - -
+- - - 0
+- 0 - 0
+- - 1 -
+0 - - -
+>*8`.add("<7!2 -!6 5!4 -!4>")).scale("g#:major").s("saw")
+  .distort(5).ph("5").lfo()
+  .jux(rev)
+  .lpf(120).lpenv(3).lpq(20).lpa("<.7!2 -!.6 .2!4 -!4>").postgain(.1)
 
 
 // phone_pluck: n(`<
@@ -107,16 +107,16 @@ sub: n(bassPat.trans(-14))
 //   .compressor(-10).pan(perlin.seed(2).range(.2,.8).rib(4096, 4))
 //   .delay(1).ds(1/2)
 
-// lead: n(`<
-// 0!7 -
-// 5 3 5 4 - 2 5 -
-// 3 - 3!6
-// 0 1 0 3 4 5 8 2
-//   >*8`.add(stack("<0!8 -2!8>",
-//                  note("7").vel(rand.seed(2).range(.5, 1).rib(24, 2)))))
-//   .scale("g#:major").s("pulse")
-//   .unison(4)
-//   .room(.5).rel(.2)
-//   .lpf(900).lfo().lpenv(2).lpq(12)
-//   .lpa(wchoose(["<.7!4 .2!4 .9!4 .2!4>",2], ["0", 6]))
-//   .pan(.6)
+lead: n(`<
+0!7 -
+5 3 5 4 - 2 5 -
+3 - 3!6
+0 1 0 3 4 5 8 2
+  >*8`.add(stack("<0!8 -2!8>".vel(.4),
+                 note("7").vel(rand.seed(2).range(.5, .7).rib(24, 2)))))
+  .scale("g#:major").s("pulse")
+  .unison(4)
+  .room(.5).rel(.2)
+  .lpf(900).lfo().lpenv(2).lpq(12)
+  .lpa(wchoose(["<.7!4 .2!4 .9!4 .2!4>",2], ["0", 6]))
+  .pan(.6)
