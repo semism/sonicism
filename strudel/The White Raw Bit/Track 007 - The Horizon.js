@@ -2,10 +2,10 @@ setcpm(133/4)
 
 samples('github:semism/smbreaks')
 
-// amen: s("breaks:3/2").fit()
-//   .scrub(irand(10).div(16).seg(8).rib("<2 144>", 1))
-//   .ply("2")
-//   .velocity(rand.seed(33).range(.2,.9).rib(12, 2))
+amen: s("breaks:3/2").fit()
+  .scrub(irand(10).div(16).seg(8).rib("<2 144>", 1))
+  .ply("2")
+  .velocity(rand.seed(33).range(.2,.9).rib(12, 2))
 
 kick: s("bd").bank("tr909")
   .struct(`<
@@ -34,9 +34,9 @@ snare: s("sd").bank("kr55")
 clap: s("cp").bank("rx21")
     .struct(`<
           - 1 - 1
-          - 1 - -
+          - - - -
           - 1 - 1
-          - 1 - -
+          - - - -
           >*8`)
 
 hat: s("hh").bank("spacedrum")
@@ -96,16 +96,16 @@ bai: n(`<
   .lpf(120).lpenv(3).lpq(20).lpa("<.7!2 -!.6 .2!4 -!4>").postgain(.1)
 
 
-// phone_pluck: n(`<
-// 0 - 0 - 4 - 8 -
-// -!7 0
-// - - - - 4 - - 5
-// 3 - 3 -!5
-//   >*16`.add("<0!2 3!2>"))
-//   .scale("g#:major").s("sine")
-//   .fm(4).fmdec(.2).fmh(1)
-//   .compressor(-10).pan(perlin.seed(2).range(.2,.8).rib(4096, 4))
-//   .delay(1).ds(1/2)
+phone_pluck: n(`<
+0 - 0 - 4 - 8 -
+-!7 0
+- - - - 4 - - 5
+3 - 3 -!5
+  >*16`.add("<0!2 3!2>"))
+  .scale("g#:major").s("sine")
+  .fm(4).fmdec(.2).fmh(1)
+  .compressor(-10).pan(perlin.seed(2).range(.2,.8).rib(4096, 4))
+  .delay(1).ds(1/2)
 
 // lead: n(`<
 // 0!7 -
