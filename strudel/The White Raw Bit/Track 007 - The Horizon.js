@@ -1,89 +1,114 @@
-setcpm(90/4)
+setcpm(133/4)
 
-var climb = "<0 3 5 7>"
-climb = "0"
+samples('github:semism/smbreaks')
 
-var pat = n(irand(12).seg(8).rib("<414 16>", 1).add(climb)).scale("a:minor");
+amen: s("breaks:3/2").fit()
+  .scrub(irand(10).div(16).seg(8).rib("<2 144>", 1))
+  .ply("2")
+  .velocity(rand.seed(33).range(.2,.9).rib(12, 2))
 
-_lead: pat
-  .s("sine")
-  .fm(2).fmdec(.4)
-  .unison(3).detune(1).room(.5).delay(.5).delays(1/4)
-  .set.mix(vel("<.2 .3 .2 .3 .4@2 .9@2>*8").fast(2))
-  .pan(perlin.seed(4).range(.2, .9).rib(2048,"2"))
-
-kick: s("bd:2 - - <- bd> bd bd - -").bank("dr550").room(.2).vel(rand.range(.3, .4)).soft(1.5)
-snare: s("- sd - sd").bank("dr550")
-  .vel(rand.range(.58, .99))
-  .every(4, x=>x.ply("1 2"))
-  .every(8, x=>x.ply("4 4"))
-
-hh: s("<hh>!8")
-  .bank("dr550").vel(rand.seed(12).range(.1, .5)).pan(.2)
-
-oh: s("<oh>*4")
-  .bank("dr550").vel(rand.seed(2).range(.1, .4)).pan(.8)
+kick: s("bd").bank("tr909")
+  .struct(`<
+          - - 1 -
+          1 - 1 -
+          - 1 - 1
+          1 - 1 -
+          >*8`).soft(.4)
+.duck(4).datt(.2)
 
 
-bass: n("7 7 7 7 7 7 [7 8] [7 7]").scale("a:minor")
-  .transpose(-28).s("saw")
-  .lpf(140).lpe(1).att(0)
-  .fm(4).fmdec(.1).fmh(2)
-  .unison(3).detune(1).room(.5).delay(.25).delays(1/4)
+rim: s("rim").bank("kr55")
+    .struct(`<
+          1 - 1 -
+          - - - -
+          >*8`)
 
-riff_guitar:
-  n("<2 0 2 0 -2 0 2 0>*8")
-    .add(
-      stack(
-        note(-12.5),
-        ))
-  .scale("a:minor")
-  .s("gm_distortion_guitar")
-  .lpf(2200)
-  .lfo()
-  .late(rand.range(0,.0075))
-  .delay(.25).delays(1/4)
-  .soft(.4)
+snare: s("sd").bank("kr55")
+    .struct(`<
+          - - 1 -
+          - - 1 -
+          - - 1 -
+          - - 1 -
+          >*8`)
+
+hat: s("hh").bank("spacedrum")
+    .struct(`<
+          1 1 1 -
+          - 1 1 1
+          >*8`)
+
+ohat: s("oh").bank("rm50")
+    .struct(`<
+          - - - 1
+          1 - - -
+          - - - 1
+          - - - -
+          >*8`)
+
+var bassPat = `<
+          0@8
+          2@3 6 0@4
+          0@8
+          3@3 2 0@2 -7@2
+          >*8`;
+
+bass_line: n(bassPat.trans("-14")).scale("g#:major")
+          .s("wt_digital").n(2)
+          .compressor(-20)
+          .lpf(800)
+          .lfo({da:2500, s:3, rt:1}).lpe(3).lpd(.7)
+          .unison(3).detune(.1)
+          .fm(4).fmdec(.5)
+          .set.mix(vel("1@2 1 .5 .7 0.9@2 .4"))
+
+sub: n(bassPat.trans(-14))
+  .scale("g#:minor").s("wt_digital").n(3)
+  .unison(3).o(4)
+  .lpf(100).lfo({da:500, s:3, rt:1}).lpe(2).lpd(.7).soft(.4)
+
+horn: n(`<
+-@56
+<0 1>@3 -2@5
+>*8`.add(-7)).scale("g#:major").s("supersaw")
+  .rel(.2)
+  .room(1).lpf(1000)
+
+bai: n(`<
+- - - 0
+- 0 - 0
+- - 1 -
+0 - - -
+- - - 0
+- 0 - 0
+- - 1 -
+0 - - -
+>*8`.add("<7!2 -!6 5!4 -!4>")).scale("g#:major").s("saw")
+  .distort(5).ph("5").lfo()
+  .jux(rev)
+  .lpf(120).lpenv(3).lpq(20).lpa("<.7!2 -!.6 .2!4 -!4>").postgain(.1)
 
 
-var arp = n("0 3 5 7 0 0 3 0 5 _ 2 3 1 _ 1 3").scale("<a2:minor c:minor>")
+phone_pluck: n(`<
+0 - 0 - 4 - 8 -
+-!7 0
+- - - - 4 - - 5
+3 - 3 -!5
+  >*16`.add("<0!2 3!2>"))
+  .scale("g#:major").s("sine")
+  .fm(4).fmdec(.2).fmh(1)
+  .compressor(-10).pan(perlin.seed(2).range(.2,.8).rib(4096, 4))
+  .delay(1).ds(1/2)
 
-const lead_guitar =  arp.s("saw").attack(.1).decay(.2).distort("3:.1")
-
-lead_left: lead_guitar.transpose(-7).pan(0).vel(sine.range(1, .8))
-  .lpf(sine.range(1600,300).slow(4)).lfo().lpq(12).lpenv(2)
-
-lead_right: lead_guitar.pan(1).vel(sine.range(.8, 1))
-  .lpf(sine.range(2200,500).slow(2)).lfo().lpq(5).lpenv(3)
-
-
-var rythm_guitar =
-  chord("Am").voicing()
-  .transpose("-14")
-  .s("gm_distortion_guitar")
-  .room(2).delay(.25)
-
-
-support_rythm_guitar: 
-rythm_guitar.transpose("-7").every(2, x=>silence)
-  .late(rand.range(.0125,.0075))
-  .pan(perlin.range(0,1).fast(2)).vel(.5)
-  .struct("1 1 1 1 1 1 1 1 1 _ 1 1 1 _ 1 1")
-
-
-rythm_guitar: rythm_guitar  
-  .lpf(saw.range(1500, 2000))
-  .lfo() //remove effect drama
-  .late(rand.range(0,.0075))
-  // .jux(rev) //onoff
-  .ply(16) //ply to strum
-  .delay(.25).delays(1/4)
-
-
-
-
-
-
-
-
-
+lead: n(`<
+0!7 -
+5 3 5 4 - 2 5 -
+3 - 3!6
+0 1 0 3 4 5 8 2
+  >*8`.add(stack("<0!8 -2!8>",
+                 note("7").vel(rand.seed(2).range(.5, 1).rib(24, 2)))))
+  .scale("g#:major").s("pulse")
+  .unison(4)
+  .room(.5).rel(.2)
+  .lpf(900).lfo().lpenv(2).lpq(12)
+  .lpa(wchoose(["<.7!4 .2!4 .9!4 .2!4>",2], ["0", 6]))
+  .pan(.6)
