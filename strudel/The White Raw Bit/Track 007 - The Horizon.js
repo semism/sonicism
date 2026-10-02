@@ -58,7 +58,7 @@ bass_line: n(bassPat.trans("-14")).scale("g#:major")
           .lpf(800)
           .lfo({da:2500, s:3, rt:1}).lpe(3).lpd(.7)
           .unison(3).detune(.1)
-          .fm(4).fmdec(.5)
+          .fm("<3 1 .5 .2>").fmdec(.5)
           .set.mix(vel("1@2 1 .5 .7 0.9@2 .4"))
 
 sub: n(bassPat.trans(-14))
