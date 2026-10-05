@@ -2,13 +2,6 @@ setcpm(143/4)
 
 samples('github:semism/smbreaks')
 
-
-// matrix: n("0!16").scale("g#:major")
-//           .s("sine")
-//           .compressor(-20)
-//           .unison(4).detune(1)
-//           .fm(".5").orbit(2)
-
 kick: s("bd:1!4").duck(2).duckatt(.3)
 snare: s("<- sd:1 - sd:1 - [sd:1!2] - sd:1>*4")
 
