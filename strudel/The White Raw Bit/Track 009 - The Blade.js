@@ -36,8 +36,9 @@ acid:n(`<
   .lpf(200).lpenv(3).lpq(15)
   .soft("2").delay(.25).delays(1/4)
   .compressor(-20)
-  // .fm(2)
-  // .fmh(".2")
+  .fm(2)
+  .fmh(".2".add("<0.06!3 .01>"))
+  .fmdec(.3).decay(.2)
   .room(.4)
   .scope()
 
@@ -47,4 +48,3 @@ bass: n("[0 0 - 0] -1 [0 0 - 0] 7").scale("g#:major")
   .distort(2).compressor(-20).room(.2).size(5)
   .unison(22)
   .orbit("<2!7 1>*4")
-
