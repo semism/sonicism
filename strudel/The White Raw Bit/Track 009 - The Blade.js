@@ -44,7 +44,7 @@ acid:n(`<
 
 bass: n("[0 0 - 0] -1 [0 0 - 0] 7").scale("g#:major")
   .s("sine")
-  .fm(2).fmh(".2")
+  .fm(2).fmh(".201")
   .distort(2).compressor(-20).room(.2).size(5)
   .unison(22)
   .orbit("<2!7 1>*4")
