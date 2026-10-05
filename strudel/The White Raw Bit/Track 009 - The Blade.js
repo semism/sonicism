@@ -36,7 +36,7 @@ acid:n(`<
   .lpf(200).lpenv(3).lpq(15)
   .soft("2").delay(.25).delays(1/4)
   .compressor(-20)
-  // .fm(1)
+  // .fm(2)
   // .fmh(".2")
   .room(.4)
   .scope()
