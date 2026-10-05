@@ -8,6 +8,9 @@ hat: s("hh:2!8".early(rand.range(-.002,.003).rib(209,4)))
 ohat: s("- oh:1 - oh:2".early(rand.range(-.002,.003).rib(209,4)))
   .vel(rand.range(.2,.8).rib(209,4))
 
+ride: s("- rd - rd - rd - rd")
+  .vel(rand.range(.5, 1).rib(9,4)).room(.9).pan(.56)
+
 uau: n("<-14 -7 -14 -7>*8").scale("b:minor").s("saw")
   .o(2)
   .lpf(500)
