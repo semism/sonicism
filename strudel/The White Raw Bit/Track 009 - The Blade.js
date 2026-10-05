@@ -18,8 +18,12 @@ toms: s("lt!16")
   .gain(rand.range(.4,.8).rib(23, 2))
   .orbit("<2!7 1>*8")
 
- 
-sub: n("-14!16").scale("g#:major").s("tri").att(0).clip(.005).soft(3).o(2)
+horn: n("<-!3 [-!4 7]>").scale("g#:major")
+       .s("supersaw").room(2).delay(.5).o(2)
+
+sub: n("-14").scale("g#:major").struct("<1 1 1 1>*4").s("sine")
+  .room(1).size(5)
+  .att(0).clip(.5).soft(2)
 
 acid:n(`<
 0 - 0 - 0 0 0 0
@@ -32,8 +36,8 @@ acid:n(`<
   .lpf(200).lpenv(3).lpq(15)
   .soft("2").delay(.25).delays(1/4)
   .compressor(-20)
-  .fm(3)
-  .fmh(".2")
+  // .fm(1)
+  // .fmh(".2")
   .room(.4)
   .scope()
 
