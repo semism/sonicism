@@ -25,10 +25,26 @@
 // se un ken e dashuroj
 
 setcpm(60/4)
+samples('https://raw.githubusercontent.com/semism/smbreaks/main/strudel.json')
 
 var climb = "<0 3 5 7>"
 climb = "0"
 const pat = n(irand(12).seg(8).rib("<316!2 314 316 314 316>", 1).add(climb)).scale("g:minor");
+
+amen:s("breaks:2/2").fit()
+.phaser(".2").lfo()
+
+vin:s("white!4".late(.125))
+  .lpf(1400).lfo()
+  .lpenv("<-1 0 0 2>*4")
+  .lpq("<0 2 4 12>*4")
+  .hpf(500).lfo()
+  .clip(".2 .6")
+  .asym("2:.2")
+  .delay(.25).delays(1/4)
+  .gain(.5)
+  
+
 
 harp: pat.s("harp").decay(.4)
   .room(1).size(4).jux(rev)
@@ -42,9 +58,10 @@ bow: chord("<Gm Dm>").voicing()
 def: s("tambourine!2 tambourine2 tambourine").delay(.25).vel(rand.range(2, 5))
 clave: s("clave")
 chime: s("marktrees").n("<-!3 <0 1 4 0>>")
-kick: s("bd:2 - bd -").bank("dr550").room(.2).vel(rand.range(.3, .4))
+kick: s("bd:2 bd bd:2 bd").bank("dr550").room(.2).vel(rand.range(.3, .4))
 hat: s("-!7 oh").bank("dr550").room(.2).delay(.1).vel(rand.range(.13, .35))
 tom: s("<[lt lt - -] [mt - - mt]>").bank("dr550").room(.2).delay(.1).vel(rand.range(.3, .6))
+
 
 piano_chords: chord("<Gm [- Gm Dm - Dm -!11]>").voicing()
   .lpf(1200)
