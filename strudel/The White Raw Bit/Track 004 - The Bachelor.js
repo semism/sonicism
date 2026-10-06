@@ -34,7 +34,7 @@ const pat = n(irand(12).seg(8).rib("<316!2 314 316 314 316>", 1).add(climb)).sca
 amen:s("breaks:2/2").fit()
 .phaser(".2").lfo()
 
-vin:s("white!8")
+vin:s("white!4")
   .lpf(1400).lfo()
   .hpf(500).lfo()
   .clip(".2 .6")
