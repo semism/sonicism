@@ -30,7 +30,7 @@ acid:n(`<
 >*16`)
   .scale("g#:major")
   .s("supersaw")
-  .lpf(50).lpenv(3).lpq(20)
+  .lpf(50).lpenv(3).lpq(12)
   .delay(.25).delays(1/4)
   .compressor(-20)
   .fm(2)
