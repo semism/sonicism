@@ -37,6 +37,14 @@ n(irand(12).seg(16).rib(522, 2))
   .vel(rand.range(.1,.6).seg(8).rib(222, 4))
   .pan(perlin.fast(4))
 
+allo:
+n(irand(12).seg(16).rib(522, 2))
+  .scale("b:minor").s("saw")
+  .mask("<1 1 0 1 1 0 1 1>*16")
+  .vel(rand.range(.1,.6).seg(8).rib(222, 4))
+  .pan("<.2 .8>")
+
+
 
 lead: n(irand(12).seg(8).rib(522, 2).add(-14))
   .scale("b:minor").s("supersaw")
