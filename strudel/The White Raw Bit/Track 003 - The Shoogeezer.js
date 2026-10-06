@@ -7,7 +7,7 @@ kick: s("bd:2 - - <- bd> bd bd - -").bank("dr550").room(.2)
 
 bass: n("7!8").scale("a:minor")
   .transpose(-28).s("saw")
-  .lpf(140).lpe(1).att(0)
+  .lpf(180).lpe(1).att(0)
   .fm(4).fmdec(.05).fmh(.2)
   .unison(3).detune(1).room(.5).delay(.25).delays(1/4)
   .soft(1.2)
@@ -47,6 +47,7 @@ lead_right: n(`<
   .lfo()
   .room(.5).delay(.25)
   .pan(sine.slow(2))
+  .hpf(300)
 
 
 var rythm_guitar =
@@ -63,11 +64,13 @@ detuned_guitar: rythm_guitar
   .room(1.5)
   .delay(.25).delays(1/4)
   .superimpose(x=>x.s("supersaw"))
+  .hpf(300)
 
 support_rythm_guitar: 
 rythm_guitar.transpose("-7").every(2, x=>silence)
   .late(rand.range(.0125,.0075))
   .pan(perlin.range(0,1).fast(2)).vel(.5)
+  .hpf(300)
 
 rythm_guitar: rythm_guitar  
   .lpf(saw.range(1500, 2000))
@@ -77,7 +80,7 @@ rythm_guitar: rythm_guitar
   .unison(4)
   .room(1.5)
   .delay(.25).delays(1/4)
-
+  .hpf(300)
 
 
 
