@@ -37,7 +37,7 @@ amen:s("breaks:2/2").fit()
 vin:s("white!4".late(.125))
   .lpf(1400).lfo()
   .lpenv("<-1 0 0 2>*4")
-  .lpq("<0 2 4 12>*4")
+  .lpq("<0 2 4 <1 10>>*4")
   .hpf(500).lfo()
   .clip(".2 .6")
   .asym("2:.2")
@@ -45,14 +45,14 @@ vin:s("white!4".late(.125))
   .gain(.5)
 
 
-harp: pat.s("harp").decay(.4)
-  .room(1).size(4).jux(rev)
-  .delay("<1!3 .5!2>")
+// harp: pat.s("harp").decay(.4)
+//   .room(1).size(4).jux(rev)
+//   .delay("<1!3 .5!2>")
 
 
-bow: chord("<Gm Dm>").voicing()
-  .lpf(1200)
-  .s("harp:22,psaltery_bow:1")
+// bow: chord("<Gm Dm>").voicing()
+//   .lpf(1200)
+//   .s("harp:22,psaltery_bow:1")
 
 def: s("tambourine!2 tambourine2 tambourine").delay(.25).vel(rand.range(2, 5))
 clave: s("clave")
@@ -61,9 +61,9 @@ kick: s("bd:2 bd bd:2 bd").bank("dr550").room(.2).vel(rand.range(.3, .4))
 hat: s("-!7 oh").bank("dr550").room(.2).delay(.1).vel(rand.range(.13, .35))
 tom: s("<[lt lt - -] [mt - - mt]>").bank("dr550").room(.2).delay(.1).vel(rand.range(.3, .6))
 
-piano_chords: chord("<Gm [- Gm Dm - Dm -!11]>").voicing()
-  .lpf(1200)
-  .s("piano").rel("<1 [- .4 1 1 .5 -!11]>").vel(.3)
+// piano_chords: chord("<Gm [- Gm Dm - Dm -!11]>").voicing()
+//   .lpf(1200)
+//   .s("piano").rel("<1 [- .4 1 1 .5 -!11]>").vel(.3)
 
 bass: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("pulse, sine").scale("<g:minor d:minor>").
   distort(".5:.3").att(.05).rel(.3).lpf(350).lpenv(.2)
@@ -72,8 +72,9 @@ saw: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("saw").scale("<g:minor d:minor
   .fm(4).fmh(2).chorus(.5)
 ._scope()
 
-// game:
-// n("0!32".add("7!2 0 <5 3>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.4)
-//   .fm(1).fmh(2).chorus(12).delay(.25)
+game:
+n("0!32".add("7!2 0 <5 3>").add(climb)).s("supersaw").scale("<g:minor d:minor>").vel(.4)
+  .lpf(1400).lfo().lpenv(2)
+  .fm(1).fmh(2).chorus(12).delay(.25)
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
