@@ -14,7 +14,6 @@ ride: s("- rd - rd - rd - rd")
   .vel(rand.range(.5, 1).rib(9,4)).room(.9).pan(.56)
 
 
-
 uau: n("<-14 -7 -14 -7>*8").scale("b:minor").s("saw")
   .o(2)
   .lpf(500)
@@ -30,7 +29,7 @@ n("<-14 -7 -14 -7>*16".late(1/8)).scale("b:minor").s("saw")
 flame:
 n(irand(12).seg(16).rib(522, 2))
   .scale("b:minor").s("supersaw")
-  // .mask("<0 1 0 1 0 1 0 1>*16")
+  .mask("<0 1 0 1 0 1 0 1>*16")
   .compressor(-20)
   .fm(22).fmh(1.25)
   .fm2(22).fmh(1.25)
@@ -53,3 +52,22 @@ lead: n(irand(12).seg(8).rib(522, 2).add(-14))
   .compressor(-20)
   .vel(rand.range(.03,.09).seg(8).rib(222, 4))
   .room(.1).delay(.5).delays(1/2)
+
+
+
+await initHydra()
+
+noise(1, .05, 0)
+.kaleid().repeat(3,2)
+.colorama(30)
+.scrollY(0, 0.1)
+.scrollX(0, -0.1).out(o1)
+
+shape()
+.repeat(25, 2)
+.colorama().kaleid()
+.scrollY(0, 0.1)
+.scrollX(0, -0.1).out(o2)
+
+src(o2).blend(o1).out()
+
