@@ -70,6 +70,6 @@ bass: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("pulse, sine").scale("<g:mino
   distort(".5:.3").att(.05).rel(.3).lpf(350).lpenv(.2)
   ._scope()
 saw: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.2)
-  .fm(4).fmh(2)
+  .fm(4).fmh(2).chorus(.5)
 ._scope()
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
