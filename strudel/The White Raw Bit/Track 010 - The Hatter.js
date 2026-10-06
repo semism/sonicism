@@ -4,15 +4,17 @@ kick: s("bd:1!4").duck(2).datt(.5)
 toms: s("lt!16").att(.02)
     .vel(rand.range(.1, .5).rib(18, 4)).room(.9).pan(.56)
 snare: s("sd:1!2")
+
+clap: s("- cp:1 - [cp:1 cp:1]")
+
 hat: s("hh:2!8".early(rand.range(-.002,.003).rib(209,4)))
   .vel(rand.range(.2,.8).rib(209,4))
 
 ohat: s("- oh:1 - oh:2".early(rand.range(-.002,.003).rib(209,4)))
-  .vel(rand.range(.2,.8).rib(209,4))
+  .vel(rand.range(.3,.9).rib(209,4))
 
 ride: s("- rd - rd - rd - rd")
-  .vel(rand.range(.5, 1).rib(9,4)).room(.9).pan(.56)
-
+  .vel(rand.range(.5, 1).rib(9, 2)).room(.9).pan(.56)
 
 uau: n("<-14 -7 -14 -7>*8").scale("b:minor").s("saw")
   .o(2)
@@ -38,14 +40,14 @@ n(irand(12).seg(16).rib(522, 2))
   .vel(rand.range(.1,.6).seg(8).rib(222, 4))
   .pan(perlin.fast(4))
 
-// allo:
-// n(irand(12).seg(16).rib(522, 2))
-//   .scale("b:minor").s("saw")
-//   .mask("<1 1 0 1 1 0 1 1>*16")
-//   .vel(rand.range(.1,.6).seg(8).rib(222, 4))
-//   .pan("<.2 .8>")
-//   .color("red")
-//   .pianoroll()
+allo:
+n(irand(12).seg(16).rib(522, 2))
+  .scale("b:minor").s("saw")
+  .mask("<1 1 0 1 1 0 1 1>*16")
+  .vel(rand.range(.1,.6).seg(8).rib(222, 4))
+  .pan("<.2 .8>")
+  .color("red")
+  .pianoroll()
 
 
 
