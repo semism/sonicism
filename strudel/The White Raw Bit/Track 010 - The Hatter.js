@@ -38,7 +38,7 @@ n(irand(12).seg(16).rib(522, 2))
   .pan(perlin.fast(4))
 
 
-_lead: n(irand(12).seg(8).rib(522, 2).add(-14))
+lead: n(irand(12).seg(8).rib(522, 2).add(-14))
   .scale("b:minor").s("supersaw")
   .att(.05).rel(.2)
   .fm(12).fmh(.99)
