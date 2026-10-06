@@ -1,3 +1,6 @@
+setCpm(20/4)
+
+/////_HYDRA_//////
 await initHydra()
 noise(1, .05, 0)
 .kaleid()
@@ -16,3 +19,4 @@ shape()
 .out(o2)
 
 src(o2).modulate(o1).out()
+
