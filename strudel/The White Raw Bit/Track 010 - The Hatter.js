@@ -1,4 +1,4 @@
-
+setcpm(135/4)
 
 kick: s("bd:1!4").duck(2).datt(.5)
 toms: s("lt!16")
