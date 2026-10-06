@@ -18,12 +18,14 @@ uau: n("<-14 -7 -14 -7>*8").scale("b:minor").s("saw")
   .o(2)
   .lpf(500)
   .lfo({da:500})
+  .color("lime")
 .spectrum({width: 800})
 
 sub:
 n("<-14 -7 -14 -7>*16".late(1/8)).scale("b:minor").s("saw")
   .lpf(150).lfo()
 .fm(4).fmh(.5)
+
 
 
 flame:
@@ -42,6 +44,8 @@ n(irand(12).seg(16).rib(522, 2))
 //   .mask("<1 1 0 1 1 0 1 1>*16")
 //   .vel(rand.range(.1,.6).seg(8).rib(222, 4))
 //   .pan("<.2 .8>")
+//   .color("red")
+//   .pianoroll()
 
 
 
@@ -73,4 +77,3 @@ shape()
 .out(o2)
 
 src(o2).modulate(o1).out()
-
