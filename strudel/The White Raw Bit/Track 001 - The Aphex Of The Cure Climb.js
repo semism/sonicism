@@ -52,7 +52,7 @@ harp: n(irand(12).seg(8).rib("<316!2 314 316 314 316>", 1).add(climb)).scale("g:
 
 bow: chord("<Gm Dm>").voicing()
   .lpf(1200)
-  .s("harp:22,psaltery_bow:1")
+  .s("harp:22, psaltery_bow:1")
 
 def: s("tambourine!2 tambourine2 tambourine").delay(.25).vel(rand.range(2, 5))
 clave: s("clave")
@@ -68,7 +68,7 @@ piano_chords: chord("<Gm [- Gm Dm - Dm -!11]>").voicing()
 bass: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("pulse, sine").scale("<g:minor d:minor>").
   distort(".5:.3").att(.05).rel(.3).lpf(350).lpenv(.2)
   ._scope()
-saw: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.2)
+_saw: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.2)
   .fm(4).fmh(2).chorus(.5)
 ._scope()
 
