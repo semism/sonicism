@@ -61,7 +61,6 @@ kick: s("bd:2 bd bd:2 bd").bank("dr550").room(.2).vel(rand.range(.3, .4))
 hat: s("-!7 oh").bank("dr550").room(.2).delay(.1).vel(rand.range(.13, .35))
 tom: s("<[lt lt - -] [mt - - mt]>").bank("dr550").room(.2).delay(.1).vel(rand.range(.3, .6))
 
-
 piano_chords: chord("<Gm [- Gm Dm - Dm -!11]>").voicing()
   .lpf(1200)
   .s("piano").rel("<1 [- .4 1 1 .5 -!11]>").vel(.3)
@@ -72,4 +71,9 @@ bass: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("pulse, sine").scale("<g:mino
 saw: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.2)
   .fm(4).fmh(2).chorus(.5)
 ._scope()
+
+// game:
+// n("0!32".add("7!2 0 <5 3>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.4)
+//   .fm(1).fmh(2).chorus(12).delay(.25)
+
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
