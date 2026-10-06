@@ -1,75 +1,84 @@
+setCps(144/60/4)
 
-// her i heca
-// her i ndala
-// her vu fuga
-// krajp ka vara
+samples('https://raw.githubusercontent.com/semism/nibbles/main/strudel.json')
 
-// her e dita
-// her e para
-// sot zateken 
-// gozhda shara
-
-// kallxom kush jom une shtaj
-// kallxom mu xhi perfaqsoj
-// ku kom fjet un udh e shpaj
-// vec i fundit perfundoj
-
-// kallxom xhi kom per detyr
-// kallxoma raftin ku perkas
-// nshtresen e ujtit nder yndyr
-// saunde leprin pse ta vras
-
-// kallxom kush jom une shtaj
-// kallxom taj xhi perfaqsojsh
-// ska kti mbretit xhi ja ndajn
-// se un ken e dashuroj
-
-setcpm(60/4)
-samples('https://raw.githubusercontent.com/semism/smbreaks/main/strudel.json')
-
-var climb = "<0 3 5 7>"
-climb = "0"
-const pat = n(irand(12).seg(8).rib("<316!2 314 316 314 316>", 1).add(climb)).scale("g:minor");
-
-amen:s("breaks:2/2").fit()
-.phaser(".2").lfo()
-
-vin:s("white!4")
-  .lpf(1400).lfo()
-  .lpenv("<-1 0 0 2>*4")
-  .lpq("<0 2 4 12>*4")
-  .hpf(500).lfo()
-  .clip(".2 .6")
-  .asym("2:.2")
-
-
-harp: pat.s("harp").decay(.4)
-  .room(1).size(4).jux(rev)
-  .delay("<1!3 .5!2>")
-
-
-bow: chord("<Gm Dm>").voicing()
-  .lpf(1200)
-  .s("harp:22,psaltery_bow:1")
-
-def: s("tambourine!2 tambourine2 tambourine").delay(.25).vel(rand.range(2, 5))
-clave: s("clave")
-chime: s("marktrees").n("<-!3 <0 1 4 0>>")
-kick: s("bd:2 bd bd:2 bd").bank("dr550").room(.2).vel(rand.range(.3, .4))
-hat: s("-!7 oh").bank("dr550").room(.2).delay(.1).vel(rand.range(.13, .35))
-tom: s("<[lt lt - -] [mt - - mt]>").bank("dr550").room(.2).delay(.1).vel(rand.range(.3, .6))
-
-
-piano_chords: chord("<Gm [- Gm Dm - Dm -!11]>").voicing()
-  .lpf(1200)
-  .s("piano").rel("<1 [- .4 1 1 .5 -!11]>").vel(.3)
-
-bass: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("pulse, sine").scale("<g:minor d:minor>").
-  distort(".5:.3").att(.05).rel(.3).lpf(350).lpenv(.2)
+kick: s("sbd bd sbd bd").distort("1:.7").duck("3:4")
   ._scope()
-saw: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.1)
+
+snare: s("- sd:4 - sd:1").bank("tr707").delay(.2)
+shak: s("tambourine")
+  .struct("x x - x x - - x").delay(.25)
+  .velocity(rand.range(1, 2))
+
+hat: s("{- [white]}!4").clip(.3).velocity(rand.range(1, 2)).delay(.25)
+.lpf(rand.range(4000, 4500))
+
+var trans = "<[0!7 1] [-3!7 1] [0!7 1] [<2 [-1]>!6 1!2]>"
+// trans = "0"
+var scale = "<f#:minor!6 a:major!2>"
+
+sub: n("0!8")
+  .scale(scale)
+  .scaleTrans(trans)
+  .scaleTranspose(-7)
+  .s("supersaw")
+  .lpf(800)
+  .decay(.4)
+  .unison(22)
+  .orbit(4)
+
+bass: n("0!16").s("supersaw, gm_voice_oohs")
+  .scale(scale)
+  .scaleTrans(-7)
+  .scaleTrans(trans)
+  .lpf(150)
+  .distort("2:.5")
+  .lpenv(3)
+  .unison(22)
+  .room(.2)
+  .orbit(4)
+
+bass2: n("0 - 0 0 1 0 0 -").s("supersaw")
+  .scale(scale)
+  .scaleTrans(-7)
+  .scaleTrans(trans)
+  .lpf(200).lfo()
+  .lpenv(2).lpq(4).lfo()
+  .decay(.4)
+  .distort("3:.5")
+  .unison(22)
+  .room(.2)
+  .orbit(4)
+
+beep: n("-!7 1").s("supersaw")
+  .scale(scale)
+  .scaleTrans(7)
+  .lpf(3000).lfo()
+  .lpenv(2).lpq(12)
+  .decay(.4)
+  .delay(.25).delays(.125)
+  .distort("3:.2")
+  .unison(22)
+
+beqo: s("beqar/8").fit()
+// .scrub("<0 -!3>")
+.attack(.15)
+// .scrub("<0@2 .25!2 .5! .62@2>".fast(2))  
+.lpf(1800).lfo()
+.delay(.25)
+.orbit(3)
+.gain(0)
+
+
+beqo_vox:
+s("beqar:1/8").fit()
+// .scrub("<<0 .12 .5 .62> -!3>")
+// .hpf(1400)
+.lpf(1200)
+.delay(.1)
+.gain(1.7)
+.gain(0)
+// .orbit(3)
 ._scope()
-
-
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
