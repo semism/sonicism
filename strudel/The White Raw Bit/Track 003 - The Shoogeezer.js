@@ -41,6 +41,7 @@ lead_right: n(`<
                 -2!12 -3!4
                >*16`)
   .scale("<a2:minor c:minor>").s("supersaw")
+  .fm(22).fmh(2).compressor(-30)
   .attack(.1).decay(.2)
   .distort("2:.4").vel(sine.range(.8, 1))
   .lpf(sine.range(1200,500).slow(2))
@@ -48,7 +49,6 @@ lead_right: n(`<
   .room(.5).delay(.25)
   .pan(sine.slow(2))
   .hpf(300)
-
 
 var rythm_guitar =
   chord("<Am Cm>").voicing()
@@ -64,7 +64,7 @@ detuned_guitar: rythm_guitar
   .room(1.5)
   .delay(.25).delays(1/4)
   .superimpose(x=>x.s("supersaw"))
-  .hpf(300)
+  .hpf(300).pan(.4)
 
 support_rythm_guitar: 
 rythm_guitar.transpose("-7").every(2, x=>silence)
