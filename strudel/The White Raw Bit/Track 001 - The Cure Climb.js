@@ -1,12 +1,13 @@
-// shati levron ara
-// fshati nuk luzon si mapara
-// fushat e thara
-// zateken gozhda shara
 
-// tokat e perchara
-// durt e shperlara
-// se de vrasem lepra ne
-// me zotin perpara
+// her i heca
+// her i ndala
+// her vu fuga
+// krajp ka vara
+
+// her e dita
+// her e para
+// sot zateken 
+// gozhda shara
 
 // kallxom kush jom une shtaj
 // kallxom mu xhi perfaqsoj
@@ -57,9 +58,4 @@ saw: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("saw").scale("<g:minor d:minor
 
 
 
-
-
-
-
-
-
+all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
