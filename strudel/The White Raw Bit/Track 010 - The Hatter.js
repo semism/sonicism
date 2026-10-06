@@ -1,4 +1,4 @@
-setcpm(135/4)
+setcpm(110/4)
 
 kick: s("bd:1!4").duck(2).datt(.5)
 toms: s("lt!16").att(.02)
@@ -30,7 +30,7 @@ n("<-14 -7 -14 -7>*16".late(1/8)).scale("b:minor").s("saw")
 flame:
 n(irand(12).seg(16).rib(522, 2))
   .scale("b:minor").s("supersaw")
-  .mask("<0 1 0 1 0 1 0 1>*16")
+  // .mask("<0 1 0 1 0 1 0 1>*16")
   .compressor(-20)
   .fm(22).fmh(1.25)
   .fm2(22).fmh(1.25)
@@ -38,7 +38,7 @@ n(irand(12).seg(16).rib(522, 2))
   .pan(perlin.fast(4))
 
 
-lead: n(irand(12).seg(8).rib(522, 2).add(-14))
+_lead: n(irand(12).seg(8).rib(522, 2).add(-14))
   .scale("b:minor").s("supersaw")
   .att(.05).rel(.2)
   .fm(12).fmh(.99)
