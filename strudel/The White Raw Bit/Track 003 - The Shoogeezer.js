@@ -1,11 +1,11 @@
 setcpm(90/4)
 
 
-Skick: s("bd:2 - - <- bd> bd bd - -").bank("dr550").room(.2)
+kick: s("bd:2 - - <- bd> bd bd - -").bank("dr550").room(.2)
   .vel(rand.range(.3, .4)).soft(1.5)
   .duck(2)
 
-Sbass: n("7!8").scale("a:minor")
+bass: n("7!8").scale("a:minor")
   .transpose(-28).s("saw")
   .lpf(140).lpe(1).att(0)
   .fm(4).fmdec(.05).fmh(.2)
@@ -34,7 +34,7 @@ rim: s("rim").bank("lm8953")
 
 
 
-Slead_right: n(`<
+lead_right: n(`<
                 <-7 0>!16
                 3!15 14
                 2!16
@@ -42,9 +42,9 @@ Slead_right: n(`<
                >*16`)
   .scale("<a2:minor c:minor>").s("supersaw")
   .attack(.1).decay(.2)
-  .distort("2:.35").vel(sine.range(.8, 1))
-  .lpf(sine.range(2200,500).slow(2))
-  .lfo().lpq(3).lpenv(3)
+  .distort("2:.4").vel(sine.range(.8, 1))
+  .lpf(sine.range(1200,500).slow(2))
+  .lfo()
   .room(.5).delay(.25)
   .pan(sine.slow(2))
 
