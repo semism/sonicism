@@ -6,7 +6,7 @@ setcpm(110/4)
 
 const scale = "<c:major>"
 
-kick: s("sbd!4").duck("2").duckatt(".2")
+kick: s("bd:1!4").duck("2").duckatt(".2")
 
 inter_kick: n("-14").scale(scale)
   .struct("- 1 - 1  - - 1 1  1 - - 1  - <1 -> - -")
@@ -28,6 +28,7 @@ rim: s("- <spacedrum_rim [yamahary30_rim:1!2]>".late(.125))
 bass:
  n("0 0? 0 - 0 - 0 0".late(.125)).fast(4).slow(2)
   .scale(scale).s("sine")
+  .fm(4).fmh(.99)
   .distort("3:.45")
   .transpose(-14)
   .decay(.8)
@@ -40,30 +41,30 @@ reed_bass:
   .s("gm_reed_organ")
   .decay(.3).delay(.25)
 
-pulse:
- n(irand(12).seg(8).rib(488, 1))
-  .mask("<0 [0 1]>")
-  .scale(scale).transpose("<7 14!3>")
-  .s("pulse")
-  .pan(perlin.range(0, 1).fast(2))
-  .decay(.3).delay(.25)
-  .velocity(rand.range(.7, .9)).fm(32).fmh(4)
+// pulse:
+//  n(irand(12).seg(8).rib(488, 1))
+//   .mask("<0 [0 1]>")
+//   .scale(scale).transpose("<7 14!3>")
+//   .s("pulse")
+//   .pan(perlin.range(0, 1).fast(2))
+//   .decay(.3).delay(.25)
+//   .velocity(rand.range(.7, .9)).fm(32).fmh(4)
 
 
-sand:
-  n(irand(16).seg(16).rib("488", 2)).scale(scale)
- // .orbit(2)
- .s("supersaw")
- .transpose(-14)   
- .delay(.5)
- .velocity(.35)
- // .attack(.2) //attack off
- .lpf(1200)
- .lpa(.0125)
- .lpd(sine.range(.1,.9).slow(2))
- .lpq(saw.range(1, 12).slow(2))
- .distort("2:.5").distorttype("<0 1 2>")
- .pan(sine.slow(4))
+// sand:
+//   n(irand(16).seg(16).rib("488", 2)).scale(scale)
+//  // .orbit(2)
+//  .s("supersaw")
+//  .transpose(-14)   
+//  .delay(.5)
+//  .velocity(.35)
+//  // .attack(.2) //attack off
+//  .lpf(1200)
+//  .lpa(.0125)
+//  .lpd(sine.range(.1,.9).slow(2))
+//  .lpq(saw.range(1, 12).slow(2))
+//  .distort("2:.5").distorttype("<0 1 2>")
+//  .pan(sine.slow(4))
 
 
 // amen1: s("breaks:3/2").fit()
