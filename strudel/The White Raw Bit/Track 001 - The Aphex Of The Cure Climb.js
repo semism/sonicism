@@ -68,13 +68,13 @@ piano_chords: chord("<Gm [- Gm Dm - Dm -!11]>").voicing()
 bass: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("pulse, sine").scale("<g:minor d:minor>").
   distort(".5:.3").att(.05).rel(.3).lpf(350).lpenv(.2)
   ._scope()
-_saw: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.2)
-  .fm(4).fmh(2).chorus(.5)
+saw: n("0!16".add("7!2 - <9 11>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.2)
+  .fm(4).fmh(.1).chorus(.5)
 ._scope()
 
 game:
 n("0!32".add("7!2 0 <5 3>").add(climb)).s("supersaw").scale("<g:minor d:minor>").vel(.4)
   .lpf(1400).lfo().lpenv(2)
-  .fm(1).fmh(2).chorus(12).delay(.25)
+  .fm(1).fmh(.5).chorus(12).delay(.25)
 
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
