@@ -44,20 +44,6 @@ var rythm_guitar =
   .s("gm_distortion_guitar")
   .room(.2).delay(.25)
 
-support_rythm_guitar: 
-rythm_guitar.transpose("-7").every(2, x=>silence)
-  .late(rand.range(.0125,.0075))
-  .pan(perlin.range(0,1).fast(2)).vel(.5)
-
-rythm_guitar: rythm_guitar  
-  .lpf(saw.range(1500, 2000))
-  .late(rand.range(0,.0075))
-  .jux(rev)
-  .ply(16) //ply to strum
-  .unison(4)
-  .room(1.5)
-  .delay(.25).delays(1/4)
-
 detuned_guitar: rythm_guitar  
   .lpf(555)
   .late(rand.range(0,.0075))
@@ -66,6 +52,22 @@ detuned_guitar: rythm_guitar
   .room(1.5)
   .delay(.25).delays(1/4)
   .superimpose(x=>x.s("supersaw"))
+
+// support_rythm_guitar: 
+// rythm_guitar.transpose("-7").every(2, x=>silence)
+//   .late(rand.range(.0125,.0075))
+//   .pan(perlin.range(0,1).fast(2)).vel(.5)
+
+// rythm_guitar: rythm_guitar  
+//   .lpf(saw.range(1500, 2000))
+//   .late(rand.range(0,.0075))
+//   .jux(rev)
+//   .ply(16) //ply to strum
+//   .unison(4)
+//   .room(1.5)
+//   .delay(.25).delays(1/4)
+
+
 
 
 
