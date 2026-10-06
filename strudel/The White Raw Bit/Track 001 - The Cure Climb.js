@@ -43,7 +43,6 @@ vin:s("white!4".late(.125))
   .asym("2:.2")
   .delay(.25).delays(1/4)
   .gain(.5)
-  
 
 
 harp: pat.s("harp").decay(.4)
@@ -70,9 +69,7 @@ piano_chords: chord("<Gm [- Gm Dm - Dm -!11]>").voicing()
 bass: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("pulse, sine").scale("<g:minor d:minor>").
   distort(".5:.3").att(.05).rel(.3).lpf(350).lpenv(.2)
   ._scope()
-saw: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.1)
+saw: n("0!16".add("-7!2 - <-5 -3>").add(climb)).s("saw").scale("<g:minor d:minor>").vel(.2)
+  .fm(4).fmh(2)
 ._scope()
-
-
-
 all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
