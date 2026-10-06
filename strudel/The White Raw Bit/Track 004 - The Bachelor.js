@@ -36,6 +36,8 @@ amen:s("breaks:2/2").fit()
 
 vin:s("white!4")
   .lpf(1400).lfo()
+  .lpenv("<-1 0 0 2>*4")
+  .lpq("<0 2 4 12>*4")
   .hpf(500).lfo()
   .clip(".2 .6")
   .asym("2:.2")
