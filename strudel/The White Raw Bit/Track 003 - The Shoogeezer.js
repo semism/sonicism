@@ -33,7 +33,9 @@ lead_right:  n("0 3 5 7 0 0 3 0 5 _ 2 3 1 _ 1 3")
   .scale("<a2:minor c:minor>").s("saw")
   .attack(.1).decay(.2).distort("3:.1").vel(sine.range(.8, 1))
   .lpf(sine.range(2200,500).slow(2))
-  .lfo().lpq(5).lpenv(3)
+  .lfo().lpq(3).lpenv(3)
+  .room(.2).delay(.25)
+  .pan(sine.slow(2))
 
 
 var rythm_guitar =
@@ -52,7 +54,19 @@ rythm_guitar: rythm_guitar
   .late(rand.range(0,.0075))
   .jux(rev)
   .ply(16) //ply to strum
+  .unison(4)
+  .room(1.5)
   .delay(.25).delays(1/4)
+
+detuned_guitar: rythm_guitar  
+  .lpf(555)
+  .late(rand.range(0,.0075))
+  .ply(16) //ply to strum
+  .unison(4)
+  .room(1.5)
+  .delay(.25).delays(1/4)
+  .superimpose(x=>x.s("supersaw"))
+
 
 
 
