@@ -1,5 +1,6 @@
 setcpm(110/4)
 
+
 kick: s("bd:1!4").duck(2).datt(.5)
 toms: s("lt!16").att(.02)
     .vel(rand.range(.1, .5).rib(18, 4)).room(.9).pan(.56)
@@ -16,15 +17,7 @@ ohat: s("- oh:1 - oh:2".early(rand.range(-.002,.003).rib(209,4)))
 ride: s("- rd - rd - rd - rd")
   .vel(rand.range(.5, 1).rib(9, 2)).room(.9).pan(.56)
 
-uau: n("<-14 -7 -14 -7>*8").scale("b:minor").s("saw")
-  .release(.2)
-  .lpf(500)
-  .lfo({da:400})
-  .lpa(.5)
-  .color("lime")
-  .slice(16,"<0 1 2 3 4@2 _ 7 _ 9 10 _ 12 14 15>*16")
-  // .lpq(12)
-.spectrum({width: 800})
+
 
 sub:
 n("<-14 -7 -14 -7>*16".late(1/8)).scale("b:minor").s("saw")
@@ -49,6 +42,17 @@ chopper :n(`<0 0 0 0
   .unison(4)
   .vel(rand.range(.1, .3).rib(18, 4))
 
+
+uau: n("<-14 -7 -14 -7>*16").scale("b:minor").s("saw")
+  .release(.2)
+  .lpf(500)
+  .lfo({da:400})
+  .color("lime")
+  .mask("<1 1 - 1 _ - 1 1 _ 1 1 - 1 - 1 ->*16")
+  // .lpq(12)
+.spectrum({width: 800})
+
+
 flame:
 n(irand(12).seg(16).rib(522, 2))
   .scale("b:minor").s("supersaw")
@@ -59,7 +63,7 @@ n(irand(12).seg(16).rib(522, 2))
   .vel(rand.range(.1,.6).seg(8).rib(222, 4))
   .pan(perlin.fast(4))
 
-allo:
+_allo:
 n(irand(12).seg(16).rib(522, 2))
   .scale("b:minor").s("saw")
   .mask("<1 1 0 1 1 0 1 1>*16")
