@@ -49,7 +49,7 @@ uau: n("<-14 -7 -14 -7>*16").scale("b:minor").s("saw")
   .lfo({da:400})
   .color("lime")
   .mask("<1 1 - 1 _ - 1 1 _ 1 1 - 1 - 1 ->*16")
-  .lpq(12)
+  //.lpq(12)
 .spectrum({width: 800})
 
 
