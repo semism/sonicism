@@ -17,10 +17,13 @@ ride: s("- rd - rd - rd - rd")
   .vel(rand.range(.5, 1).rib(9, 2)).room(.9).pan(.56)
 
 uau: n("<-14 -7 -14 -7>*8").scale("b:minor").s("saw")
-  .o(2)
+  .release(.2)
   .lpf(500)
-  .lfo({da:500})
+  .lfo({da:400})
+  .lpa(.5)
   .color("lime")
+  .slice(16,"<0 1 2 3 4@2 _ 7 _ 9 10 _ 12 14 15>*16")
+  // .lpq(12)
 .spectrum({width: 800})
 
 sub:
@@ -29,6 +32,22 @@ n("<-14 -7 -14 -7>*16".late(1/8)).scale("b:minor").s("saw")
 .fm(4).fmh(.5)
 
 
+chopper :n(`<0 0 0 0  
+             - 0 - 0 
+             0 - - 0
+             0 - 0 0
+             >*16`.early(.125))
+  .scale("b:minor")
+  .s("supersaw,white")
+  .lpf(50).lpenv(3).lpq(12)
+  .delay(.25).delays(1/4)
+  .compressor(-20)
+  .fm(5)
+  .fmh(".25")
+  .fmdec(.3).decay(.2)
+  .room(.1)
+  .unison(4)
+  .vel(rand.range(.1, .3).rib(18, 4))
 
 flame:
 n(irand(12).seg(16).rib(522, 2))
@@ -58,6 +77,8 @@ lead: n(irand(12).seg(8).rib(522, 2).add(-14))
   .compressor(-20)
   .vel(rand.range(.03,.09).seg(8).rib(222, 4))
   .room(.1).delay(.5).delays(1/2)
+
+
 
 
 /////_HYDRA_//////
