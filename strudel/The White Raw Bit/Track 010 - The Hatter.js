@@ -49,11 +49,11 @@ uau: n("<-14 -7 -14 -7>*16").scale("b:minor").s("saw")
   .lfo({da:400})
   .color("lime")
   .mask("<1 1 - 1 _ - 1 1 _ 1 1 - 1 - 1 ->*16")
-  // .lpq(12)
+  .lpq(12)
 .spectrum({width: 800})
 
 
-flame:
+_flame:
 n(irand(12).seg(16).rib(522, 2))
   .scale("b:minor").s("supersaw")
   .mask("<0 1 0 1 0 1 0 1>*16")
@@ -74,7 +74,7 @@ n(irand(12).seg(16).rib(522, 2))
 
 
 
-lead: n(irand(12).seg(8).rib(522, 2).add(-14))
+_lead: n(irand(12).seg(8).rib(522, 2).add(-14))
   .scale("b:minor").s("supersaw")
   .att(.05).rel(.2)
   .fm(12).fmh(.99)
