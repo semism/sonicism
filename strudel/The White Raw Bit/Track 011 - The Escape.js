@@ -29,8 +29,8 @@ hat: s("hh:4!8").room(.2)
 ohat: s("oh:3").struct("<0 1 0 1>*4".late(1/8)).room(.2)
   .vel(rand.range(.5, .8).rib(99, 2))
 
-// tom:  s("mt:3").struct("1!16".late(1/16)).room(.2)
-//   .vel(rand.range(.5, .8).rib(299, 2))
+tom:  s("mt:3").struct("1!16".late(1/16)).room(.2)
+  .vel(rand.range(.5, .8).rib(299, 2))
 
 bass: note(`<
    c _ g g
@@ -58,12 +58,12 @@ synth: n("0 - - 0 - 0 -7 -7 0 - - - 5 - -5 -".add("<0@3 5@5>*8"))
 
 
 
-var rep = H("<1 >")
+var rep = H("<1 2 4 8>")
 
 /////_HYDRA_//////
 await initHydra()
 
-noise(1, 1/16, .1)
+noise(1, 1/8, 1)
 .kaleid()
 .repeat(rep,rep)
 .colorama(2048)
