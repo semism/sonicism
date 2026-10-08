@@ -41,7 +41,7 @@ lead_right: n(`<
                 -2!12 -3!4
                >*16`)
   .scale("<a2:minor c:minor>").s("supersaw")
-  // .scaleTrans(-5)
+  .scaleTrans(-5)
   .fm(22).fmh(2).compressor(-30)
   .attack(.1).decay(.2)
   .distort("2:.4").vel(sine.range(.8, 1))
@@ -82,7 +82,6 @@ rythm_guitar: rythm_guitar
   .room(1.5)
   .delay(.25).delays(1/4)
   .hpf(300)
-
 
 
 
