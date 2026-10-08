@@ -67,6 +67,7 @@ noise(1, 1/8, 1)
 .kaleid()
 .repeat(rep,rep)
 .colorama(2048)
+.posterize()
 .out(o1)
 
 shape(3, 0.3, 0.01)  
