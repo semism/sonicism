@@ -50,8 +50,8 @@ keyb: note(`<
    a3 _  g3 -
    - - b4 -
    c5 - - -
-   >*16`)
-  .s("sine".late(1/16 | 0))
+   >*16`.late(1/16 | 0))
+  .s("sine")
   .att(choose(.3, .2,.1, 0))
   .rel(choose(.3, .2,.1, 0))
   .compressor(-20)
@@ -74,6 +74,7 @@ synth: n("0 - - 0 - 0 -7 -7 0 - - - 5 - -5 -".add("<0@3 5@5>*8"))
   .fm(4).fmh(.999)
   .fm1(4).fmh(.99)
   .detune(2)
+
 
 
 var rep = H("<1 2 4 8>")
