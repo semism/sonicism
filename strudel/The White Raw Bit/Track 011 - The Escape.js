@@ -9,12 +9,12 @@ sea: n("<-7 -7 -5 -7 -5 0 5 7>/2").scale("c:major").s("supersaw")
 alikupter_prop: s("white!8")
   .lpf(500).lfo({da:5000, r:16})
   .pan(sine.slow(2)).room(.6).delay(.5)
-  // .o(2)
+  .o(2)
 
 alikupter_machine: note("c3!8").s("sine")
   .lpf(500).lfo({da:5000, r:16})
   .pan(sine.slow(2)).room(.6).delay(.5)
-  // .o(2)
+  .o(2)
 
 
 kick: s("bd:2 - bd bd bd:2 - bd - - - bd:2 - bd:2 - - -").duck(2).datt(.5)
