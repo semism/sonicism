@@ -48,7 +48,7 @@ bark:
   .pan(perlin.range(0, 1).fast(2))
   .decay(.3).delay(.25)
   .fm(4).fmh(.15).fmdec(.15)
-  // .velocity(rand.range(.5, .8))
+  .velocity(rand.range(.2, .7))
 
 _sand:
   n(irand(16).seg(16).rib("488", 2)).scale(scale)
