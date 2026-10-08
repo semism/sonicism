@@ -45,6 +45,17 @@ sub: n(`<
   .lpf(200)
   .soft(1)
 
+sevnejsh: note(`<
+   [52 _ _  52
+   55@1.5 52@1.5 50]
+   [48@4 47@2
+    - -]
+   >`.add(7))
+  .s("gm_electric_guitar_muted:3")
+  .rel(1)
+  .room(.2)
+  .soft(1)
+
 keyb: note(`<
    c4 _ g3 g3
    a3 _  g3 -
@@ -80,19 +91,19 @@ synth: n("0 - - 0 - 0 -7 -7 0 - - - 5 - -5 -".add("<0@3 5@5>*8"))
 var rep = H("<1 2 4 8>")
 
 /////_HYDRA_//////
-await initHydra()
+// await initHydra()
 
-noise(1, 1/8, 1)
-.kaleid()
-.repeat(rep,rep)
-.colorama(2048)
-.posterize()
-.out(o1)
+// noise(1, 1/8, 1)
+// .kaleid()
+// .repeat(rep,rep)
+// .colorama(2048)
+// .posterize()
+// .out(o1)
 
-shape(3, 0.3, 0.01)  
-.rotate(H("<3 5>*8"), .3)
-.repeat(rep,rep)
-.color(.3,.3,1)
-.out(o2)
+// shape(3, 0.3, 0.01)  
+// .rotate(H("<3 5>*8"), .3)
+// .repeat(rep,rep)
+// .color(.3,.3,1)
+// .out(o2)
 
-src(o1).modulate(o2).out()
+// src(o1).modulate(o2).out()
