@@ -19,25 +19,37 @@ alikupter_machine: note("c3!8").s("sine")
 
 kick: s("bd - - bd - bd bd:2 - bd - - - bd:2 - bd:2 -").duck(2).datt(.5)
 .room(.2)
+.vel(rand.range(.9, 1).rib(2, 2))
+
 snare: s("- sd:1 - sd:1").room(.2)
+  .vel(rand.range(.5, 1).rib(2, 4))
 hat: s("hh:4!8").room(.2)
+  .vel(rand.range(.5, 1).rib(2, 4))
+
+ohat: s("oh:3").struct("<0 1 0 1>*4".late(1/8)).room(.2)
+  .vel(rand.range(.5, .8).rib(99, 2))
+
+tom:  s("mt:3").struct("1!16".late(1/16)).room(.2)
+  .vel(rand.range(.5, .8).rib(299, 2))
 
 bass: note(`<
-   c - g g
+   c _ g g
    a _ - g
    - - - -
-   - b - c4
+   - b - c5
    >*8`
   .add("<0@3 5@5>*8")).s("sine")
   .fm(4).fmh(.15)
   .lpf(500).lfo()
   .delay(.25).delays(1/8)
+  .jux(rev)
 
 synth: n("0 - - 0 - 0 -7 -7 0 - - - 5 - -5 -".add("<0@3 5@5>*8"))
   .scale("<c:major d:minor c:major d:minor e:minor f:major>")
-  .s("saw")
+  .s("wt_digital")
   .att(.2).rel(.5)
-  .lpf(4500).lfo({r:.25})
+  .lpf(4500)
+  .lfo({r:.25})
   .unison(4).room(1)
   .fm(4).fmh(.999)
   .fm1(4).fmh(.99)
