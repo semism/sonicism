@@ -1,6 +1,14 @@
 setCps(144/60/4)
 
 samples('https://raw.githubusercontent.com/semism/nibbles/main/strudel.json')
+const sliceternate = (n, ...sounds) => stack(
+  ...sounds.map((snd, j) =>
+    snd.slice(n, run(n))
+       .mask(cat(...sounds.map((_, x) => (x === j ? 1 : 0))).fast(n))
+  )
+).clip(1)
+
+
 
 kick: s("sbd bd sbd bd").distort("1:.7").duck("3:4")
   ._scope()
@@ -26,6 +34,16 @@ sub: n("0!8")
   .decay(.4)
   .unison(22)
   .orbit(4)
+
+whiteboard: 
+sliceternate(24,
+             n("0!16").scale("").s("saw").lpf(600).lfo(),
+             s("beqar:1"))
+  .slow(2)
+  .distort("3:.2")
+  .room(1)
+  .crush(8)
+
 
 bass: n("0!16").s("supersaw, gm_voice_oohs")
   .scale(scale)
