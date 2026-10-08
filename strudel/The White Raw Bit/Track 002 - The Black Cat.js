@@ -37,7 +37,7 @@ reed_bass:
   .s("gm_reed_organ")
   .decay(.3).delay(.25)
 
-pluck:
+bark:
  n(irand(12).seg(16).rib(488, 1))
   .mask("<0 0 1 1 1 0 1 0>*16")
   .scale(scale).transpose("<7 14!3>")
@@ -45,9 +45,9 @@ pluck:
   .pan(perlin.range(0, 1).fast(2))
   .decay(.3).delay(.25)
   .fm(4).fmh(.15).fmdec(.15)
-  .velocity(rand.range(.2, .5))
+  .velocity(rand.range(.5, .8))
 
-sand:
+_sand:
   n(irand(16).seg(16).rib("488", 2)).scale(scale)
  // .orbit(2)
  .s("supersaw")
@@ -63,11 +63,11 @@ sand:
  .pan(sine.slow(4))
 
 
-amen1: s("breaks:3/2").fit()
+_amen: s("breaks:3/2").fit()
   .scrub(irand(16).div(16).seg(8).rib("<[2048 16]!4 55 16 55 16>", 1))
   .delay(.125).velocity(rand.range(.7,1))
 
 
-// dek: s("nibble/2").fit()
-//   .scrub("- .44 - .44").clip(.4)
-//   .lpf(3200).lpq(12)
+_dek: s("nibble/2").fit()
+  .scrub("- .44 - .44").clip(.4)
+  .lpf(3200).lpq(12)
