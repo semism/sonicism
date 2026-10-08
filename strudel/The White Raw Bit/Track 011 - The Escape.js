@@ -9,12 +9,12 @@ sea: n("<-7 -7 -5 -7 -5 0 5 7>/2").scale("c:major").s("supersaw")
 alikupter_prop: s("white!8")
   .lpf(500).lfo({da:5000, r:16})
   .pan(sine.slow(2)).room(.6).delay(.5)
-  .o(2)
+  // .o(2)
 
 alikupter_machine: note("c3!8").s("sine")
   .lpf(500).lfo({da:5000, r:16})
   .pan(sine.slow(2)).room(.6).delay(.5)
-  .o(2)
+  // .o(2)
 
 
 kick: s("bd - - bd - bd bd:2 - bd - - - bd:2 - bd:2 -").duck(2).datt(.5)
@@ -29,8 +29,8 @@ hat: s("hh:4!8").room(.2)
 ohat: s("oh:3").struct("<0 1 0 1>*4".late(1/8)).room(.2)
   .vel(rand.range(.5, .8).rib(99, 2))
 
-tom:  s("mt:3").struct("1!16".late(1/16)).room(.2)
-  .vel(rand.range(.5, .8).rib(299, 2))
+// tom:  s("mt:3").struct("1!16".late(1/16)).room(.2)
+//   .vel(rand.range(.5, .8).rib(299, 2))
 
 bass: note(`<
    c _ g g
@@ -53,8 +53,27 @@ synth: n("0 - - 0 - 0 -7 -7 0 - - - 5 - -5 -".add("<0@3 5@5>*8"))
   .unison(4).room(1)
   .fm(4).fmh(.999)
   .fm1(4).fmh(.99)
-  .detune(1)
+  .detune(2)
 
 
 
+
+var rep = H("<1 >")
+
+/////_HYDRA_//////
+await initHydra()
+
+noise(1, 1/16, .1)
+.kaleid()
+.repeat(rep,rep)
+.colorama(2048)
+.out(o1)
+
+shape(3, 0.3, 0.01)  
+.rotate(H("<3 5>*8"), .3)
+.repeat(rep,rep)
+.colorama()
+.out(o2)
+
+src(o1).modulate(o2).out()
 
