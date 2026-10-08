@@ -57,7 +57,7 @@ keyb: note(`<
   .compressor(-20)
   .detune(2)
   .unison(4)
-  .fm(1)
+  .fm(1).fmh(.99)
   .hpf(220)
   .lpf(600).lfo()
   .delay(.25).delays(1/8)
@@ -76,23 +76,22 @@ synth: n("0 - - 0 - 0 -7 -7 0 - - - 5 - -5 -".add("<0@3 5@5>*8"))
   .detune(2)
 
 
-
 var rep = H("<1 2 4 8>")
 
 /////_HYDRA_//////
 await initHydra()
 
-// noise(1, 1/8, 1)
-// .kaleid()
-// .repeat(rep,rep)
-// .colorama(2048)
-// .posterize()
-// .out(o1)
+noise(1, 1/8, 1)
+.kaleid()
+.repeat(rep,rep)
+.colorama(2048)
+.posterize()
+.out(o1)
 
-// shape(3, 0.3, 0.01)  
-// .rotate(H("<3 5>*8"), .3)
-// .repeat(rep,rep)
-// .colorama()
-// .out(o2)
+shape(3, 0.3, 0.01)  
+.rotate(H("<3 5>*8"), .3)
+.repeat(rep,rep)
+.colorama()
+.out(o2)
 
-// src(o1).modulate(o2).out()
+src(o1).modulate(o2).out()
