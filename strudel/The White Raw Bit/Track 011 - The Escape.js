@@ -33,48 +33,6 @@ ohat: s("oh:3").struct("<0 1 0 1>*4".late(1/8)).room(.2)
 tom:  s("mt:3").struct("1!16".late(1/16)).room(.2)
   .vel(rand.range(.5, .8).rib(299, 2))
 
-sub: n(`<
-   7 _ 4 4
-   5 _  4 -
-   - - 13 -
-   14 - - -
-   >*16`.add(-7))
-  .scale("c:major")
-  .s("sine")
-  .fm(1).fmh(.15)
-  .lpf(200)
-  .soft(1)
-
-sevnejsh: note(`<
-   [52 _ _  52
-   55@1.5 52@1.5 50]
-   [48@4 47@2
-    - -]
-   >`.add(7))
-  .s("gm_electric_guitar_muted:3")
-  .rel(1)
-  .room(.2)
-  .soft(1)
-
-keyb: note(`<
-   c4 _ g3 g3
-   a3 _  g3 -
-   - - b4 -
-   c5 - - -
-   >*16`.late(1/16 | 0))
-  .s("sine")
-  .att(choose(.3, .2,.1, 0))
-  .rel(choose(.3, .2,.1, 0))
-  .compressor(-20)
-  .detune(2)
-  .unison(4)
-  .fm(1).fmh(.99)
-  .hpf(220)
-  .lpf(600).lfo()
-  .delay(.25).delays(1/8)
-  .jux(rev)
-
-
 synth: n("0 - - 0 - 0 -7 -7 0 - - - 5 - -5 -".add("<0@3 5@5>*8"))
   .scale("<c:major d:minor c:major d:minor e:minor f:major>")
   .s("wt_digital")
@@ -86,6 +44,48 @@ synth: n("0 - - 0 - 0 -7 -7 0 - - - 5 - -5 -".add("<0@3 5@5>*8"))
   .fm1(4).fmh(.99)
   .detune(2)
 
+
+// sub: n(`<
+//    7 _ 4 4
+//    5 _  4 -
+//    - - 13 -
+//    14 - - -
+//    >*16`.add(-7))
+//   .scale("c:major")
+//   .s("sine")
+//   .fm(1).fmh(.30)
+//   .lpf(200)
+//   .soft(1)
+
+
+// keyb: note(`<
+//    c4 _ g3 g3
+//    a3 _  g3 -
+//    - - b4 -
+//    c5 - - -
+//    >*16`.late(1/16 | 0))
+//   .s("sine")
+//   .att(choose(.3, .2,.1, 0))
+//   .rel(choose(.3, .2,.1, 0))
+//   .compressor(-20)
+//   .detune(2)
+//   .unison(4)
+//   .fm(1).fmh(.99)
+//   .hpf(220)
+//   .lpf(600).lfo()
+//   .delay(.25).delays(1/8)
+//   // .jux(rev)
+
+// sevnejsh: note(`<
+//    [52 _ _  52
+//    55@1.5 52@1.5 50]
+//    [48@4 47@2
+//     - -]
+//    >`.add(7))
+//   .s("gm_electric_guitar_muted:3")
+//   .rel(1)
+//   .room(.2)
+//   .soft(1)
 
 
 var rep = H("<1 2 4 8>")
