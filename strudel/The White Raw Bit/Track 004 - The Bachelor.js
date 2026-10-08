@@ -35,14 +35,17 @@ sub: n("0!8")
   .unison(22)
   .orbit(4)
 
-whiteboard: 
+vox: 
 sliceternate(24,
-             n("0!16").scale("").s("saw").lpf(600).lfo(),
-             s("beqar:1"))
+             n("0").scale(scale).scaleTrans(trans).s("saw").lpf(1500).lfo().detune(2).unison(4),
+             // s("silence")
+             s("beqar:1").postgain(.8).pan(.4)
+            )
   .slow(2)
   .distort("3:.2")
   .room(1)
   .crush(8)
+  .echo(2, .25, .5)
 
 
 bass: n("0!16").s("supersaw, gm_voice_oohs")
@@ -78,25 +81,25 @@ beep: n("-!7 1").s("supersaw")
   .distort("3:.2")
   .unison(22)
 
-beqo: s("beqar/8").fit()
+_beqo: s("beqar/8").fit()
 // .scrub("<0 -!3>")
 .attack(.15)
 // .scrub("<0@2 .25!2 .5! .62@2>".fast(2))  
 .lpf(1800).lfo()
 .delay(.25)
 .orbit(3)
-.gain(0)
+// .gain(0)
 
 
-beqo_vox:
+_beqo_vox:
 s("beqar:1/8").fit()
 // .scrub("<<0 .12 .5 .62> -!3>")
 // .hpf(1400)
 .lpf(1200)
 .delay(.1)
 .gain(1.7)
-.gain(0)
+// .gain(0)
 // .orbit(3)
 ._scope()
 
-all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
+// all(x=>x.whenKey("Control:b", x=>x.coarse("8").color("red").lpenv(5)))
