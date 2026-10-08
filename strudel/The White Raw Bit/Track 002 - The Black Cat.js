@@ -38,14 +38,17 @@ reed_bass:
   .decay(.3).delay(.25)
 
 bark:
- n(irand(12).seg(16).rib(488, 1))
-  .mask("<0 0 1 1 1 0 1 0>*16")
-  .scale(scale).transpose("<7 14!3>")
+ n(`<0 0 - 0 
+     0 - 0 0 
+     0 0 0 0
+     0 - <0 7> 0>*16`.add("<7 14!3>"))
+  .scale(scale)
   .s("pulse")
+  .att(.02).rel(.01)
   .pan(perlin.range(0, 1).fast(2))
   .decay(.3).delay(.25)
   .fm(4).fmh(.15).fmdec(.15)
-  .velocity(rand.range(.5, .8))
+  // .velocity(rand.range(.5, .8))
 
 _sand:
   n(irand(16).seg(16).rib("488", 2)).scale(scale)
