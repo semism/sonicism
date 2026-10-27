@@ -75,7 +75,9 @@ n(irand(6).seg(3).rib("<0 0 4 4 5 6 6 8>", 16).add("14"))
 await initHydra()
 
 
-shape(5, .3, 0).color(1, .6, .1)
+shape(5, .3, 0)
+// voronoi(1, .1, .1)  
+.color(1, .6, .1)
 .repeat(H("<3 3 8 2 4 4>"),
          H(rand.range(6, 10).seg(2).rib(522,2)))
 .kaleid()
