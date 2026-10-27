@@ -15,13 +15,13 @@ bass: n("<-2 -3 0 0>".add("<0 0 0 4>/4"))
   .soft(1)
   .fm(3).fmh(.99)
 
-acid: n("0!6".add("<0 0 0 <4 [7 2 2 5 5 7]>>/4"))
-  .scale(key)
-  .s("saw")
-  .lpf(500).lfo().lpenv(2).lpq(20)
-  .delay(.25).dfb("<0 .25 .5 .75>/4")
-  .velocity("1 0 .2 1 0 .2")
-  .soft(1)
+// acid: n("0!6".add("<0 0 0 <4 [7 2 2 5 5 7]>>/4"))
+//   .scale(key)
+//   .s("saw")
+//   .lpf(500).lfo().lpenv(2).lpq(20)
+//   .delay(.25).dfb("<0 .25 .5 .75>/4")
+//   .velocity("1 0 .2 1 0 .2")
+//   .soft(1)
 
 
 chords: chord(prog).anchor("d4").voicing()
@@ -57,7 +57,7 @@ skelet: s("skelet/16").fit()
 await initHydra()
 
 
-shape().color(1, .6, .1)
+shape(5, .3, 0).color(1, .6, .1)
 .repeat(H("<3 3 8 2 4 4>"),
          H(rand.range(6, 10).seg(2).rib(522,2)))
 .kaleid()
