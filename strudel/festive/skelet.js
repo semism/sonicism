@@ -57,6 +57,17 @@ chord(prog).anchor("d5").voicing()
     .struct("x@2 ~ x@3")
     .s("saxello_vib")
     .rel(.1).lpf(4000).lfo({r: .25})
+    .unison(4)
+
+
+solo_horn: 
+n(irand(6).seg(3).rib("<0 0 4 4 5 6 6 8>", 16).add("<0 0 0 <4 [7 2 2 5 5 7]>>/4"))
+  .struct("x@2 x x@3")
+  .scale(key)
+  .s("saxello")
+  .rel(.1)
+  .unison(4)
+  // .jux(rev)
 
 
 //___________________
