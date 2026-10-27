@@ -34,7 +34,7 @@ chords: chord(prog).anchor("d4").voicing()
   .room(.3).gain(.66)
 
 
-kick:  s("- - - sbd - -")
+kick:  s("- - - [sbd, bd:1] - -")
 
 ohat: s("white - - - - -").rel(.1)
  .lpf(3500).lfo()
@@ -53,9 +53,9 @@ skelet: s("skelet/16").fit()
 .soft(1)
 
 horn: 
-chord(prog).anchor("d8").voicing()
+chord(prog).anchor("d5").voicing()
     .struct("x@2 ~ x@3")
-    .s("supersaw")
+    .s("saxello_vib")
     .rel(.1).lpf(4000).lfo({r: .25})
 
 
