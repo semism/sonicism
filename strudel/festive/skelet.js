@@ -1,12 +1,12 @@
 
-setcpm(200/2)
+setcpm(150/2)
 
 samples('github:semism/nibbles')
 
 const prog = "<G F# Bm Bm>"
 const key  = "B1:harmonic:minor"
 
-bass: n("<-2 -3 0 0>".add("<0 0 0 4>/4"))
+bass: n("-7".add("<0 0 0 4>/4"))
   .scale(key)
   .struct("x x -")
   .s("saw")
@@ -18,9 +18,9 @@ bass: n("<-2 -3 0 0>".add("<0 0 0 4>/4"))
 acid: n("0!6".add("<0 0 0 <4 [7 2 2 5 5 7]>>/4"))
   .scale(key)
   .s("saw")
-  .lpf(500).lfo().lpenv(2).lpq(20)
+  .lpf(500).lfo().lpenv(2).lpq(15)
   .delay(.25).dfb("<0 .25 .5 .75>/4")
-  .velocity("1 0 .2 1 0 .2")
+  .velocity("1 0 .2 1 .4 <.1 .3>")
   .soft(1)
 
 
@@ -48,9 +48,9 @@ skelet_fast: s("skelet")
   .slice(12,"- - - <0 6> - -")
   .echo(2, 1/2, .7).gain(.35)
 
-// skelet: s("skelet/16").fit()
-// .room(2)
-// .soft(1)
+_skelet: s("skelet/16").fit()
+.room(2)
+.soft(1)
 
 horn: 
 chord(prog).anchor("d3").voicing()
@@ -67,6 +67,7 @@ n(irand(6).seg(3).rib("<0 0 4 4 5 6 6 8>", 16).add("7"))
   .s("saxello")
   .rel(.1)
   .unison(4)
+  .delay(.25).delayfb(.8)
   // .jux(rev)
 
 
