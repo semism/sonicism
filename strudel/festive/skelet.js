@@ -51,7 +51,7 @@ skelet: s("skelet/16").fit()
 .soft(1)
 
 horn: 
-chord(prog).anchor("d5").voicing()
+chord(prog).anchor("d3").voicing()
     .struct("x@2 ~ x@3")
     .s("saxello_vib")
     .rel(.1).lpf(4000).lfo({r: .25})
