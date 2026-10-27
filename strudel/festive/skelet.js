@@ -41,14 +41,16 @@ ohat: s("white - - - - -").rel(.1)
 
 hat: s("hh:4 - - hh:4 - -")
 
+snare: s("sd:3").struct("x - x x - x").velocity("1 0 .3 .6 0 <.1 .3>")
+
 
 skelet_fast: s("skelet")
   .slice(12,"- - - <0 6> - -")
   .echo(2, 1/2, .7).gain(.35)
 
-skelet: s("skelet/16").fit()
-.room(2)
-.soft(1)
+// skelet: s("skelet/16").fit()
+// .room(2)
+// .soft(1)
 
 horn: 
 chord(prog).anchor("d3").voicing()
