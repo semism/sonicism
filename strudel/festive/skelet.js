@@ -1,3 +1,4 @@
+
 setcpm(200/2)
 
 samples('github:semism/nibbles')
@@ -52,6 +53,14 @@ skelet: s("skelet/16").fit()
 .soft(1)
 
 
+//___________________
+await initHydra()
 
 
-  
+shape().color(1, .6, .1)
+.repeat(H("<3 3 8 2 4 4>"),
+         H(rand.range(6, 10).seg(2).rib(522,2)))
+.kaleid()
+.scrollY(0, H(rand.range(-.1, .2).seg(2).rib(33,4)))
+.scrollX(0, H(rand.range(-.1, .2).seg(2).rib(52,4)))
+.out()
