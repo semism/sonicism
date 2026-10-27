@@ -48,8 +48,6 @@ skelet_fast: s("skelet")
 
 skelet: s("skelet/16").fit()
 .room(2)
-.echo(2, 1/6, .8)
-.phaser(2)
 .soft(1)
 
 horn: 
@@ -61,7 +59,7 @@ chord(prog).anchor("d5").voicing()
 
 
 solo_horn: 
-n(irand(6).seg(3).rib("<0 0 4 4 5 6 6 8>", 16).add("<0 0 0 <4 [7 2 2 5 5 7]>>/4"))
+n(irand(6).seg(3).rib("<0 0 4 4 5 6 6 8>", 16).add("7"))
   .struct("x@2 x x@3")
   .scale(key)
   .s("saxello")
