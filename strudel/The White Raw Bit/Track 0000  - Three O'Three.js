@@ -9,13 +9,13 @@ sub: n("-14!8").scale("b:minor").n(irand(12)).s("triangle")
 amen: s("breaks:3").fit()
   .vel(.65)
 
-kick: s("sbd!4").delay(.25)
+kick: s("sbd!4").delay(.25).duck(2)
 snare: s("- sd:1 - sd:1")
   .room(.02)
   .lpf(2000)
   .vel(rand.range(.7, .9))
 
-hat: s("hh:1").struct("0 0 1 1 1 0 0 1").vel(rand.range(.2, .4))
+hat: s("hh:1").struct("0 0 1 1 1 0 0 1").vel(rand.range(.5, .6))
 
 midlead: n(irand(4).seg(16).rib(5, 4).swing(8)).scale("b:minor").s("saw:10")
   
@@ -32,6 +32,7 @@ acid: n(`0 3 0 5
   .delay(.25)
   .soft(1)
   .lpf("<300!16 500!4>").lpenv(2).lpq(12).lfo()
+  .orbit(2)
 
 
 sea: n("<3 4 5 2 0 1 3 0>!4".add(-7)).scale("b:minor").s("saw:10")
