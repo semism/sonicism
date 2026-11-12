@@ -17,7 +17,8 @@ snare: s("- sd:1 - sd:1")
 
 hat: s("hh:1").struct("0 0 1 1 1 0 0 1").vel(rand.range(.2, .4))
 
-midlead: n(irand(4).seg(16).rib(5, 4)).scale("b:minor").s("saw:10")
+midlead: n(irand(4).seg(16).rib(5, 4).swing(8)).scale("b:minor").s("saw:10")
+  
   .unison(5).room(.6)
   .lpf(300)
 
@@ -33,8 +34,9 @@ acid: n(`0 3 0 5
   .lpf("<300!16 500!4>").lpenv(2).lpq(12).lfo()
 
 
-sea: n("<3 4 5 2 0 1 3 0>").scale("b:minor").s("sine:10")
-  .unison(25).room(3).soft(.2)
+sea: n("<3 4 5 2 0 1 3 0>!4".add(-7)).scale("b:minor").s("saw:10")
+  .delay(.5)
+  .soft(.6).vel(.2).lpf(3000).lfo({r:.5})
 
 
 
