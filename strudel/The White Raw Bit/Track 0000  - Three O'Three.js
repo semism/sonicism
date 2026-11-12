@@ -21,7 +21,10 @@ midlead: n(irand(4).seg(16).rib(5, 4).swing(8)).scale("b:minor").s("saw:10")
   .unison(5).room(.6)
   .lpf(300)
 
-// mfaj nuk tnjofta 
+
+// zamren tond
+// e ke ujdis
+// mfal nuk tnjofta 
 // anubis
 
 //fati i bardh
