@@ -12,7 +12,7 @@ _amen: s("breaks:3").fit()
 kick: s("sbd!4").delay(.25).duck(2)
 snare: s("- sd:1 - sd:1")
   .room(.02)
-  .lpf(2000)
+  .att(.2)
   .vel(rand.range(.7, .9))
 
 hat: s("hh:1").struct("0 0 1 1 1 0 0 1").vel(rand.range(.5, .6))
