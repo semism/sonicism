@@ -6,7 +6,7 @@ samples('github:semism/smbreaks')
 bass: n(-14).scale("b:minor").s("saw").lpf(300).room(.2)
 sub: n("-14!8").scale("b:minor").n(irand(12)).s("triangle")
 
-amen: s("breaks:3").fit()
+_amen: s("breaks:3").fit()
   .vel(.65)
 
 kick: s("sbd!4").delay(.25).duck(2)
@@ -28,7 +28,7 @@ acid:
 //         3 0 5 0
 //         3 - <3 5>@2
 //         `.add(-14))
-n(irand(12).seg(8).add(-14).rib(256, 4))
+n(irand(12).seg(16).add(-14).rib(256, 4))
   .scale("b:minor").s("saw")
   .unison(5)
   .room(.25)
