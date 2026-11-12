@@ -42,5 +42,10 @@ sea: n("<3 4 5 2 0 1 3 0>!4".add(-7)).scale("b:minor").s("saw:10")
   .delay(.5)
   .soft(.6).vel(.2).lpf(3000).lfo({r:.5})
 
+//fati i bardh
+//nuk o me mu
+//nuk o me taj 
+//nuk o me askond
+
 
 
