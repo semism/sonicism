@@ -7,7 +7,15 @@ bass: n(-14).scale("b:minor").s("saw").lpf(300).room(.2)
 sub: n("-14!8").scale("b:minor").n(irand(12)).s("triangle")
 
 amen: s("breaks:3").fit()
-  .vel(.65)
+  .scrub(arrange(
+    [1, "0"],
+    [1, ".2 .5 .2 <.5!3 .7>"],
+    [1, "0"],
+    [1, "0!4 .2 .5 .2 .12"],
+    [1, "0!4 .2!4"],
+    [2, "0@4 .5!2 .06!2"],
+    [1, "-!7 .12"]))
+  // .vel(.65)
 
 kick: s("sbd!4").delay(.25).duck(2)
 snare: s("- sd:1 - sd:1")
@@ -22,15 +30,15 @@ midlead: n(irand(4).seg(16).rib(5, 4).swing(8)).scale("b:minor").s("saw:10")
   .lpf(300)
 
 
-// zamren tond
-// e ke ujdis
-// mfal nuk tnjofta 
-// anubis
+// // zamren tond
+// // e ke ujdis
+// // mfal nuk tnjofta 
+// // anubis
 
-//fati i bardh
-//nuk o me mu
-//nuk o me taj 
-//nuk o me askond
+// //fati i bardh
+// //nuk o me mu
+// //nuk o me taj 
+// //nuk o me askond
 
 acid:
 // n(`0 3 0 5 
