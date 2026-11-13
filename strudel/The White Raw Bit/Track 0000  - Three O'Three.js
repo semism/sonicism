@@ -26,9 +26,9 @@ snare: s("- sd:1 - sd:1")
 
 hat: s("hh:1").struct("0 0 1 1 1 0 0 1").vel(rand.range(.5, .6))
 
-// midlead: n(irand(4).seg(16).rib(5, 4).swing(8)).scale("b:minor").s("saw:10")
-//   .unison(5).room(.6)
-//   .lpf(300)
+midlead: n(irand(4).seg(16).rib(5, 4).swing(8)).scale("b:minor").s("saw:10")
+  .unison(5).room(.6)
+  .lpf(300)
 
 
 // // // zamren tond
@@ -53,7 +53,7 @@ n(`0 3 0 5
   .room(.25)
   .delay(.25)
   .soft(1)
-  .lpf("<300!16 500!4>").lpenv(2).lpq(12).lfo()
+  .lpf("<300!16 500!4>").lpenv(2).lfo().lpq(12).lfo()
   .orbit(2)
 
 
