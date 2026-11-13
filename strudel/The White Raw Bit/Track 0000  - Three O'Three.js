@@ -16,6 +16,7 @@ amen: s("breaks:3").fit()
     [1, ".2 .5 .2 <.5!3 .7>"],
     [1, "0"],
     [1, "0@2 0@2 .2 .5 0 .12"]))
+.lpf(3000)
 
 kick: s("sbd!4").delay(.25).duck(2)
 snare: s("- sd:1 - sd:1")
@@ -25,20 +26,20 @@ snare: s("- sd:1 - sd:1")
 
 hat: s("hh:1").struct("0 0 1 1 1 0 0 1").vel(rand.range(.5, .6))
 
-midlead: n(irand(4).seg(16).rib(5, 4).swing(8)).scale("b:minor").s("saw:10")
-  .unison(5).room(.6)
-  .lpf(300)
+// midlead: n(irand(4).seg(16).rib(5, 4).swing(8)).scale("b:minor").s("saw:10")
+//   .unison(5).room(.6)
+//   .lpf(300)
 
 
-// // zamren tond
-// // e ke ujdis
-// // mfal nuk tnjofta 
-// // anubis
+// // // zamren tond
+// // // e ke ujdis
+// // // mfal nuk tnjofta 
+// // // anubis
 
-// //fati i bardh
-// //nuk o me mu
-// //nuk o me taj 
-// //nuk o me askond
+// // //fati i bardh
+// // //nuk o me mu
+// // //nuk o me taj 
+// // //nuk o me askond
 
 acid:
 n(`0 3 0 5 
@@ -56,9 +57,9 @@ n(`0 3 0 5
   .orbit(2)
 
 
-sea: n("<3 4 5 2 0 1 3 0>!4".add(-7)).scale("b:minor").s("saw:10")
-  .delay(.5)
-  .soft(.6).vel(.2).lpf(3000).lfo({r:.5})
+// sea: n("<3 4 5 2 0 1 3 0>!4".add(-7)).scale("b:minor").s("saw:10")
+//   .delay(.5)
+//   .soft(.6).vel(.2).lpf(3000).lfo({r:.5})
 
 
 
