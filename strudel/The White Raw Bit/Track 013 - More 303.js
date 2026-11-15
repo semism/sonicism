@@ -29,6 +29,9 @@ sub: n(`-14!4`).scale("f3:minor").s("supersaw")
   .lpf(250)
   .att(0).rel(1).dec(0.4)
 
+
+snare: s("- sd:1 - sd:1")
+
 opn: s("oh:2").beat("2, 6, 10, 14", 16).room(.2).gain(2)
 
 hi: s("hh:4!16").vel(pat.mul(.2))
