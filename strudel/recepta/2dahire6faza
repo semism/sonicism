@@ -1,0 +1,5 @@
+dahiretrofaza: n(irand(12).seg(8).rib(295,2).add("-7, -14, 7, 21")) //start at 2x slow from base
+  .scale("f3:minor").s("gm_synth_strings_1").gain(.6)
+  .room(.5)
+  .unison(22)
+  .rel(.1)
