@@ -12,7 +12,7 @@ const pat2 = irand(12).seg(16).rib("<920!32 420!32 920!32 69!32>", 2);
 pat = pat2;
 
 tomorrows: n(pat.add("<0!2 3 5>"))
-  .scale("f3:minor").s("supersaw").gain(.6)
+  .scale("f3:minor").s("piano").gain(.6) //supersaw
   .room(2)
   .unison(22)
   .rel(.1)
