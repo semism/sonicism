@@ -24,25 +24,26 @@ oh: s("<oh>*4")
   .bank("dr550").vel(rand.seed(2).range(.1, .4)).pan(.8)
 
 
-lead_right: n(`<
-                <-7 0>!16
-                3!15 14
-                2!16
-                -2!12 -3!4
-               >*16`)
-  .scale("<a2:minor c:minor>").s("supersaw")
-  .scaleTrans(-5)
-  .fm(22).fmh(2).compressor(-30)
-  .attack(.1).decay(.2)
-  .distort("2:.4").vel(sine.range(.8, 1))
-  .lpf(sine.range(1000,500).slow(2))
-  .lfo()
-  .room(.5).delay(.25)
-  .pan(sine.slow(2))
-  .hpf(300)
+// lead_right: n(`<
+//                 <-7 0>!16
+//                 3!15 14
+//                 2!16
+//                 -2!12 -3!4
+//                >*16`)
+//   .scale("<a2:minor c:minor>").s("supersaw")
+//   .scaleTrans(-5)
+//   .fm(22).fmh(2).compressor(-30)
+//   .attack(.1).decay(.2)
+//   .distort("2:.4").vel(sine.range(.8, 1))
+//   .lpf(sine.range(1000,500).slow(2))
+//   .lfo()
+//   .room(.5).delay(.25)
+//   .pan(sine.slow(2))
+//   .hpf(300)
 
 var rythm_guitar =
-  chord("<Am Cm>").voicing()
+  // chord("<Am Cm>").voicing()
+  n(irand(12).seg(8).rib(2,4)).scale("<- c:minor>")
   .transpose("-14")
   .s("saw")
   .room(.2).delay(.25)
