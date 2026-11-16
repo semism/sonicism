@@ -23,16 +23,6 @@ hh: s("<hh rd hh!2 hh:2!4>*8")
 oh: s("<oh>*4")
   .bank("dr550").vel(rand.seed(2).range(.1, .4)).pan(.8)
 
-rim: s("rim").bank("lm8953")
-  .struct(`<
-  - 1 - 1 - - [1 1] 1
-  - 1 - - - - - 1
-  - 1 - 1 - - [1 1] 1
-  - 1 - - - - - 1
-  >*8`)
-  .vel(rand.seed(2).range(.7, .9).rib(2048,2))
-
-
 
 lead_right: n(`<
                 <-7 0>!16
@@ -45,7 +35,7 @@ lead_right: n(`<
   .fm(22).fmh(2).compressor(-30)
   .attack(.1).decay(.2)
   .distort("2:.4").vel(sine.range(.8, 1))
-  .lpf(sine.range(1200,500).slow(2))
+  .lpf(sine.range(1000,500).slow(2))
   .lfo()
   .room(.5).delay(.25)
   .pan(sine.slow(2))
@@ -54,13 +44,12 @@ lead_right: n(`<
 var rythm_guitar =
   chord("<Am Cm>").voicing()
   .transpose("-14")
-  .s("gm_distortion_guitar")
+  .s("saw")
   .room(.2).delay(.25)
 
 detuned_guitar: rythm_guitar  
   .lpf(555)
   .late(rand.range(0,.0075))
-  .ply(16) //ply to strum
   .unison(4)
   .room(1.5)
   .delay(.25).delays(1/4)
@@ -82,7 +71,6 @@ rythm_guitar: rythm_guitar
   .room(1.5)
   .delay(.25).delays(1/4)
   .hpf(300)
-
 
 
 
