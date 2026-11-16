@@ -7,11 +7,11 @@ var pat =
    8@2 14 4`;
 
 //segment to 16
-const pat2 = irand(12).seg(8).rib("<920!32 420!32 920!32 69!32>", 2);
+const pat2 = irand(12).seg(16).rib("<920!32 420!32 920!32 69!32>", 2);
 
 pat = pat2;
 
-tomorrows: n(pat.add("<0!2 3 5>"))
+_tomorrows: n(pat.add("<0!2 3 5>"))
   .scale("f3:minor").s("piano").gain(.6) //supersaw
   .room(2)
   .delay(.25)
@@ -25,7 +25,7 @@ yesterdays: n("<0!2 3 5>".add(-14).ply(4))
   .unison(22)
   .rel(.1).velocity(rand.range(.8,.9))
 
-_acid: n(pat.add(-14)).scale("f3:minor").s("saw")
+acid: n(pat.add(-14)).scale("f3:minor").s("saw")
   .lpf(300).lpenv(3).lpq(12).lfo({r:.075})
   .delay(.15)
   .dec(.4)
@@ -44,7 +44,7 @@ opn: s("oh:2").beat("2, 6, 10, 14", 16).room(.2).gain(2)
 
 hi: s("hh:4!16").vel(pat.mul(.2))
 
-_bass: n(pat.add(-14)).scale("f3:minor")
+bass: n(pat.add(-14)).scale("f3:minor")
   .s("saw")
   .unison(25)
   .soft("1.25")
@@ -53,3 +53,10 @@ _bass: n(pat.add(-14)).scale("f3:minor")
   .room(.4)
   .vel(.5)
   .delay(.25)
+
+
+//mu nuk um ha kush ije
+//vec a ije me me mu
+//peradorin xhi e kie
+//vec a ije me me mu
+//prezidentin xhi e kie
