@@ -57,6 +57,8 @@ bass: n(pat.add(-14)).scale("f3:minor")
 
 //mu nuk um ha kush ije
 //vec a ije me me mu
-//peradorin xhi e kie
+//peradorin/prezidentin xhi e kie
 //vec a ije me me mu
-//prezidentin xhi e kie
+
+//en ndell ene nder hije
+//taj a ije me me mu
