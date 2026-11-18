@@ -18,7 +18,7 @@ _tomorrows: n(pat.add("<0!2 3 5>"))
   .unison(22)
   .rel(.1).velocity(rand.range(.4,.9))
 
-yesterdays: n("<0!2 3 5>".add(-14).ply(4))
+_yesterdays: n("<0!2 3 5>".add(-14).ply(4))
   .scale("f3:minor").s("piano").gain(.6) //supersaw
   .room(2)
   .delay(.25)
@@ -62,3 +62,26 @@ bass: n(pat.add(-14)).scale("f3:minor")
 
 //en ndell ene nder hije
 //taj a ije me me mu
+
+
+
+/////_HYDRA_//////
+await initHydra()
+noise(1, .05, 0)
+.kaleid()
+.repeat(2,2)
+.colorama(30)
+.scrollY(0, 0.1)
+.scrollX(0, -0.1).out(o1)
+
+shape()
+
+.repeat(H("<3 3 8 4>*4"),
+         H(rand.range(6, 10).seg(8).rib(522,2)))
+.colorama().kaleid()
+.scrollY(0, H(rand.range(-.1, .2).seg(2).rib(522,2)))
+.scrollX(0, H(rand.range(-.1, .2).seg(4).rib(522,2)))
+.out(o2)
+
+src(o2).modulate(o1).out()
+
